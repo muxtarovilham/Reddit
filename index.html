@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/main.css">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <nav style="position: inherit; width: 5%;" class="navbar fixed-top menu">
+                <div style="position: relative; display: flex; justify-content: center; align-items: center;" class="container-fluid">
+                  <button style="position: absolute; height: 48px; top: 0px;" class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                    <span class="navbar-toggler-icon"><i class="fa-solid fa-bars" style="color: #000000;"></i></span>
+                  </button>
+                  <div style="left: -1px; top: 58px;" class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div style="background-color: transparent;" class="offcanvas-body">    
+                      <ul style="padding: 14px;" class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="./index.html"><i class="fa-solid fa-house"></i> Home</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="./popular.html"><i class="fa-solid fa-up-right-from-square" style="color: #000000;"></i> Popular</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                          <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            TOPICS <i class="fa-solid fa-chevron-down" style="color: #000000; font-size: 12px;"></i>
+                          </a>
+                          <ul style="border: none;" class="dropdown-menu show" data-bs-popper="static">
+                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-gamepad"></i> Gaming</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-volleyball"></i> Sports</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-chart-line"></i> Business</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fa-brands fa-bitcoin"></i> Cyrpto</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-tv"></i> Television</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-cake-candles"></i> Celebrity</a></li>
+                            <li>
+                              <hr class="dropdown-divider">
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                          <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            RESOURCES <i class="fa-solid fa-chevron-down" style="color: #000000; font-size: 12px;"></i>
+                          </a>
+                          <ul style="border: none;" class="dropdown-menu show" data-bs-popper="static">
+                            <li><a class="dropdown-item" href="#"><i class="fa-brands fa-reddit"></i> About Reddit</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-rectangle-ad"></i> Advertise</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-info"></i>Help</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-book"></i> Blog</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-arrow-up-right-dots"></i> Careers</a></li>
+                            <li>
+                              <hr class="dropdown-divider">
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                          <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            POPULAR POSTS <i class="fa-solid fa-chevron-down" style="color: #000000; font-size: 12px;"></i>
+                          </a>
+                          <ul style="border: none;" class="dropdown-menu show" data-bs-popper="static">
+                            <li><a class="dropdown-item" href="#">Turkish</a></li>
+                            <li><a class="dropdown-item" href="#">English / Global</a></li>
+                            <li><a class="dropdown-item" href="#">Deutsch</a></li>
+                            <li><a class="dropdown-item" href="#">Español</a></li>
+                            <li><a class="dropdown-item" href="#">Français</a></li>
+                            <li><a class="dropdown-item" href="#">Italiano</a></li>
+                            <li>
+                              <hr class="dropdown-divider">
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                      <a class="reserved" href="">Reddit, Inc. © 2024. All rights reserved.</a>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+            <div class="reddit-images">
+                <img src="https://seeklogo.com/images/R/reddit-icon-new-2023-logo-3F12137D65-seeklogo.com.png" alt="">
+                <p>reddit</p>
+            </div>
+            <img src="" alt="">
+            <form id="form">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search Reddit">
+            </form>
+            <div class="login">
+                <button class="barcodeButton"><i class="fa-solid fa-qrcode"></i></button>
+                <button class="loginButton">Login</button>
+                <div class="btn-group dropdownes">
+                  <button style="background-color: transparent; border: none;" type="button" class="btn btn-secondary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa-solid fa-ellipsis" style="color: #000000;"></i>
+                  </button>
+                  <div class="dropdown-menu dropdown-menu-right">
+                    <button class="dropdown-item" type="button"><a href=""><i class="fa-solid fa-right-to-bracket" style="color: #000000;"></i> Log In / Sign Up</a></button>
+                    <button class="dropdown-item" type="button"><a href=""><i class="fa-solid fa-arrow-pointer" style="color: #000000;"></i> Advertise on Reddit</a></button>
+                    <button class="dropdown-item" type="button"><a href=""><i class="fa-solid fa-bag-shopping" style="color: #000000;"></i> Shop Collectible Avatars</a></button>
+                  </div>
+                </div>
+            </div>
+        </nav>
+  
+    </header>
+
+
+
+    <main>
+      <div style="left: -1px; top: 58px; width: 21%; border-right: 1px solid gainsboro; position: fixed;" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div style="background-color: transparent;" class="offcanvas-body">    
+          <ul style="padding: 14px; padding-left: 33px; gap: 7px;" class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./index.html"><i class="fa-solid fa-house"></i> Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./popular.html"><i class="fa-solid fa-up-right-from-square" style="color: #000000;"></i> Popular</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                TOPICS <i class="fa-solid fa-chevron-down" style="color: #000000; font-size: 12px;"></i>
+              </a>
+              <ul style="border: none;" class="dropdown-menu show" data-bs-popper="static">
+                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-gamepad"></i> Gaming</a></li>
+                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-volleyball"></i> Sports</a></li>
+                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-chart-line"></i> Business</a></li>
+                <li><a class="dropdown-item" href="#"><i class="fa-brands fa-bitcoin"></i> Cyrpto</a></li>
+                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-tv"></i> Television</a></li>
+                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-cake-candles"></i> Celebrity</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                RESOURCES <i class="fa-solid fa-chevron-down" style="color: #000000; font-size: 12px;"></i>
+              </a>
+              <ul style="border: none;" class="dropdown-menu show" data-bs-popper="static">
+                <li><a class="dropdown-item" href="#"><i class="fa-brands fa-reddit"></i> About Reddit</a></li>
+                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-rectangle-ad"></i> Advertise</a></li>
+                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-info"></i>Help</a></li>
+                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-book"></i> Blog</a></li>
+                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-arrow-up-right-dots"></i> Careers</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                POPULAR POSTS <i class="fa-solid fa-chevron-down" style="color: #000000; font-size: 12px;"></i>
+              </a>
+              <ul style="border: none;" class="dropdown-menu show" data-bs-popper="static">
+                <li><a class="dropdown-item" href="#">Turkish</a></li>
+                <li><a class="dropdown-item" href="#">English / Global</a></li>
+                <li><a class="dropdown-item" href="#">Deutsch</a></li>
+                <li><a class="dropdown-item" href="#">Español</a></li>
+                <li><a class="dropdown-item" href="#">Français</a></li>
+                <li><a class="dropdown-item" href="#">Italiano</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <a class="reserved" href="">Reddit, Inc. © 2024. All rights reserved.</a>
+        </div>
+      </div>
+
+      <div class="discover">
+        <h1>asdfacxz</h1>
+        <h1>asdfacxz</h1>
+        <h1>asdfacxz</h1>
+        <h1>asdfacxz</h1>
+        <h1>asdfacxz</h1>
+        <h1>asdfacxz</h1>
+        <h1>asdfacxz</h1>
+        <h1>asdfacxz</h1>
+
+
+        <h1>asdfacxz</h1>
+        <h1>asdfacxz</h1>
+        <h1>asdfacxz</h1>
+        <h1>asdfacxz</h1>
+        <h1>asdfacxz</h1>
+        <h1>asdfacxz</h1>
+        <h1>asdfacxz</h1>
+        <h1>asdfacxz</h1>
+        <h1>asdfacxz</h1>
+        <h1>asdfacxz</h1>
+
+
+        <h1>asdfacxz</h1>
+        <h1>asdfacxz</h1>
+        <h1>asdfacxz</h1>
+        <h1>asdfacxz</h1>
+        <h1>asdfacxz</h1>
+        <h1>asdfacxz</h1>
+        <h1>asdfacxz</h1>
+        <h1>asdfacxz</h1>
+        <h1>asdfacxz</h1>
+        <h1>asdfacxz</h1>
+
+
+        <h1>asdfacxz</h1>
+        <h1>asdfacxz</h1>
+        <h1>asdfacxz</h1>
+        <h1>asdfacxz</h1>
+        <h1>asdfacxz</h1>
+        <h1>asdfacxz</h1>
+        <h1>asdfacxz</h1>
+        <h1>asdfacxz</h1>
+        <h1>asdfacxz</h1>
+        <h1>asdfacxz</h1>
+
+
+        <h1>asdfacxz</h1>
+        <h1>asdfacxz</h1>
+        <h1>asdfacxz</h1>
+        
+      </div>
+    </main>
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.7/axios.min.js"
+        integrity="sha512-NQfB/bDaB8kaSXF8E77JjhHG5PM6XVRxvHzkZiwl3ddWCEPBa23T76MuWSwAJdMGJnmQqM0VeY9kFszsrBEFrQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
