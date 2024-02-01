@@ -154,15 +154,28 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    #offcanvasNavbar{
+    .offcanva{
+        display: block;
         position: fixed;
-            .reserved{
+            overflow-y: auto;
+            max-height: 100vh;
+
+          .reserved{
                 width: 100%;
                 display: flex;
                 justify-content: center;
                 font-size: 10px;
                 color: gray;
             }
+        
+        .offcanvas::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .offcanvas::-webkit-scrollbar-thumb {
+            background-color: transparent;
+        }
+        
     }
     
 }
@@ -187,6 +200,11 @@ main{
             .menu{
                 display: block;
             }
+        }
+    }
+    main{
+        .offcanva{
+            display: none;
         }
     }
 }

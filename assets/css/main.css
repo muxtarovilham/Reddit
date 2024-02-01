@@ -149,15 +149,24 @@ main {
   justify-content: center;
   align-items: center;
 }
-main #offcanvasNavbar {
+main .offcanva {
+  display: block;
   position: fixed;
+  overflow-y: auto;
+  max-height: 100vh;
 }
-main #offcanvasNavbar .reserved {
+main .offcanva .reserved {
   width: 100%;
   display: flex;
   justify-content: center;
   font-size: 10px;
   color: gray;
+}
+main .offcanva .offcanvas::-webkit-scrollbar {
+  width: 6px;
+}
+main .offcanva .offcanvas::-webkit-scrollbar-thumb {
+  background-color: transparent;
 }
 
 @media screen and (max-width: 1200px) {
@@ -166,6 +175,9 @@ main #offcanvasNavbar .reserved {
   }
   header nav .menu {
     display: block;
+  }
+  main .offcanva {
+    display: none;
   }
 }
 @media screen and (max-width: 960px) {
