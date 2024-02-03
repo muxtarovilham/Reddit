@@ -152,38 +152,128 @@ main{
     width: 100%;
     height: auto;
     display: flex;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
     padding-top: 58px;
     .discover{
-        width: 95%;
+        width: 79%;
         display: flex;
-        justify-content: end;
-        #posts-container{
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        overflow: hidden;
+        .news{
+            background-color: blue;
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            #posts-container{
+                width: 99%;
+                .box{
+                    width: 98%;
+                    height: 98%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    .boxes{
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: start;
+                        flex-direction: column;
+                        border-radius: 7px;
+                        border: 1px solid gainsboro;
+                        padding: 7px;
+                        .users{
+                            display: flex;
+                            justify-content: start;
+                            align-items: center;
+                            gap: 7px;
+                            h1{
+                                font-size: 14px;
+                                color: rgb(33, 33, 33);
+                            }
+                            img{
+                                width: 27px;
+                                height: 27px;
+                                border-radius: 50%;
+                            }
+                            
+                        }
+                        p{
+                            font-size: 27px;
+                            color: black;
+                            font-weight: 700;
+                        }
+                        .postImg{
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 21px;
+                        }
+                    }
+                }
+            }
+        }
+        #popular-container{
             background-color: red;
-            width: 81%;
+            width: 100%;
+            height: 210px;
+            overflow: hidden;
             .box{
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                height: 99%;
                 .boxes{
-                    width: 95%;
+                    width: 99%;
                     height: 95%;
                     position: relative;
                     display: flex;
-                    justify-content: center;
+                    justify-content: start;
                     align-items: end;
                     border-radius: 14px;
                     overflow: hidden;
+                    .users{
+                        width: 66%;
+                        height: auto;
+                        display: flex;
+                        justify-content: start;
+                        align-items: center;
+                        position: absolute;
+                        padding-bottom: 7px;
+                        padding-left: 14px; 
+                        gap: 7px;
+                        img{
+                            width: 27px;
+                            height: 27px;
+                            border-radius: 50%;
+                        }
+                        h1{
+                            display: contents;
+                            padding-left: 14px;
+                            color: white;
+                            font-weight: 600;
+                            font-size: 14px;
+                            font-weight: 600;
+                        }
+                    }
                     img{
                         width: 100%;
                         height: 100%;
+                        filter: brightness(80%);
                     }
                     p{
+                        position: absolute;
+                        padding-left: 14px;
+                        padding-bottom: 33px;
                         color: white;
                         font-weight: 600;
-                        position: absolute;
+                        font-size: 21px;
                     }
+
                 }
             }
         }
@@ -239,6 +329,11 @@ main{
     main{
         .offcanva{
             display: none;
+        }
+        .discover{
+            #popular-container{
+                width: 100%;
+            }
         }
     }
 }
