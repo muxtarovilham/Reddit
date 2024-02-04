@@ -1,9 +1,10 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-header{
+
+header {
     width: 100%;
     height: 57px;
     display: flex;
@@ -12,7 +13,8 @@ header{
     position: fixed;
     z-index: 1;
     background-color: white;
-    nav{
+
+    nav {
         width: 99%;
         height: 57px;
         display: flex;
@@ -20,6 +22,7 @@ header{
         align-items: center;
         border-bottom: 1px solid gainsboro;
         padding: 14px;
+
         .offcanvas {
             overflow-y: auto;
             max-height: 100vh;
@@ -27,56 +30,65 @@ header{
             scrollbar-color: transparent transparent;
             -ms-overflow-style: none;
         }
-        
+
         .offcanvas::-webkit-scrollbar {
             width: 6px;
         }
-        
+
         .offcanvas::-webkit-scrollbar-thumb {
             background-color: transparent;
         }
-        .reserved{
+
+        .reserved {
             font-size: 10px;
             color: gray;
         }
-        .menu{
+
+        .menu {
             display: none;
-            ul{
-             li{
-                border-radius: 7px;
-                ul{
-                    li{
-                        border-radius: 7px;
-                        a{
-                            display: flex;
-                            justify-content: start;
-                            align-items: center;
-                            gap: 14px;
-                            i{
-                                display: contents;
-                                font-size: 21px;
-                                color: rgb(41, 41, 41);
+
+            ul {
+                li {
+                    border-radius: 7px;
+
+                    ul {
+                        li {
+                            border-radius: 7px;
+
+                            a {
+                                display: flex;
+                                justify-content: start;
+                                align-items: center;
+                                gap: 14px;
+
+                                i {
+                                    display: contents;
+                                    font-size: 21px;
+                                    color: rgb(41, 41, 41);
+                                }
                             }
                         }
                     }
+
+                    &:hover {
+                        background-color: rgb(239, 239, 239);
+                    }
                 }
-                &:hover{
-                    background-color: rgb(239, 239, 239);
-                }
-             }   
             }
-            .offcanvas-backdrop{
+
+            .offcanvas-backdrop {
                 background-color: transparent;
             }
         }
-       
-        .login{
+
+        .login {
             width: 18%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             gap: 10px;
-            a{
+
+            a {
                 display: flex;
                 justify-content: start;
                 align-items: center;
@@ -84,17 +96,20 @@ header{
                 color: black;
                 font-size: 14px;
             }
-            .barcodeButton{
+
+            .barcodeButton {
                 width: 103px;
                 height: 40px;
                 border-radius: 21px;
                 background-color: gainsboro;
                 border: none;
-                &:hover{
+
+                &:hover {
                     background-color: rgb(195, 195, 195);
                 }
             }
-            .loginButton{
+
+            .loginButton {
                 width: 67px;
                 height: 40px;
                 background-color: #FF4500;
@@ -102,24 +117,28 @@ header{
                 font-weight: 600;
                 border-radius: 21px;
                 border: none;
-                &:hover{
+
+                &:hover {
                     background-color: #a32c00;
                 }
             }
         }
-        #form{
+
+        #form {
             width: 55%;
             height: auto;
             display: flex;
             justify-content: start;
             align-items: center;
             position: relative;
-            i{
+
+            i {
                 position: absolute;
                 left: 14px;
                 color: rgb(78, 78, 78);
             }
-            input{
+
+            input {
                 width: 100%;
                 height: 40px;
                 background-color: #E2E7E9;
@@ -129,18 +148,21 @@ header{
                 border: none;
             }
         }
-        .reddit-images{
+
+        .reddit-images {
             display: flex;
             justify-content: start;
             align-items: center;
             gap: 7px;
-            p{
+
+            p {
                 font-size: 27px;
                 display: contents;
                 color: #FF4500;
                 font-weight: 800;
             }
-            img{
+
+            img {
                 width: 33px;
                 height: 33px;
             }
@@ -148,36 +170,75 @@ header{
     }
 }
 
-main{
+main {
     width: 100%;
     height: auto;
     display: flex;
     justify-content: end;
     align-items: center;
     padding-top: 58px;
-    .discover{
+
+    .modal {
+        position: fixed;
+        top: 33%;
+        left: 9%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 83%;
+        height: 200px;
+        z-index: 1;
+
+        .modal-content {
+            width: 100%;
+            height: auto;
+            padding: 7px;
+            display: flex;
+            justify-content: center;
+            align-items: end;
+
+            p {
+                width: 100%;
+                height: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .close {
+                width: 10%;
+                height: 40px;
+            }
+        }
+    }
+
+    .discover {
         width: 79%;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
         overflow: hidden;
-        .news{
+
+        .news {
             background-color: blue;
             width: 100%;
             height: auto;
             display: flex;
-            justify-content: center;
+            justify-content: start;
             align-items: center;
-            #posts-container{
-                width: 99%;
-                .box{
+
+            #posts-container {
+                width: 66%;
+
+                .box {
                     width: 98%;
                     height: 98%;
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    .boxes{
+
+                    .boxes {
                         width: 100%;
                         height: 100%;
                         display: flex;
@@ -187,28 +248,103 @@ main{
                         border-radius: 7px;
                         border: 1px solid gainsboro;
                         padding: 7px;
-                        .users{
+                        gap: 7px;
+
+                        #commentForm {
+                            width: 100%;
+                            height: auto;
+                            display: flex;
+                            justify-content: start;
+                            align-items: center;
+                        }
+
+                        .interaction-icons {
+                            padding-left: 7px;
+                            width: 99%;
+                            height: auto;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+
+                            button {
+                                background-color: transparent;
+                                border: transparent;
+                            }
+
+                            .sends {
+                                display: flex;
+                                justify-content: start;
+                                align-items: center;
+                                gap: 14px;
+
+                                .fa-comment {
+                                    color: gainsboro;
+                                    font-size: 27px;
+                                    transition: 0.3s ease;
+
+                                    &:hover {
+                                        color: gray;
+                                    }
+                                }
+
+                                .fa-share {
+                                    color: gainsboro;
+                                    font-size: 27px;
+                                    transition: 0.3s ease;
+
+                                    &:hover {
+                                        color: rgb(0, 106, 255);
+                                    }
+                                }
+
+                                .fa-heart {
+                                    color: gainsboro;
+                                    font-size: 27px;
+                                    transition: 0.3s ease;
+
+                                    &:hover {
+                                        color: red;
+                                    }
+                                }
+                            }
+
+                            .fa-bookmark {
+                                color: gainsboro;
+                                font-size: 27px;
+                                transition: 0.3s ease;
+
+                                &:hover {
+                                    color: black;
+                                }
+                            }
+                        }
+
+                        .users {
                             display: flex;
                             justify-content: start;
                             align-items: center;
                             gap: 7px;
-                            h1{
+
+                            h1 {
                                 font-size: 14px;
                                 color: rgb(33, 33, 33);
                             }
-                            img{
+
+                            img {
                                 width: 27px;
                                 height: 27px;
                                 border-radius: 50%;
                             }
-                            
+
                         }
-                        p{
+
+                        p {
                             font-size: 27px;
                             color: black;
                             font-weight: 700;
                         }
-                        .postImg{
+
+                        .postImg {
                             width: 100%;
                             height: 100%;
                             border-radius: 21px;
@@ -217,17 +353,20 @@ main{
                 }
             }
         }
-        #popular-container{
+
+        #popular-container {
             background-color: red;
             width: 100%;
             height: 210px;
             overflow: hidden;
-            .box{
+
+            .box {
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 height: 99%;
-                .boxes{
+
+                .boxes {
                     width: 99%;
                     height: 95%;
                     position: relative;
@@ -236,7 +375,8 @@ main{
                     align-items: end;
                     border-radius: 14px;
                     overflow: hidden;
-                    .users{
+
+                    .users {
                         width: 66%;
                         height: auto;
                         display: flex;
@@ -244,14 +384,16 @@ main{
                         align-items: center;
                         position: absolute;
                         padding-bottom: 7px;
-                        padding-left: 14px; 
+                        padding-left: 14px;
                         gap: 7px;
-                        img{
+
+                        img {
                             width: 27px;
                             height: 27px;
                             border-radius: 50%;
                         }
-                        h1{
+
+                        h1 {
                             display: contents;
                             padding-left: 14px;
                             color: white;
@@ -260,12 +402,14 @@ main{
                             font-weight: 600;
                         }
                     }
-                    img{
+
+                    img {
                         width: 100%;
                         height: 100%;
                         filter: brightness(80%);
                     }
-                    p{
+
+                    p {
                         position: absolute;
                         padding-left: 14px;
                         padding-bottom: 33px;
@@ -278,30 +422,31 @@ main{
             }
         }
     }
-    .offcanva{
+
+    .offcanva {
         display: block;
         position: fixed;
-            overflow-y: auto;
-            max-height: 100vh;
+        overflow-y: auto;
+        max-height: 100vh;
 
-          .reserved{
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                font-size: 10px;
-                color: gray;
-            }
-        
+        .reserved {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            font-size: 10px;
+            color: gray;
+        }
+
         .offcanvas::-webkit-scrollbar {
             width: 6px;
         }
-        
+
         .offcanvas::-webkit-scrollbar-thumb {
             background-color: transparent;
         }
-        
+
     }
-    
+
 }
 
 
@@ -313,69 +458,79 @@ main{
 
 
 @media screen and (max-width: 1200px) {
-    header{
-        
-        nav{
-            .login{
-                .barcodeButton{
+    header {
+
+        nav {
+            .login {
+                .barcodeButton {
                     display: none;
                 }
             }
-            .menu{
+
+            .menu {
                 display: block;
             }
         }
     }
-    main{
-        .offcanva{
+
+    main {
+        .offcanva {
             display: none;
         }
-        .discover{
-            #popular-container{
+
+        .discover {
+            #popular-container {
                 width: 100%;
             }
         }
     }
 }
+
 @media screen and (max-width: 960px) {
-    header{
-        nav{
-            #form{
+    header {
+        nav {
+            #form {
                 width: 66%;
             }
-            .reddit-images{
-                p{
+
+            .reddit-images {
+                p {
                     display: none;
                 }
             }
         }
     }
 }
+
 @media screen and (max-width: 600px) {
-    header{
-        nav{
+    header {
+        nav {
             gap: 10px;
-            .login{
+
+            .login {
                 width: 33%;
             }
-            #form{
+
+            #form {
                 width: 36%;
             }
-            
+
         }
     }
 }
+
 @media screen and (max-width: 450px) {
-    header{
-        nav{
+    header {
+        nav {
             gap: 10px;
-            .login{
-                    .dropdownes{
-                        display: none;
-                    }
+
+            .login {
+                .dropdownes {
+                    display: none;
+                }
             }
-           
-            
+
+
         }
     }
 }
