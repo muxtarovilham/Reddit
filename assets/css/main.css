@@ -152,33 +152,125 @@ main {
 }
 main .modal {
   position: fixed;
-  top: 33%;
-  left: 9%;
+  top: 9%;
+  left: 32%;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 83%;
-  height: 200px;
+  width: 40%;
+  height: auto;
   z-index: 1;
 }
 main .modal .modal-content {
   width: 100%;
-  height: auto;
+  height: 585px;
   padding: 7px;
   display: flex;
-  justify-content: center;
-  align-items: end;
+  justify-content: start;
+  align-items: center;
+  top: 0%;
+  gap: 3px;
+  flex-direction: column;
+  padding: 14px;
 }
-main .modal .modal-content p {
+main .modal .modal-content .logins {
+  width: 90%;
+  height: 40px;
+  background-color: rgb(233, 233, 233);
+  border: none;
+  border-radius: 21px;
+  color: gray;
+}
+main .modal .modal-content .forum {
   width: 100%;
   height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  gap: 7px;
 }
-main .modal .modal-content .close {
-  width: 10%;
+main .modal .modal-content .forum input {
+  width: 80%;
+  height: 50px;
+  border-radius: 21px;
+  border: 1px solid gainsboro;
+  padding: 14px;
+  background-color: rgb(234, 234, 234);
+}
+main .modal .modal-content .or {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 7px;
+}
+main .modal .modal-content .or p {
+  width: 66%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .modal .modal-content .or .line {
+  width: 100%;
+  height: 1px;
+  background-color: gainsboro;
+}
+main .modal .modal-content .sign {
+  width: 80%;
   height: 40px;
+  background-color: transparent;
+  border: 1px solid gainsboro;
+  border-radius: 21px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  padding: 14px;
+}
+main .modal .modal-content .sign i {
+  font-size: 21px;
+}
+main .modal .modal-content .buttons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+}
+main .modal .modal-content .buttons button {
+  width: 148px;
+  height: 33px;
+  border: 1px solid orangered;
+  background-color: orangered;
+  color: white;
+  font-weight: 600;
+  border-radius: 3px;
+  transition: background-color 0.3s ease;
+}
+main .modal .modal-content .buttons button:hover {
+  background-color: white;
+  color: orangered;
+}
+main .modal .modal-content p {
+  width: 100%;
+  height: auto;
+  font-size: 15px;
+}
+main .modal .modal-content .cloose {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 100%;
+}
+main .modal .modal-content .cloose .close {
+  width: 7%;
+  height: 27px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 main .discover {
   width: 79%;
@@ -218,12 +310,28 @@ main .discover .news #posts-container .box .boxes {
   padding: 7px;
   gap: 7px;
 }
-main .discover .news #posts-container .box .boxes #commentForm {
-  width: 100%;
-  height: auto;
+main .discover .news #posts-container .box .boxes .comment-section {
   display: flex;
   justify-content: start;
   align-items: center;
+  gap: 7px;
+  width: 100%;
+}
+main .discover .news #posts-container .box .boxes .comment-section input {
+  border-radius: 3px;
+  border: 1px solid gainsboro;
+  width: 24%;
+  height: 33px;
+  padding: 7px;
+}
+main .discover .news #posts-container .box .boxes .comment-section button {
+  border-radius: 3px;
+  border: 1px solid gainsboro;
+  width: 14%;
+  height: 33px;
+}
+main .discover .news #posts-container .box .boxes .comment-section button:hover {
+  background-color: orangered;
 }
 main .discover .news #posts-container .box .boxes .interaction-icons {
   padding-left: 7px;

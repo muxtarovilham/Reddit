@@ -117,12 +117,31 @@
   
 
     <main>
-        <div id="loginModal" class="modal">
-          <div class="modal-content">
-              <span class="close" onclick="closeModal()">&times;</span>
-              <p>Please log in or register to post a comment.</p>
+      <div id="loginModal" class="modal">
+        <div class="modal-content">
+          <div class="cloose">
+                        <span class="close" onclick="closeModal()">&times;</span>
           </div>
-      </div>
+            <h1>Log In</h1>
+            <p>By continuing, you agree to our <a href="">User Agreement</a> and acknowledge that you understand the <a href="">Privacy Policy</a>.</p>
+            <button class="sign">Sign in Google<i class="fa-brands fa-google" style="color: #0091ff;"></i></button>
+            <button class="sign">Continue with Apple<i class="fa-brands fa-apple" style="color: #000000;"></i></button>
+            <div class="or">
+              <div class="line"></div>
+              <p>or</p>
+              <div class="line"></div>
+            </div>
+            <form class="forum">
+              <input type="text" placeholder="Username">
+              <input type="text" placeholder="Password">
+            </form>
+            <p>Forgot your <a href="">username</a> or <a href="">password</a>?</p>
+            <p>New to Reddit? <a href="">Sign Up</a></p>
+            <button class="logins" onclick="openLoginModal()">Log In</button>
+        </div>
+    </div>
+    
+
 
       <div class="offcanva" style="left: -1px; top: 58px; width: 21%; border-right: 1px solid gainsboro; position: fixed;" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         <div style="background-color: transparent;" class="offcanvas-body">    
