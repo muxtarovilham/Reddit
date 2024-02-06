@@ -475,8 +475,10 @@ main .offcanva {
 }
 main .offcanva .reserved {
   width: 100%;
+  height: 84px;
   display: flex;
   justify-content: center;
+  align-items: start;
   font-size: 10px;
   color: gray;
 }
@@ -496,6 +498,9 @@ main .offcanva .offcanvas::-webkit-scrollbar-thumb {
   }
   main .offcanva {
     display: none;
+  }
+  main .discover {
+    width: 100%;
   }
   main .discover #popular-container {
     width: 100%;

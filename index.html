@@ -72,8 +72,6 @@
                             <li><a class="dropdown-item" href="#">English / Global</a></li>
                             <li><a class="dropdown-item" href="#">Deutsch</a></li>
                             <li><a class="dropdown-item" href="#">Español</a></li>
-                            <li><a class="dropdown-item" href="#">Français</a></li>
-                            <li><a class="dropdown-item" href="#">Italiano</a></li>
                             <li>
                               <hr class="dropdown-divider">
                             </li>
@@ -131,78 +129,78 @@
               <p>or</p>
               <div class="line"></div>
             </div>
-            <form class="forum">
-              <input type="text" placeholder="Username">
-              <input type="text" placeholder="Password">
-            </form>
+            <form name="loginForm" class="forum" method="post" action="./signup.html">
+              <input name="userid" type="text" placeholder="Username">
+              <input name="pwd" type="text" placeholder="Password">
             <p>Forgot your <a href="">username</a> or <a href="">password</a>?</p>
-            <p>New to Reddit? <a href="">Sign Up</a></p>
-            <button class="logins" onclick="openLoginModal()">Log In</button>
+            <p>New to Reddit? <a href="./signup.html">Sign Up</a></p>
+            <input type="submit" onclick="return check(this.form)" value="Login">
+          </form>
         </div>
     </div>
     
+    
 
-
-      <div class="offcanva" style="left: -1px; top: 58px; width: 21%; border-right: 1px solid gainsboro; position: fixed;" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-        <div style="background-color: transparent;" class="offcanvas-body">    
-          <ul style="padding: 14px; padding-left: 33px; gap: 7px;" class="navbar-nav justify-content-end flex-grow-1 pe-3">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./index.html"><i class="fa-solid fa-house"></i> Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./popular.html"><i class="fa-solid fa-up-right-from-square" style="color: #000000;"></i> Popular</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                TOPICS <i class="fa-solid fa-chevron-down" style="color: #000000; font-size: 12px;"></i>
-              </a>
-              <ul style="border: none;" class="dropdown-menu show" data-bs-popper="static">
-                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-gamepad"></i> Gaming</a></li>
-                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-volleyball"></i> Sports</a></li>
-                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-chart-line"></i> Business</a></li>
-                <li><a class="dropdown-item" href="#"><i class="fa-brands fa-bitcoin"></i> Cyrpto</a></li>
-                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-tv"></i> Television</a></li>
-                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-cake-candles"></i> Celebrity</a></li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                RESOURCES <i class="fa-solid fa-chevron-down" style="color: #000000; font-size: 12px;"></i>
-              </a>
-              <ul style="border: none;" class="dropdown-menu show" data-bs-popper="static">
-                <li><a class="dropdown-item" href="#"><i class="fa-brands fa-reddit"></i> About Reddit</a></li>
-                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-rectangle-ad"></i> Advertise</a></li>
-                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-info"></i>Help</a></li>
-                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-book"></i> Blog</a></li>
-                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-arrow-up-right-dots"></i> Careers</a></li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                POPULAR POSTS <i class="fa-solid fa-chevron-down" style="color: #000000; font-size: 12px;"></i>
-              </a>
-              <ul style="border: none;" class="dropdown-menu show" data-bs-popper="static">
-                <li><a class="dropdown-item" href="#">Turkish</a></li>
-                <li><a class="dropdown-item" href="#">English / Global</a></li>
-                <li><a class="dropdown-item" href="#">Deutsch</a></li>
-                <li><a class="dropdown-item" href="#">Español</a></li>
-                <li><a class="dropdown-item" href="#">Français</a></li>
-                <li><a class="dropdown-item" href="#">Italiano</a></li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-              </ul>
-              <a class="reserved" href="">Reddit, Inc. © 2024. All rights reserved.</a>
-            </li>
-          </ul>
-        </div>
+    <div class="offcanva" style="left: -1px; top: 58px; width: 21%; border-right: 1px solid gainsboro; position: fixed;" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div style="background-color: transparent;" class="offcanvas-body">    
+        <ul style="padding: 14px; padding-left: 33px; gap: 7px; min-height: 88vh; display: flex; justify-content: start !important; align-items: start; flex-direction: column;" class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./index.html"><i class="fa-solid fa-house"></i> Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./popular.html"><i class="fa-solid fa-up-right-from-square" style="color: #000000;"></i> Popular</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              TOPICS <i class="fa-solid fa-chevron-down" style="color: #000000; font-size: 12px;"></i>
+            </a>
+            <ul style="border: none;" class="dropdown-menu show" data-bs-popper="static">
+              <li><a class="dropdown-item" href="#"><i class="fa-solid fa-gamepad"></i> Gaming</a></li>
+              <li><a class="dropdown-item" href="#"><i class="fa-solid fa-volleyball"></i> Sports</a></li>
+              <li><a class="dropdown-item" href="#"><i class="fa-solid fa-chart-line"></i> Business</a></li>
+              <li><a class="dropdown-item" href="#"><i class="fa-brands fa-bitcoin"></i> Cyrpto</a></li>
+              <li><a class="dropdown-item" href="#"><i class="fa-solid fa-tv"></i> Television</a></li>
+              <li><a class="dropdown-item" href="#"><i class="fa-solid fa-cake-candles"></i> Celebrity</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              RESOURCES <i class="fa-solid fa-chevron-down" style="color: #000000; font-size: 12px;"></i>
+            </a>
+            <ul style="border: none;" class="dropdown-menu show" data-bs-popper="static">
+              <li><a class="dropdown-item" href="#"><i class="fa-brands fa-reddit"></i> About Reddit</a></li>
+              <li><a class="dropdown-item" href="#"><i class="fa-solid fa-rectangle-ad"></i> Advertise</a></li>
+              <li><a class="dropdown-item" href="#"><i class="fa-solid fa-info"></i>Help</a></li>
+              <li><a class="dropdown-item" href="#"><i class="fa-solid fa-book"></i> Blog</a></li>
+              <li><a class="dropdown-item" href="#"><i class="fa-solid fa-arrow-up-right-dots"></i> Careers</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              POPULAR POSTS <i class="fa-solid fa-chevron-down" style="color: #000000; font-size: 12px;"></i>
+            </a>
+            <ul style="border: none;" class="dropdown-menu show" data-bs-popper="static">
+              <li><a class="dropdown-item" href="#">Turkish</a></li>
+              <li><a class="dropdown-item" href="#">English / Global</a></li>
+              <li><a class="dropdown-item" href="#">Deutsch</a></li>
+              <li><a class="dropdown-item" href="#">Español</a></li>
+              <li>
+                <hr style="border-top: white;" class="dropdown-divider">
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <a class="reserved" href="">Reddit, Inc. © 2024. All rights reserved.</a>
       </div>
+    </div>
+
+
 
       <div class="discover">
         <div class="row" id="popular-container">

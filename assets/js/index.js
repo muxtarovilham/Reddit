@@ -163,3 +163,39 @@ function bookmark(id) {
         localStorage.setItem('bookmark', JSON.stringify(bookmark));
     }
 }
+
+
+
+
+// Login Forum
+
+
+async function check(form) {
+    const apiUrl = "https://655e356a9f1e1093c59ab81c.mockapi.io/Api3/Api3";
+    const username = form.userid.value;
+    const password = form.pwd.value;
+
+    try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+
+        console.log("API Response:", data);  // Log the API response for debugging
+
+        const matchingUser = data.find(user => user.username === username && user.password === password);
+
+        if (matchingUser) {
+            console.log("Login successful!");  // Log successful login for debugging
+            form.action = "./signup.html";  // Redirect to the desired page
+            return true;
+        } else {
+            console.log("Login failed. No matching user found.");  // Log failed login for debugging
+            alert("Incorrect Password or Username");
+            return false;
+        }
+    } catch (error) {
+        console.error("Error fetching data from API:", error);
+        alert("An error occurred. Please try again later.");
+        return false;
+    }
+}
+
