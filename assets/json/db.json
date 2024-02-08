@@ -3,36 +3,36 @@
       { 
         "id": 1,
         "userimage": "https://img.freepik.com/free-photo/people-making-hands-heart-shape-silhouette-sunset_53876-15987.jpg?size=626&ext=jpg&ga=GA1.1.1448711260.1706918400&semt=sph",
-        "image": "https://platinumlist.net/guide/wp-content/uploads/2023/03/8359_img_worlds_of_adventure-big1613913137.jpg-1024x683.webp",
+        "image": "https://preview.redd.it/eras-tour-coming-to-disney-for-streaming-march-15th-2024-v0-rqswstfzf8hc1.jpeg?width=320&crop=smart&auto=webp&s=a4edcb2d8234abafb39c0dcb141ca2855893d991",
         "username": "r/television",
-        "name": "Post 1",
+        "name": "Eras Tour on Disney+",
         "description": "Description 1",
         "comments": []
       },
       { 
         "id": 2,
         "userimage": "https://images.pexels.com/photos/2893685/pexels-photo-2893685.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png",
+        "image": "https://external-preview.redd.it/the-traitors-renewed-for-season-3-at-peacock-v0-dwLqfEfb4EFZQSpgN2-eRaxbe0a6IJXMI-9Nog0xWvQ.jpg?width=320&crop=smart&auto=webp&s=24c653fa69b3ad27cf196c6be0d71d90a6831038",
         "username": "r/nba",
-        "name": "Post 2",
+        "name": "The Traitors season 3",
         "description": "Description 2",
         "comments": []
       },
       { 
         "id": 3,
         "userimage": "https://img.freepik.com/free-photo/people-making-hands-heart-shape-silhouette-sunset_53876-15987.jpg?size=626&ext=jpg&ga=GA1.1.1448711260.1706918400&semt=sph",
-        "image": "https://platinumlist.net/guide/wp-content/uploads/2023/03/8359_img_worlds_of_adventure-big1613913137.jpg-1024x683.webp",
+        "image": "https://external-preview.redd.it/moana-2-announcement-v0-dkQYopbHbBivBu3ByHXqiVbLgt3HOK-hHQikbyjmnH8.jpg?width=320&crop=smart&format=pjpg&auto=webp&s=13108575d12e2770c620ef32ec240c78f5acb385",
         "username": "r/television",
-        "name": "Post 3",
+        "name": "Moana 2",
         "description": "Description 3",
         "comments": []
       },
       { 
         "id": 4,
         "userimage": "https://images.pexels.com/photos/2893685/pexels-photo-2893685.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png",
+        "image": "https://external-preview.redd.it/iceland-volcano-erupts-again-molten-rocks-spew-from-fissures-v0-FAV1G_JmUJbdBd4Y5rJbmeg1rZPTp0DsKA5E6qjy-wc.jpg?width=320&crop=smart&auto=webp&s=94a22eb5b933355c8bd16535badeada85eda81e7",
         "username": "r/nba",
-        "name": "Post 4",
+        "name": "Iceland volcano erupts",
         "description": "Description 4",
         "comments": []
       },
@@ -61,6 +61,36 @@
 
 
     "post": [
+      {
+        "id": 1,
+        "userimage": "https://img.freepik.com/free-photo/people-making-hands-heart-shape-silhouette-sunset_53876-15987.jpg?size=626&ext=jpg&ga=GA1.1.1448711260.1706918400&semt=sph",
+        "media": "https://preview.redd.it/such-an-action-would-greatly-offend-the-american-public-v0-b7ults9ni7hc1.png?auto=webp&s=ad45e7f33f693f27dc80e442cd2ec536dd8a6f8e",
+        "username": "r/television",
+        "name": "Such an action would greatly offend the American public",
+        "description": "Description 1",
+        "comments": []
+      },
+      {
+        "id": 2,
+        "userimage": "https://images.pexels.com/photos/2893685/pexels-photo-2893685.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        "media": "https://preview.redd.it/unions-are-good-v0-jwy319z8tahc1.jpeg?width=640&crop=smart&auto=webp&s=22451169259ce5989635d405670bf6db6793ec47",
+        "username": "r/nba",
+        "name": "Unions are good!",
+        "description": "Description 2",
+        "comments": []
+      },
+      {
+        "id": 3,
+        "userimage": "https://img.freepik.com/free-photo/people-making-hands-heart-shape-silhouette-sunset_53876-15987.jpg?size=626&ext=jpg&ga=GA1.1.1448711260.1706918400&semt=sph",
+        "media": "https://preview.redd.it/come-out-of-the-grocery-store-to-this-car-on-the-right-v0-915x2lm5u8hc1.jpeg?width=640&crop=smart&auto=webp&s=d2f9185caaf351ad5cbcb0dc70fb25a2c6909b67",
+        "username": "r/television",
+        "name": "Come out of the grocery store to this car on the right.",
+        "description": "Description 3",
+        "comments": []
+      }
+    ],
+
+    "gaming": [
       {
         "id": 1,
         "userimage": "https://img.freepik.com/free-photo/people-making-hands-heart-shape-silhouette-sunset_53876-15987.jpg?size=626&ext=jpg&ga=GA1.1.1448711260.1706918400&semt=sph",

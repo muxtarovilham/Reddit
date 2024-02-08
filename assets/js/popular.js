@@ -1,11 +1,41 @@
+const productPopular = document.getElementById('popular-container');
 const productPost = document.getElementById('posts-container');
 
 
-async function getPosts() {
+// Popular Posts
+async function getProducts() {
     try {
-        const res = await axios.get('https://655e356a9f1e1093c59ab81c.mockapi.io/Api3/Api4');
-        const data = res.data;
-        db = data
+        const res = await axios.get('http://localhost:5500/assets/json/db.json');
+        const data = res.data.posts; // "data" ekledim
+        db = data;
+        db.map(item => {
+            const box = document.createElement('div');
+            box.className = 'box col-12 col-sm-4 col-lg-3';
+            box.innerHTML = `
+                <a class="boxes">
+                    <img src="${item.image}" alt="${item.name}"> 
+                    <p>${item.name}</p>
+                    <div class="users">
+                        <img src="${item.userimage}" alt="${item.username}">
+                        <h1>${item.username}</h1>
+                    </div>
+                </a>
+            `;
+            productPopular.appendChild(box);
+        });
+    } catch (error) {
+        console.error('Error fetching popular posts:', error);
+    }
+}
+getProducts();
+
+// Post
+
+async function getPostz() {
+    try {
+        const res = await axios.get('http://localhost:5500/assets/json/db.json');
+        const data = res.data.post;
+        db = data;
         db.map(item => {
             const box = document.createElement('div');
             box.className = 'box col-12';
@@ -16,7 +46,7 @@ async function getPosts() {
                         <h1>${item.username}</h1>
                     </div>
                     <p>${item.name}</p>
-                    <img class="postImg" src="${item.image}" alt="${item.name}">
+                    <img class="postImg" src="${item.media}" alt="${item.name}">
                     <div class="interaction-icons">
                         <div class="sends">
                             <button onclick="like(${item.id})"><i class="fa-solid fa-heart"></i></button>     
@@ -39,87 +69,9 @@ async function getPosts() {
     }
 }
 
-getPosts();
 
 
-
-function like(id) {
-    const like = JSON.parse(localStorage.getItem('like')) || [];
-    const index = like.findIndex(item => item.id == id);
-
-    if (index !== -1) {
-        like.splice(index, 1);
-        localStorage.setItem('like', JSON.stringify(like));
-    } else {
-        like.push(db.find(item => item.id == id));
-        localStorage.setItem('like', JSON.stringify(like));
-    }
-}
-
-function bookmark(id) {
-    const bookmark = JSON.parse(localStorage.getItem('bookmark')) || [];
-    const index = bookmark.findIndex(item => item.id == id);
-
-    if (index !== -1) {
-        bookmark.splice(index, 1);
-        localStorage.setItem('bookmark', JSON.stringify(bookmark));
-    } else {
-        bookmark.push(db.find(item => item.id == id));
-        localStorage.setItem('bookmark', JSON.stringify(bookmark));
-    }
-}
-
-
-
-
-const searchForm = document.getElementById('Searchform');
-const nameInput = document.getElementById('nameInput');
-
-
-
-function formSearch() {
-    productPost.innerHTML = ''
-    axios.get('https://655e356a9f1e1093c59ab81c.mockapi.io/Api3/Api4')
-    .then(res => {
-        db = res.data
-        const filteredData = db.filter(item => item.name.toLowerCase().includes(nameInput.value.toLowerCase()))
-        filteredData.map(item => {
-            const box = document.createElement('div')
-            box.className = 'box'
-            box.innerHTML = `
-            <div class="boxes">
-            <div class="users">
-                <img src="${item.userimage}" alt="${item.username}">
-                <h1>${item.username}</h1>
-            </div>
-            <p>${item.name}</p>
-            <img class="postImg" src="${item.image}" alt="${item.name}">
-            <div class="interaction-icons">
-                <div class="sends">
-                    <button onclick="like(${item.id})"><i class="fa-solid fa-heart"></i></button>     
-                    <button onclick="toggleCommentSection(${item.id})"><i class="fa-regular fa-comment"></i></button>     
-                    <i class="fa-solid fa-share"></i>
-                </div>
-                <button onclick="bookmark(${item.id})"><i class="fa-solid fa-bookmark"></i></button>     
-            </div>
-            <div class="comment-section" id="commentSection-${item.id}" style="display:none;">
-                <input type="text" placeholder="Add a comment" id="commentInput-${item.id}">
-                <button onclick="postComment(${item.id})">Post</button>
-                <div id="comments-${item.id}"></div>
-            </div>
-        </div>
-    `;
-    productPost.appendChild(box)
-        })
-    })
-}
-
-searchForm.addEventListener('submit', (e) => {
-    e.preventDefault()
-    formSearch()
-})
-
-
+getPostz()
 
 
 function toggleCommentSection(postId) {
@@ -184,9 +136,36 @@ function updateCommentsUI(postId) {
 
 
 
+getPosts();
 
 
 
+
+function like(id) {
+    const like = JSON.parse(localStorage.getItem('like')) || [];
+    const index = like.findIndex(item => item.id === id);
+
+    if (index !== -1) {
+        like.splice(index, 1);
+        localStorage.setItem('like', JSON.stringify(like));
+    } else {
+        like.push(db.find(item => item.id === id));
+        localStorage.setItem('like', JSON.stringify(like));
+    }
+}
+
+function bookmark(id) {
+    const bookmark = JSON.parse(localStorage.getItem('bookmark')) || [];
+    const index = bookmark.findIndex(item => item.id === id);
+
+    if (index !== -1) {
+        bookmark.splice(index, 1);
+        localStorage.setItem('bookmark', JSON.stringify(bookmark));
+    } else {
+        bookmark.push(db.find(item => item.id === id));
+        localStorage.setItem('bookmark', JSON.stringify(bookmark));
+    }
+}
 
 
 

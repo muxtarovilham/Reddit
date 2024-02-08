@@ -103,7 +103,7 @@ header nav .login .loginButton {
 header nav .login .loginButton:hover {
   background-color: #a32c00;
 }
-header nav #form {
+header nav #Searchform {
   width: 55%;
   height: auto;
   display: flex;
@@ -111,12 +111,12 @@ header nav #form {
   align-items: center;
   position: relative;
 }
-header nav #form i {
+header nav #Searchform i {
   position: absolute;
   left: 14px;
   color: rgb(78, 78, 78);
 }
-header nav #form input {
+header nav #Searchform input {
   width: 100%;
   height: 40px;
   background-color: #E2E7E9;
@@ -286,7 +286,52 @@ main .discover .news {
   height: auto;
   display: flex;
   justify-content: start;
+  align-items: start;
+}
+main .discover .news .community {
+  position: fixed;
+  top: 14%;
+  right: 5%;
+  width: 313px;
+  min-height: 300px;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+  padding: 14px;
+  padding-left: 14px;
+  gap: 7px;
+  background-color: #F9FAFA;
+  border-radius: 21px;
+}
+main .discover .news .community p {
+  font-size: 12px;
+  color: gray;
+}
+main .discover .news .community .communiti {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: start;
   align-items: center;
+  gap: 7px;
+}
+main .discover .news .community .communiti:hover {
+  cursor: pointer;
+  background-color: rgb(229, 229, 229);
+}
+main .discover .news .community .communiti .about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main .discover .news .community .communiti .about h3 {
+  font-size: 12px;
+}
+main .discover .news .community .communiti img {
+  width: 33px;
+  height: 33px;
 }
 main .discover .news #posts-container {
   width: 66%;
@@ -507,7 +552,7 @@ main .offcanva .offcanvas::-webkit-scrollbar-thumb {
   }
 }
 @media screen and (max-width: 960px) {
-  header nav #form {
+  header nav #Searchform {
     width: 66%;
   }
   header nav .reddit-images p {
@@ -521,7 +566,7 @@ main .offcanva .offcanvas::-webkit-scrollbar-thumb {
   header nav .login {
     width: 33%;
   }
-  header nav #form {
+  header nav #Searchform {
     width: 36%;
   }
 }
