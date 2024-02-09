@@ -56,7 +56,35 @@
       }
     ],
 
-
+    "popular": [
+      {
+        "id": 1,
+        "userimage": "https://styles.redditmedia.com/t5_2xbci/styles/communityIcon_32btum6062v91.png",
+        "username": "r/xboxone",
+        "members": "4,571,20"
+      },
+      {
+        "id": 2,
+        "userimage": "https://styles.redditmedia.com/t5_2s84e/styles/communityIcon_g8xlzjxvilbb1.jpg?format=pjpg&s=904e57327bdb1e8dad5b23a60fbe9344e48719a6",
+        "username": "r/NBA2k",
+        "members": "1,453,29"
+      },   {
+        "id": 3,
+        "userimage": "https://styles.redditmedia.com/t5_2rrlp/styles/communityIcon_06pablpo0le21.png",
+        "username": "r/PS6",
+        "members": "1,071,26"
+      },   {
+        "id": 4,
+        "userimage": "https://styles.redditmedia.com/t5_2qh1f/styles/communityIcon_26udmxwqbrwb1.png",
+        "username": "r/apple",
+        "members": "4,637,66"
+      },   {
+        "id": 5,
+        "userimage": "https://styles.redditmedia.com/t5_2qhl2/styles/communityIcon_u1yvm8lizyv41.png",
+        "username": "r/cars",
+        "members": "1,494,6"
+      }
+    ],
 
 
 
@@ -73,7 +101,7 @@
       {
         "id": 2,
         "userimage": "https://images.pexels.com/photos/2893685/pexels-photo-2893685.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-        "media": "https://preview.redd.it/unions-are-good-v0-jwy319z8tahc1.jpeg?width=640&crop=smart&auto=webp&s=22451169259ce5989635d405670bf6db6793ec47",
+        "media": "https://preview.redd.it/sy4u7hwgi0v81.jpg?width=1080&crop=smart&auto=webp&s=e9e7fd7397cb2229404513ebd999f502e36ba353",
         "username": "r/nba",
         "name": "Unions are good!",
         "description": "Description 2",
@@ -94,27 +122,27 @@
       {
         "id": 1,
         "userimage": "https://img.freepik.com/free-photo/people-making-hands-heart-shape-silhouette-sunset_53876-15987.jpg?size=626&ext=jpg&ga=GA1.1.1448711260.1706918400&semt=sph",
-        "media": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png",
-        "username": "r/television",
-        "name": "Post 1",
+        "media": "https://preview.redd.it/minecraft-is-minecraft-v0-eix2pfk45uib1.jpg?width=640&crop=smart&auto=webp&s=d5b9a4227edeb7e0d97817a21712c2e06ca1fad3",
+        "username": "r/mine",
+        "name": "Minecraft is minecraft",
         "description": "Description 1",
         "comments": []
       },
       {
         "id": 2,
         "userimage": "https://images.pexels.com/photos/2893685/pexels-photo-2893685.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-        "media": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png",
-        "username": "r/nba",
-        "name": "Post 2",
+        "media": "https://preview.redd.it/custom-made-escape-from-tarkov-figure-v0-8ofcz2nw6cfc1.jpg?width=640&crop=smart&auto=webp&s=5691ba542aa92b2421c0bfd36e9c66a6900dfd76",
+        "username": "r/tarkov",
+        "name": "Custom made escape from Tarkov figure",
         "description": "Description 2",
         "comments": []
       },
       {
         "id": 3,
         "userimage": "https://img.freepik.com/free-photo/people-making-hands-heart-shape-silhouette-sunset_53876-15987.jpg?size=626&ext=jpg&ga=GA1.1.1448711260.1706918400&semt=sph",
-        "media": "https://platinumlist.net/guide/wp-content/uploads/2023/03/8359_img_worlds_of_adventure-big1613913137.jpg-1024x683.webp",
-        "username": "r/television",
-        "name": "Post 3",
+        "media": "https://preview.redd.it/usf39rzbtjs61.png?width=640&crop=smart&auto=webp&s=5bf8b27cbbafec95a2dd6abc2124500f73ed70e3",
+        "username": "r/wdogs",
+        "name": "Wrench confirmed in watch dogs legion!",
         "description": "Description 3",
         "comments": []
       }

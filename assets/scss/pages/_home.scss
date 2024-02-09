@@ -3,7 +3,6 @@
     margin: 0;
     box-sizing: border-box;
 }
-
 header {
     width: 100%;
     height: 57px;
@@ -188,6 +187,225 @@ main {
         width: 40%;
         height: auto;
         z-index: 1;
+        #container {
+            width: 300px;
+            margin: 0 auto;
+            width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    #register{
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        input{
+            display: block;
+            width: 71%;
+            height: 40px;
+            margin: 10px 13px;
+            padding: 10px;
+            font-size: 1.1em;
+            color: rgba(11, 177, 224, 0.82);
+            border-radius: 3px;
+            border: 1px solid gainsboro;
+        }
+
+        input[type="submit"] {
+            width: 71%;
+            height: 48px;
+            background-color: orangered;
+            border: 1px solid orangered;
+            color: white;
+            font-weight: 600;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+            #tabs{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 7px;
+                #rt{
+                    width: 48%;
+                    height: 40px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 16px;
+                    background-color: green;
+                    border: none;
+                }
+                #lt {
+                    width: 48%;
+                    height: 40px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 16px;
+                    background-color: green;
+                    border: none;
+                }
+                .tabs {
+                    display: table-cell;
+                    width: 30%;
+                    background-color: rgba(11, 177, 224, 0.82);
+                    padding: 10px;
+                    float: left;
+                    text-align: center;
+                    vertical-align: middle;
+                    border: 2px solid #ffffff;
+                    border-bottom: 0px;
+                    position: relative;
+                    font-size: 1.3em;
+                    color: #ffffff;
+                    &:hover, p{
+                        cursor: pointer;
+                    }
+                }
+               
+            }
+        }
+   
+
+      
+        #cont {
+            width: 100%;
+            height: 300px;
+            border: 2px solid #ffffff;
+
+            input{
+                display: block;
+                width: 71%;
+                height: 40px;
+                margin: 10px 13px;
+                padding: 10px;
+                font-size: 1.1em;
+                color: rgba(11, 177, 224, 0.82);
+                border-radius: 3px;
+                border: 1px solid gainsboro;
+            }
+    
+            input[type="submit"] {
+                width: 71%;
+                height: 48px;
+                background-color: orangered;
+                border: 1px solid orangered;
+                color: white;
+                font-weight: 600;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+    
+            #clear {
+                clear: both;
+            }
+    
+            .comm {
+                position: absolute;
+                visibility: hidden;
+            }
+            #login {
+                visibility: visible;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                width: 95%;
+                input[type="submit"] {
+                    width: 71%;
+                    height: 48px;
+                    background-color: orangered;
+                    border: 1px solid orangered;
+                    color: white;
+                    font-weight: 600;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+    
+            h3 {
+                display: table-cell;
+                vertical-align: middle;
+                padding: 10px 15px;
+                font-size: 1.5em;
+                color: orangered;
+            }
+    
+            #forgot{
+                display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 92%;
+    height: auto;
+    .forgett{
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 0px;
+        input{
+            display: block;
+            width: 71%;
+            height: 40px;
+            margin: 10px 13px;
+            padding: 10px;
+            font-size: 1.1em;
+            color: rgba(11, 177, 224, 0.82);
+            border-radius: 3px;
+            border: 1px solid gainsboro;
+        }
+
+        input[type="submit"] {
+            width: 71%;
+            height: 48px;
+            background-color: orangered;
+            border: 1px solid orangered;
+            color: white;
+            font-weight: 600;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+  
+                 h3 {
+                display: block;
+                margin-top: 30px;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                color: orangered;
+             
+            }
+        }
+    
+            #forgot div {
+                margin-top: 30px;
+            }
+            p {
+                padding: 10px 15px;
+                font-size: 1.3em;
+                color: #ffffff;
+            }
+
+
+        }
+
+     
+   
         .modal-content {
             width: 100%;
             height: 585px;
@@ -313,7 +531,6 @@ main {
         overflow: hidden;
 
         .news {
-            background-color: blue;
             width: 100%;
             height: auto;
             display: flex;
@@ -331,7 +548,6 @@ main {
                 flex-direction: column;
                 padding: 14px;
                 padding-left: 14px;
-                gap: 7px;
                 background-color: #F9FAFA;
                 border-radius: 21px;
                 p{
@@ -343,8 +559,10 @@ main {
                     height: auto;
                     display: flex;
                     justify-content: start;
-                    align-items: center;
+                    align-items: start;
                     gap: 7px;
+                    padding-top: 7px;
+                    padding-left: 7px;
                     &:hover{
                         cursor: pointer;
                         background-color: rgb(229, 229, 229);
@@ -352,7 +570,7 @@ main {
                     .about{
                         display: flex;
                         justify-content: center;
-                        align-items: center;
+                        align-items: start;
                         flex-direction: column;
                         h3{
                             font-size: 12px;
@@ -361,6 +579,7 @@ main {
                     img{
                         width: 33px;
                         height: 33px;
+                        border-radius: 50%;
                     }
                 }
             }
@@ -382,9 +601,8 @@ main {
                         justify-content: center;
                         align-items: start;
                         flex-direction: column;
-                        border-radius: 7px;
-                        border: 1px solid gainsboro;
-                        padding: 7px;
+                        border-bottom: 1px solid gainsboro;
+                        padding: 14px;
                         gap: 7px;
 
                         .comment-section{
@@ -402,10 +620,15 @@ main {
                             }
                             button{
                                 border-radius: 3px;
-                                border: 1px solid gainsboro;
+                                border: 1px solid gray;
                                 width: 14%;
                                 height: 33px;
+                                color: black;
+                                font-weight: 600;
+                                transition: background-color 0.3s ease;
                                 &:hover{
+                                    border: 1px solid orangered;
+                                    color: white;
                                     background-color: orangered;
                                 }
                             }
@@ -431,27 +654,27 @@ main {
                                 gap: 14px;
 
                                 .fa-comment {
-                                    color: gainsboro;
+                                    color: rgb(49, 49, 49);
                                     font-size: 27px;
                                     transition: 0.3s ease;
 
                                     &:hover {
-                                        color: gray;
+                                        color: rgb(203, 203, 203);
                                     }
                                 }
 
                                 .fa-share {
-                                    color: gainsboro;
+                                    color: rgb(49, 49, 49);
                                     font-size: 27px;
                                     transition: 0.3s ease;
-
                                     &:hover {
+                                        cursor: pointer;
                                         color: rgb(0, 106, 255);
                                     }
                                 }
 
                                 .fa-heart {
-                                    color: gainsboro;
+                                    color: rgb(49, 49, 49);
                                     font-size: 27px;
                                     transition: 0.3s ease;
 
@@ -462,7 +685,7 @@ main {
                             }
 
                             .fa-bookmark {
-                                color: gainsboro;
+                                color: rgb(49, 49, 49);
                                 font-size: 27px;
                                 transition: 0.3s ease;
 
@@ -479,6 +702,7 @@ main {
                             gap: 7px;
 
                             h1 {
+                                display: contents;
                                 font-size: 14px;
                                 color: rgb(33, 33, 33);
                             }
@@ -491,16 +715,16 @@ main {
 
                         }
 
-                        p {
-                            font-size: 27px;
+                        a {
+                            font-size: 25px;
                             color: black;
-                            font-weight: 700;
+                            font-weight: 600;
                         }
 
                         .postImg {
                             width: 100%;
                             height: 100%;
-                            border-radius: 21px;
+                            border-radius: 14px;
                         }
                     }
                 }

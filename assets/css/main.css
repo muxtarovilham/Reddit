@@ -161,6 +161,205 @@ main .modal {
   height: auto;
   z-index: 1;
 }
+main .modal #container {
+  width: 300px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main .modal #container #register {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main .modal #container #register input {
+  display: block;
+  width: 71%;
+  height: 40px;
+  margin: 10px 13px;
+  padding: 10px;
+  font-size: 1.1em;
+  color: rgba(11, 177, 224, 0.82);
+  border-radius: 3px;
+  border: 1px solid gainsboro;
+}
+main .modal #container #register input[type=submit] {
+  width: 71%;
+  height: 48px;
+  background-color: orangered;
+  border: 1px solid orangered;
+  color: white;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .modal #container #tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+}
+main .modal #container #tabs #rt {
+  width: 48%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  background-color: green;
+  border: none;
+}
+main .modal #container #tabs #lt {
+  width: 48%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  background-color: green;
+  border: none;
+}
+main .modal #container #tabs .tabs {
+  display: table-cell;
+  width: 30%;
+  background-color: rgba(11, 177, 224, 0.82);
+  padding: 10px;
+  float: left;
+  text-align: center;
+  vertical-align: middle;
+  border: 2px solid #ffffff;
+  border-bottom: 0px;
+  position: relative;
+  font-size: 1.3em;
+  color: #ffffff;
+}
+main .modal #container #tabs .tabs:hover, main .modal #container #tabs .tabs p {
+  cursor: pointer;
+}
+main .modal #cont {
+  width: 100%;
+  height: 300px;
+  border: 2px solid #ffffff;
+}
+main .modal #cont input {
+  display: block;
+  width: 71%;
+  height: 40px;
+  margin: 10px 13px;
+  padding: 10px;
+  font-size: 1.1em;
+  color: rgba(11, 177, 224, 0.82);
+  border-radius: 3px;
+  border: 1px solid gainsboro;
+}
+main .modal #cont input[type=submit] {
+  width: 71%;
+  height: 48px;
+  background-color: orangered;
+  border: 1px solid orangered;
+  color: white;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .modal #cont #clear {
+  clear: both;
+}
+main .modal #cont .comm {
+  position: absolute;
+  visibility: hidden;
+}
+main .modal #cont #login {
+  visibility: visible;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 95%;
+}
+main .modal #cont #login input[type=submit] {
+  width: 71%;
+  height: 48px;
+  background-color: orangered;
+  border: 1px solid orangered;
+  color: white;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .modal #cont h3 {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 10px 15px;
+  font-size: 1.5em;
+  color: orangered;
+}
+main .modal #cont #forgot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 92%;
+  height: auto;
+}
+main .modal #cont #forgot .forgett {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 0px;
+}
+main .modal #cont #forgot .forgett input {
+  display: block;
+  width: 71%;
+  height: 40px;
+  margin: 10px 13px;
+  padding: 10px;
+  font-size: 1.1em;
+  color: rgba(11, 177, 224, 0.82);
+  border-radius: 3px;
+  border: 1px solid gainsboro;
+}
+main .modal #cont #forgot .forgett input[type=submit] {
+  width: 71%;
+  height: 48px;
+  background-color: orangered;
+  border: 1px solid orangered;
+  color: white;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .modal #cont #forgot h3 {
+  display: block;
+  margin-top: 30px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: orangered;
+}
+main .modal #cont #forgot div {
+  margin-top: 30px;
+}
+main .modal #cont p {
+  padding: 10px 15px;
+  font-size: 1.3em;
+  color: #ffffff;
+}
 main .modal .modal-content {
   width: 100%;
   height: 585px;
@@ -281,7 +480,6 @@ main .discover {
   overflow: hidden;
 }
 main .discover .news {
-  background-color: blue;
   width: 100%;
   height: auto;
   display: flex;
@@ -300,7 +498,6 @@ main .discover .news .community {
   flex-direction: column;
   padding: 14px;
   padding-left: 14px;
-  gap: 7px;
   background-color: #F9FAFA;
   border-radius: 21px;
 }
@@ -313,8 +510,10 @@ main .discover .news .community .communiti {
   height: auto;
   display: flex;
   justify-content: start;
-  align-items: center;
+  align-items: start;
   gap: 7px;
+  padding-top: 7px;
+  padding-left: 7px;
 }
 main .discover .news .community .communiti:hover {
   cursor: pointer;
@@ -323,7 +522,7 @@ main .discover .news .community .communiti:hover {
 main .discover .news .community .communiti .about {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   flex-direction: column;
 }
 main .discover .news .community .communiti .about h3 {
@@ -332,6 +531,7 @@ main .discover .news .community .communiti .about h3 {
 main .discover .news .community .communiti img {
   width: 33px;
   height: 33px;
+  border-radius: 50%;
 }
 main .discover .news #posts-container {
   width: 66%;
@@ -350,9 +550,8 @@ main .discover .news #posts-container .box .boxes {
   justify-content: center;
   align-items: start;
   flex-direction: column;
-  border-radius: 7px;
-  border: 1px solid gainsboro;
-  padding: 7px;
+  border-bottom: 1px solid gainsboro;
+  padding: 14px;
   gap: 7px;
 }
 main .discover .news #posts-container .box .boxes .comment-section {
@@ -371,11 +570,16 @@ main .discover .news #posts-container .box .boxes .comment-section input {
 }
 main .discover .news #posts-container .box .boxes .comment-section button {
   border-radius: 3px;
-  border: 1px solid gainsboro;
+  border: 1px solid gray;
   width: 14%;
   height: 33px;
+  color: black;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
 }
 main .discover .news #posts-container .box .boxes .comment-section button:hover {
+  border: 1px solid orangered;
+  color: white;
   background-color: orangered;
 }
 main .discover .news #posts-container .box .boxes .interaction-icons {
@@ -397,23 +601,24 @@ main .discover .news #posts-container .box .boxes .interaction-icons .sends {
   gap: 14px;
 }
 main .discover .news #posts-container .box .boxes .interaction-icons .sends .fa-comment {
-  color: gainsboro;
+  color: rgb(49, 49, 49);
   font-size: 27px;
   transition: 0.3s ease;
 }
 main .discover .news #posts-container .box .boxes .interaction-icons .sends .fa-comment:hover {
-  color: gray;
+  color: rgb(203, 203, 203);
 }
 main .discover .news #posts-container .box .boxes .interaction-icons .sends .fa-share {
-  color: gainsboro;
+  color: rgb(49, 49, 49);
   font-size: 27px;
   transition: 0.3s ease;
 }
 main .discover .news #posts-container .box .boxes .interaction-icons .sends .fa-share:hover {
+  cursor: pointer;
   color: rgb(0, 106, 255);
 }
 main .discover .news #posts-container .box .boxes .interaction-icons .sends .fa-heart {
-  color: gainsboro;
+  color: rgb(49, 49, 49);
   font-size: 27px;
   transition: 0.3s ease;
 }
@@ -421,7 +626,7 @@ main .discover .news #posts-container .box .boxes .interaction-icons .sends .fa-
   color: red;
 }
 main .discover .news #posts-container .box .boxes .interaction-icons .fa-bookmark {
-  color: gainsboro;
+  color: rgb(49, 49, 49);
   font-size: 27px;
   transition: 0.3s ease;
 }
@@ -435,6 +640,7 @@ main .discover .news #posts-container .box .boxes .users {
   gap: 7px;
 }
 main .discover .news #posts-container .box .boxes .users h1 {
+  display: contents;
   font-size: 14px;
   color: rgb(33, 33, 33);
 }
@@ -443,15 +649,15 @@ main .discover .news #posts-container .box .boxes .users img {
   height: 27px;
   border-radius: 50%;
 }
-main .discover .news #posts-container .box .boxes p {
-  font-size: 27px;
+main .discover .news #posts-container .box .boxes a {
+  font-size: 25px;
   color: black;
-  font-weight: 700;
+  font-weight: 600;
 }
 main .discover .news #posts-container .box .boxes .postImg {
   width: 100%;
   height: 100%;
-  border-radius: 21px;
+  border-radius: 14px;
 }
 main .discover #popular-container {
   background-color: red;

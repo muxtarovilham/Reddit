@@ -94,7 +94,7 @@
             </form>
             <div class="login">
                 <button class="barcodeButton"><i class="fa-solid fa-qrcode"></i></button>
-                <button class="loginButton">Login</button>
+                <button id="loginbuton" class="loginButton">Login</button>
                 <div class="btn-group dropdownes">
                   <button style="background-color: transparent; border: none;" type="button" class="btn btn-secondary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fa-solid fa-ellipsis" style="color: #000000;"></i>
@@ -120,8 +120,6 @@
           <div class="cloose">
                         <span class="close" onclick="closeModal()">&times;</span>
           </div>
-            <h1>Log In</h1>
-            <p>By continuing, you agree to our <a href="">User Agreement</a> and acknowledge that you understand the <a href="">Privacy Policy</a>.</p>
             <button class="sign">Sign in Google<i class="fa-brands fa-google" style="color: #0091ff;"></i></button>
             <button class="sign">Continue with Apple<i class="fa-brands fa-apple" style="color: #000000;"></i></button>
             <div class="or">
@@ -129,13 +127,41 @@
               <p>or</p>
               <div class="line"></div>
             </div>
-            <form name="loginForm" class="forum" method="post" action="./signup.html">
-              <input name="userid" type="text" placeholder="Username">
-              <input name="pwd" type="text" placeholder="Password">
-            <p>Forgot your <a href="">username</a> or <a href="">password</a>?</p>
-            <p>New to Reddit? <a href="./signup.html">Sign Up</a></p>
-            <input type="submit" onclick="return check(this.form)" value="Login">
-          </form>
+            <div id="container">
+              <div id="tabs">
+                  <p id="lt" class="tabs" onclick="loginTabFun()">Log in</p>
+                  <p id="rt" class="tabs" onclick="regTabFun()">Register</p>
+      
+                  <div id="clear"></div>
+              </div>
+      
+              <div id="cont">
+                  <div id="login" class="comm">
+                      <h3>Sign in</h3>
+      
+                      <input id="se" type="email" placeholder="Email" required/>
+                      <input id="sp" type="password" placeholder="Password" required/>
+                      <input type="submit" onclick="login()" value="Submit"/>
+      
+                      <p style="color: orangered; width: 77%;" onclick="forTabFun()">Forget Password?</p>
+                  </div>
+                  <div id="register" class="comm">
+                      <h3>Register</h3>
+                      <input id="re" type="email" placeholder="Email" required/>
+                      <input id="rp" type="password" placeholder="Password" required/>
+                      <input id="rrp" type="password" placeholder="Re write Password" required/>
+                      <input type="submit" onclick="register()" value="Submit"/>
+      
+                  </div >
+                  <div id="forgot" class="comm">
+                  <h3>Forgot Password</h3>
+                  <div class="forgett">
+                      <input id="fe" type="email" placeholder="Email" required/>
+                      <input type="submit" onclick="forgot()" value="Submit"/>
+                  </div>
+                  </div>
+              </div>
+          </div>
         </div>
     </div>
     
@@ -208,43 +234,8 @@
           <div id="posts-container" class="row">
             
           </div>
-          <div class="community">
+          <div id="community" class="community">
             <p>POPULAR COMMUNITIES</p>
-            <div class="communiti">
-              <img src="https://styles.redditmedia.com/t5_2qh1e/styles/communityIcon_ostbin5fscdb1.png" alt="">
-              <div class="about">
-                <h3>r/NoStupidQuestions</h3>
-                <p>2,501,243 members</p>
-              </div>
-            </div>
-            <div class="communiti">
-              <img src="https://styles.redditmedia.com/t5_2qh1e/styles/communityIcon_ostbin5fscdb1.png" alt="">
-              <div class="about">
-                <h3>r/NoStupidQuestions</h3>
-                <p>2,501,243 members</p>
-              </div>
-            </div>
-            <div class="communiti">
-              <img src="https://styles.redditmedia.com/t5_2qh1e/styles/communityIcon_ostbin5fscdb1.png" alt="">
-              <div class="about">
-                <h3>r/NoStupidQuestions</h3>
-                <p>2,501,243 members</p>
-              </div>
-            </div>
-            <div class="communiti">
-              <img src="https://styles.redditmedia.com/t5_2qh1e/styles/communityIcon_ostbin5fscdb1.png" alt="">
-              <div class="about">
-                <h3>r/NoStupidQuestions</h3>
-                <p>2,501,243 members</p>
-              </div>
-            </div>
-            <div class="communiti">
-              <img src="https://styles.redditmedia.com/t5_2qh1e/styles/communityIcon_ostbin5fscdb1.png" alt="">
-              <div class="about">
-                <h3>r/NoStupidQuestions</h3>
-                <p>2,501,243 members</p>
-              </div>
-            </div>
           </div>
 
         </div>

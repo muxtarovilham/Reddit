@@ -1,40 +1,12 @@
-const productPopular = document.getElementById('popular-container');
 const productPost = document.getElementById('posts-container');
 
-
-// Popular Posts
-async function getProducts() {
-    try {
-        const res = await axios.get('http://localhost:5500/assets/json/db.json');
-        const data = res.data.posts;
-        db = data;
-        db.map(item => {
-            const box = document.createElement('div');
-            box.className = 'box col-12 col-sm-4 col-lg-3';
-            box.innerHTML = `
-                <a class="boxes">
-                    <img src="${item.image}" alt="${item.name}"> 
-                    <p>${item.name}</p>
-                    <div class="users">
-                        <img src="${item.userimage}" alt="${item.username}">
-                        <h1>${item.username}</h1>
-                    </div>
-                </a>
-            `;
-            productPopular.appendChild(box);
-        });
-    } catch (error) {
-        console.error('Error fetching popular posts:', error);
-    }
-}
-getProducts();
 
 // Post
 
 async function getPostz() {
     try {
         const res = await axios.get('http://localhost:5500/assets/json/db.json');
-        const data = res.data.post;
+        const data = res.data.gaming;
         db = data;
         db.map(item => {
             const box = document.createElement('div');
@@ -161,6 +133,55 @@ function bookmark(id) {
         localStorage.setItem('bookmark', JSON.stringify(bookmark));
     }
 }
+// Popular
+
+
+const community = document.getElementById('community');
+
+
+
+
+async function getPopulars() {
+    try {
+        const res = await axios.get('http://localhost:5500/assets/json/db.json');
+        const data = res.data.popular;
+        db = data
+        db.map(item => {
+            const box = document.createElement('div');
+            box.className = 'box col-12';
+            box.innerHTML = `
+            <div class="communiti">
+            <img src="${item.userimage}" alt="">
+            <div class="about">
+              <h3>${item.username}</h3>
+              <p>${item.members} members</p>
+            </div>
+          </div>
+            `
+            community.appendChild(box);
+        });
+    } catch (error) {
+        console.error('Error fetching posts:', error);
+    }
+}
+
+getPopulars();
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Login Forum
+
+
 
 
 var emailArray=[];

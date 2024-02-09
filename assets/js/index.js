@@ -15,7 +15,7 @@ async function getPosts() {
                         <img src="${item.userimage}" alt="${item.username}">
                         <h1>${item.username}</h1>
                     </div>
-                    <p>${item.name}</p>
+                    <a>${item.name}</a>
                     <img class="postImg" src="${item.image}" alt="${item.name}">
                     <div class="interaction-icons">
                         <div class="sends">
@@ -92,7 +92,7 @@ function formSearch() {
                 <img src="${item.userimage}" alt="${item.username}">
                 <h1>${item.username}</h1>
             </div>
-            <p>${item.name}</p>
+            <a>${item.name}</a>
             <img class="postImg" src="${item.image}" alt="${item.name}">
             <div class="interaction-icons">
                 <div class="sends">
@@ -139,7 +139,6 @@ function postComment(postId) {
     const commentText = commentInput.value.trim();
 
     if (commentText !== "") {
-        // Check if user is logged in
         if (isLoggedIn()) {
             const comment = {
                 postId: postId,
@@ -152,19 +151,15 @@ function postComment(postId) {
 
             commentInput.value = "";
         } else {
-            // Display the login modal
             const loginModal = document.getElementById('loginModal');
             loginModal.style.display = 'block';
         }
     }
 }
 
-// Function to check if the user is logged in (dummy implementation)
 function isLoggedIn() {
-    // Replace this with your actual authentication logic
-    // For example, you might check if there's a user session or a token
-    // If the user is logged in, return true; otherwise, return false
-    return false; // Placeholder, replace with actual authentication check
+
+    return false; 
 }
 
 
@@ -182,6 +177,43 @@ function updateCommentsUI(postId) {
     });
 }
 
+// Popular
+
+
+const community = document.getElementById('community');
+
+
+
+
+async function getPopulars() {
+    try {
+        const res = await axios.get('http://localhost:5500/assets/json/db.json');
+        const data = res.data.popular;
+        db = data
+        db.map(item => {
+            const box = document.createElement('div');
+            box.className = 'box col-12';
+            box.innerHTML = `
+            <div class="communiti">
+            <img src="${item.userimage}" alt="">
+            <div class="about">
+              <h3>${item.username}</h3>
+              <p>${item.members} members</p>
+            </div>
+          </div>
+            `
+            community.appendChild(box);
+        });
+    } catch (error) {
+        console.error('Error fetching posts:', error);
+    }
+}
+
+getPopulars();
+
+
+
+
 
 
 
@@ -194,31 +226,152 @@ function updateCommentsUI(postId) {
 // Login Forum
 
 
-async function check(form) {
-    const apiUrl = "https://655e356a9f1e1093c59ab81c.mockapi.io/Api3/Api3";
-    const username = form.userid.value;
-    const password = form.pwd.value;
 
-    try {
-        const response = await fetch(apiUrl);
-        const data = await response.json();
 
-        console.log("API Response:", data);  // Log the API response for debugging
+var emailArray=[];
+var passwordArray=[];
 
-        const matchingUser = data.find(user => user.username === username && user.password === password);
+var loginBox = document.getElementById("login");
+var regBox = document.getElementById("register");
+var forgetBox = document.getElementById("forgot");
 
-        if (matchingUser) {
-            console.log("Login successful!");  // Log successful login for debugging
-            form.action = "./signup.html";  // Redirect to the desired page
-            return true;
-        } else {
-            console.log("Login failed. No matching user found.");  // Log failed login for debugging
-            alert("Incorrect Password or Username");
-            return false;
-        }
-    } catch (error) {
-        console.error("Error fetching data from API:", error);
-        alert("An error occurred. Please try again later.");
-        return false;
+var loginTab = document.getElementById("lt");
+var regTab = document.getElementById("rt");
+
+function regTabFun(){
+    event.preventDefault();
+
+    regBox.style.visibility="visible";
+    loginBox.style.visibility="hidden";
+    forgetBox.style.visibility="hidden";
+
+    regTab.style.backgroundColor="green";
+    loginTab.style.backgroundColor="orangered";
+}
+function loginTabFun(){
+    event.preventDefault();
+
+    regBox.style.visibility="hidden";
+    loginBox.style.visibility="visible";
+    forgetBox.style.visibility="hidden";
+
+    loginTab.style.backgroundColor="green";
+    regTab.style.backgroundColor="orangered";
+}
+function forTabFun(){
+    event.preventDefault();
+
+    regBox.style.visibility="hidden";
+    loginBox.style.visibility="hidden";
+    forgetBox.style.visibility="visible";
+
+    regTab.style.backgroundColor="orangered";
+    loginTab.style.backgroundColor="orangered";
+
+}
+
+
+function register(){
+    event.preventDefault();
+
+    var email = document.getElementById("re").value;
+    var password = document.getElementById("rp").value;
+    var passwordRetype = document.getElementById("rrp").value;
+
+    if (email == ""){
+        alert("Email required.");
+        return ;
+    }
+    else if (password == ""){
+        alert("Password required.");
+        return ;
+    }
+    else if (passwordRetype == ""){
+        alert("Password required.");
+        return ;
+    }
+    else if ( password != passwordRetype ){
+        alert("Password don't match retype your Password.");
+        return;
+    }
+    else if(emailArray.indexOf(email) == -1){
+        emailArray.push(email);
+        passwordArray.push(password);
+
+        alert(email + "  Thanks for registration. \nTry to login Now");
+
+        document.getElementById("re").value ="";
+        document.getElementById("rp").value="";
+        document.getElementById("rrp").value="";
+    }
+    else{
+        alert(email + " is already register.");
+        return ;
     }
 }
+function login(){
+    event.preventDefault();
+
+    var email = document.getElementById("se").value;
+    var password = document.getElementById("sp").value;
+
+    var i = emailArray.indexOf(email);
+
+    if(emailArray.indexOf(email) == -1){
+        if (email == ""){
+            alert("Email required.");
+            return ;
+        }
+        alert("Email does not exist.");
+        return ;
+    }
+    else if(passwordArray[i] != password){
+        if (password == ""){
+            alert("Password required.");
+            return ;
+        }
+        alert("Password does not match.");
+        return ;
+    }
+    else {
+        alert(email + "You are login now, welcome to our website.");
+        window.location.href = "index.html";
+        document.getElementById("se").value ="";
+        document.getElementById("sp").value="";
+        return ;
+    }
+
+}
+function forgot(){
+    event.preventDefault();
+
+    var email = document.getElementById("fe").value;
+
+    if(emailArray.indexOf(email) == -1){
+        if (email == ""){
+            alert("Email required.");
+            return ;
+        }
+        alert("Email does not exist.");
+        return ;
+    }
+
+    alert("Email is send to your email check it in 24hr.");
+    document.getElementById("fe").value ="";
+}
+
+
+
+const loginbuton = document.getElementById('loginbuton')
+
+loginbuton.addEventListener('click', (e) => {
+    e.preventDefault()
+    loginModal.style.display = 'block';
+})
+
+const loginbutonn = document.getElementById('loginbutonn')
+
+loginbutonn.addEventListener('click', (e) => {
+    e.preventDefault()
+    loginModal.style.display = 'block';
+})
