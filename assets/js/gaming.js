@@ -46,6 +46,56 @@ async function getPostz() {
 getPostz()
 
 
+
+const searchForm = document.getElementById('Searchform');
+const nameInput = document.getElementById('nameInput');
+
+
+
+function formSearch() {
+    productPost.innerHTML = ''
+    axios.get('http://localhost:5500/assets/json/db.json')
+    .then(res => {
+        db = res.data.gaming
+        const filteredData = db.filter(item => item.name.toLowerCase().includes(nameInput.value.toLowerCase()))
+        filteredData.map(item => {
+            const box = document.createElement('div')
+            box.className = 'box'
+            box.innerHTML = `
+            <div class="boxes">
+            <div class="users">
+                <img src="${item.userimage}" alt="${item.username}">
+                <h1>${item.username}</h1>
+            </div>
+            <a>${item.name}</a>
+            <img class="postImg" src="${item.media}" alt="${item.name}">
+            <div class="interaction-icons">
+                <div class="sends">
+                    <button onclick="like(${item.id})"><i class="fa-solid fa-heart"></i></button>     
+                    <button onclick="toggleCommentSection(${item.id})"><i class="fa-regular fa-comment"></i></button>     
+                    <i class="fa-solid fa-share"></i>
+                </div>
+                <button onclick="bookmark(${item.id})"><i class="fa-solid fa-bookmark"></i></button>     
+            </div>
+            <div class="comment-section" id="commentSection-${item.id}" style="display:none;">
+                <input type="text" placeholder="Add a comment" id="commentInput-${item.id}">
+                <button onclick="postComment(${item.id})">Post</button>
+                <div id="comments-${item.id}"></div>
+            </div>
+        </div>
+    `;
+    productPost.appendChild(box)
+        })
+    })
+}
+
+searchForm.addEventListener('submit', (e) => {
+    e.preventDefault()
+    formSearch()
+})
+
+
+
 function toggleCommentSection(postId) {
     const commentSection = document.getElementById(`commentSection-${postId}`);
     const isCommentSectionVisible = commentSection.style.display === "block";
