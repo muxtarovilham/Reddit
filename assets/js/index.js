@@ -228,8 +228,8 @@ getPopulars();
 
 
 
-var emailArray=[];
-var passwordArray=[];
+// var emailArray=[];
+// var passwordArray=[];
 
 var loginBox = document.getElementById("login");
 var regBox = document.getElementById("register");
@@ -309,6 +309,37 @@ function register(){
         return ;
     }
 }
+
+async function getData() {
+    await axios.get('http://localhost:5500/assets/json/db.json')
+    .then(res => {
+        findData = res.data.user.data
+    })
+}
+
+async function checkUser(e) {
+    e.preventDefault()
+
+    await getData()
+
+    let checkEmail = findData.find(item => item.email == email.value)
+    let checkPassword = findData.find(item => item.password == password.value)
+
+    if (checkEmail && checkPassword) {
+        let user = JSON.parse(localStorage.getItem("user")) || []
+        user.push(checkEmail)
+        localStorage.setItem("user", JSON.stringify(user))
+        console.log("Hos geldiniz", checkEmail.name)
+        window.location.href = "./index.html"
+    } else {
+        console.log("wrong password or email");
+        
+    }
+}
+
+loginBox.addEventListener('submit', checkUser())
+
+
 function login(){
     event.preventDefault();
 
@@ -342,6 +373,8 @@ function login(){
     }
 
 }
+
+
 function forgot(){
     event.preventDefault();
 

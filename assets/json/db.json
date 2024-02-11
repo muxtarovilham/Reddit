@@ -176,5 +176,19 @@
         "comments": []
       }
     ],
+    "user": [
+        {
+          "id": 1,
+          "email": "muxtarov@gmail.com",
+          "password": "ilham123",
+          "name": "Ilham"
+        },
+        {
+          "id": 2,
+          "email": "aaa@aaa",
+          "password": "aaa",
+          "name": "aaa"
+        }
+    ],
     "comments": []
 }

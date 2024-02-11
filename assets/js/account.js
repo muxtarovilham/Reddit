@@ -222,3 +222,23 @@ async function getPopulars() {
 }
 
 getPopulars();
+
+
+// localStorage'den "user" adlı anahtarın değerini al
+var storedUserData = localStorage.getItem("user");
+
+// JSON formatındaki veriyi JavaScript nesnesine dönüştür
+var userData = JSON.parse(storedUserData);
+
+// En son elemanın "name" alanını al
+var lastName = userData && userData.length > 0 ? userData[userData.length - 1].name : null;
+
+// "usernamee" id'li <p> elementine yazdır
+var usernameElement = document.getElementById("usernamee");
+
+if (lastName) {
+    usernameElement.textContent = lastName
+} else {
+    usernameElement.textContent = "Name not found in user data.";
+}
+

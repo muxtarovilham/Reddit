@@ -355,6 +355,17 @@ main .modal #cont #login {
   flex-direction: column;
   width: 92%;
 }
+main .modal #cont #login button {
+  width: 71%;
+  height: 40px;
+  background-color: orangered;
+  border: 1px solid orangered;
+  color: white;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 main .modal #cont #login input[type=submit] {
   width: 71%;
   height: 48px;
@@ -548,6 +559,97 @@ main .discover {
   align-items: center;
   flex-direction: column;
   overflow: hidden;
+}
+main .discover .wrapper {
+  max-width: 1100px;
+  width: 100%;
+  position: relative;
+}
+main .discover .wrapper .wrapper i {
+  top: 50%;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  position: absolute;
+  text-align: center;
+  line-height: 50px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+  transform: translateY(-50%);
+  transition: transform 0.1s linear;
+}
+main .discover .wrapper .wrapper i:active {
+  transform: translateY(-50%) scale(0.85);
+}
+main .discover .wrapper .wrapper i:first-child {
+  left: -22px;
+}
+main .discover .wrapper .wrapper i:last-child {
+  right: -22px;
+}
+main .discover .wrapper .wrapper .carousel {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc(33.3333333333% - 12px);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 16px;
+  border-radius: 8px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+main .discover .wrapper .carousel::-webkit-scrollbar {
+  display: none;
+}
+main .discover .wrapper .carousel.no-transition {
+  scroll-behavior: auto;
+}
+main .discover .wrapper .carousel.dragging {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+main .discover .wrapper .carousel.dragging .card {
+  cursor: grab;
+  user-select: none;
+}
+main .discover .wrapper .carousel :where(.card, .img) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .discover .wrapper .carousel .card {
+  scroll-snap-align: start;
+  height: 342px;
+  list-style: none;
+  background: #fff;
+  cursor: pointer;
+  padding-bottom: 15px;
+  flex-direction: column;
+  border-radius: 8px;
+}
+main .discover .wrapper .carousel .card .img {
+  background: #8B53FF;
+  height: 148px;
+  width: 148px;
+  border-radius: 50%;
+}
+main .discover .wrapper .card .img img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fff;
+}
+main .discover .wrapper .carousel .card h2 {
+  font-weight: 500;
+  font-size: 1.56rem;
+  margin: 30px 0 5px;
+}
+main .discover .wrapper .carousel .card span {
+  color: #6A6D78;
+  font-size: 1.31rem;
 }
 main .discover .news {
   width: 100%;

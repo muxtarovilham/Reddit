@@ -234,10 +234,9 @@ getPopulars();
 
 
 
-var emailArray=[];
-var passwordArray=[];
 
-var loginBox = document.getElementById("login");
+
+var lgin = document.getElementById("login");
 var regBox = document.getElementById("register");
 var forgetBox = document.getElementById("forgot");
 
@@ -277,77 +276,40 @@ function forTabFun(){
 }
 
 
-function register(){
-    event.preventDefault();
 
-    var email = document.getElementById("re").value;
-    var password = document.getElementById("rp").value;
-    var passwordRetype = document.getElementById("rrp").value;
+async function getData() {
+    await axios.get('http://localhost:5500/assets/json/db.json')
+    .then(res => {
+        findData = res.data.user
+    })
+}
 
-    if (email == ""){
-        alert("Email required.");
-        return ;
-    }
-    else if (password == ""){
-        alert("Password required.");
-        return ;
-    }
-    else if (passwordRetype == ""){
-        alert("Password required.");
-        return ;
-    }
-    else if ( password != passwordRetype ){
-        alert("Password don't match retype your Password.");
-        return;
-    }
-    else if(emailArray.indexOf(email) == -1){
-        emailArray.push(email);
-        passwordArray.push(password);
+async function checkUser(e) {
+    e.preventDefault()
 
-        alert(email + "  Thanks for registration. \nTry to login Now");
+    var email = document.getElementById("se");
+    var password = document.getElementById("sp");
 
-        document.getElementById("re").value ="";
-        document.getElementById("rp").value="";
-        document.getElementById("rrp").value="";
-    }
-    else{
-        alert(email + " is already register.");
-        return ;
+    await getData()
+
+    let checkEmail = findData.find(item => item.email === email.value)
+    let checkPassword = findData.find(item => item.password === password.value)
+
+    if (checkEmail && checkPassword) {
+        let user = JSON.parse(localStorage.getItem("user")) || []
+        user.push(checkEmail)
+        localStorage.setItem("user", JSON.stringify(user))
+        console.log("Hos geldiniz")
+        window.location.href = "./account.html"
+    } else {
+        console.log("wrong password or email");
+        
     }
 }
-function login(){
-    event.preventDefault();
 
-    var email = document.getElementById("se").value;
-    var password = document.getElementById("sp").value;
+lgin.addEventListener('submit', checkUser)
 
-    var i = emailArray.indexOf(email);
 
-    if(emailArray.indexOf(email) == -1){
-        if (email == ""){
-            alert("Email required.");
-            return ;
-        }
-        alert("Email does not exist.");
-        return ;
-    }
-    else if(passwordArray[i] != password){
-        if (password == ""){
-            alert("Password required.");
-            return ;
-        }
-        alert("Password does not match.");
-        return ;
-    }
-    else {
-        alert(email + "You are login now, welcome to our website.");
-        window.location.href = "index.html";
-        document.getElementById("se").value ="";
-        document.getElementById("sp").value="";
-        return ;
-    }
-
-}
 function forgot(){
     event.preventDefault();
 
