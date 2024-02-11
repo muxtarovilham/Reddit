@@ -334,7 +334,7 @@ function login(){
         return ;
     }
     else {
-        alert(email + "You are login now, welcome to our website.");
+        alert(email + "You are login now, welcome to our account.");
         window.location.href = "account.html";
         document.getElementById("se").value ="";
         document.getElementById("sp").value="";

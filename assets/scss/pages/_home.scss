@@ -3,15 +3,16 @@
     margin: 0;
     box-sizing: border-box;
 }
+
 body {
     transition: background-color 0.3s ease;
-  }
-  
-  .dark-mode {
-    background-color: #1a1a1a; // Dark mode arkaplan rengi
-    color: #ffffff; // Dark mode metin rengi
-  }
-  
+}
+
+.dark-mode {
+    background-color: black;
+    color: white;
+}
+
 header {
     width: 100%;
     height: 57px;
@@ -37,6 +38,10 @@ header {
             scrollbar-width: thin;
             scrollbar-color: transparent transparent;
             -ms-overflow-style: none;
+            left: -1px;
+            top: 58px;
+            width: 21%;
+            border-right: 1px solid gainsboro;
         }
 
         .offcanvas::-webkit-scrollbar {
@@ -95,10 +100,72 @@ header {
             justify-content: space-between;
             align-items: center;
             gap: 10px;
+
+            .switch {
+                position: relative;
+                display: inline-block;
+                width: 40px;
+                height: 26px;
+            }
+
+            .switch input {
+                opacity: 0;
+                width: 0;
+                height: 0;
+            }
+
+            .slider {
+                position: absolute;
+                cursor: pointer;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: #ccc;
+                -webkit-transition: .4s;
+                transition: .4s;
+            }
+
+            .slider:before {
+                position: absolute;
+                content: "";
+                height: 20px;
+                width: 20px;
+                left: 5px;
+                bottom: 3px;
+                background-color: white;
+                -webkit-transition: .4s;
+                transition: .4s;
+            }
+
+            input:checked+.slider {
+                background-color: #2196F3;
+            }
+
+            input:focus+.slider {
+                box-shadow: 0 0 1px #2196F3;
+            }
+
+            input:checked+.slider:before {
+                -webkit-transform: translateX(26px);
+                -ms-transform: translateX(26px);
+                transform: translateX(26px);
+            }
+
+            /* Rounded sliders */
+            .slider.round {
+                width: 55px;
+                border-radius: 34px;
+            }
+
+            .slider.round:before {
+                border-radius: 50%;
+            }
+
             .dark-mode {
                 background-color: #1a1a1a; // Dark mode arkaplan rengi
                 color: #ffffff; // Dark mode metin rengi
-              }
+            }
 
             a {
                 display: flex;
@@ -200,51 +267,56 @@ main {
         width: 40%;
         height: auto;
         z-index: 1;
+
         #container {
             width: 300px;
             margin: 0 auto;
             width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    #register{
-        width: 92%;
-        height: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        input{
-            display: block;
-            width: 71%;
-            height: 40px;
-            margin: 10px 13px;
-            padding: 10px;
-            font-size: 1.1em;
-            color: rgba(11, 177, 224, 0.82);
-            border-radius: 3px;
-            border: 1px solid gainsboro;
-        }
-
-        input[type="submit"] {
-            width: 71%;
-            height: 48px;
-            background-color: orangered;
-            border: 1px solid orangered;
-            color: white;
-            font-weight: 600;
             display: flex;
             justify-content: center;
             align-items: center;
-        }
-    }
-            #tabs{
+            flex-direction: column;
+
+            #register {
+                width: 92%;
+                height: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+
+                input {
+                    display: block;
+                    width: 71%;
+                    height: 40px;
+                    margin: 10px 13px;
+                    padding: 10px;
+                    font-size: 1.1em;
+                    color: rgba(11, 177, 224, 0.82);
+                    border-radius: 3px;
+                    border: 1px solid gainsboro;
+                }
+
+                input[type="submit"] {
+                    width: 71%;
+                    height: 48px;
+                    background-color: orangered;
+                    border: 1px solid orangered;
+                    color: white;
+                    font-weight: 600;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+
+            #tabs {
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 gap: 7px;
-                #rt{
+
+                #rt {
                     width: 48%;
                     height: 40px;
                     display: flex;
@@ -254,6 +326,7 @@ main {
                     background-color: green;
                     border: none;
                 }
+
                 #lt {
                     width: 48%;
                     height: 40px;
@@ -264,6 +337,7 @@ main {
                     background-color: green;
                     border: none;
                 }
+
                 .tabs {
                     display: table-cell;
                     width: 30%;
@@ -277,22 +351,24 @@ main {
                     position: relative;
                     font-size: 1.3em;
                     color: #ffffff;
-                    &:hover, p{
+
+                    &:hover,
+                    p {
                         cursor: pointer;
                     }
                 }
-               
+
             }
         }
-   
 
-      
+
+
         #cont {
             width: 100%;
             height: 300px;
             border: 2px solid #ffffff;
 
-            input{
+            input {
                 display: block;
                 width: 71%;
                 height: 40px;
@@ -303,7 +379,7 @@ main {
                 border-radius: 3px;
                 border: 1px solid gainsboro;
             }
-    
+
             input[type="submit"] {
                 width: 71%;
                 height: 48px;
@@ -315,15 +391,16 @@ main {
                 justify-content: center;
                 align-items: center;
             }
-    
+
             #clear {
                 clear: both;
             }
-    
+
             .comm {
                 position: absolute;
                 visibility: hidden;
             }
+
             #login {
                 visibility: visible;
                 display: flex;
@@ -331,6 +408,7 @@ main {
                 align-items: center;
                 flex-direction: column;
                 width: 92%;
+
                 input[type="submit"] {
                     width: 71%;
                     height: 48px;
@@ -343,7 +421,7 @@ main {
                     align-items: center;
                 }
             }
-    
+
             h3 {
                 display: table-cell;
                 vertical-align: middle;
@@ -351,63 +429,66 @@ main {
                 font-size: 1.5em;
                 color: orangered;
             }
-    
-            #forgot{
-                display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 92%;
-    height: auto;
-    .forgett{
-        width: 92%;
-        height: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        margin-top: 0px;
-        input{
-            display: block;
-            width: 71%;
-            height: 40px;
-            margin: 10px 13px;
-            padding: 10px;
-            font-size: 1.1em;
-            color: rgba(11, 177, 224, 0.82);
-            border-radius: 3px;
-            border: 1px solid gainsboro;
-        }
 
-        input[type="submit"] {
-            width: 71%;
-            height: 48px;
-            background-color: orangered;
-            border: 1px solid orangered;
-            color: white;
-            font-weight: 600;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-    }
-  
-                 h3 {
-                display: block;
-                margin-top: 30px;
-                text-align: center;
+            #forgot {
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
-                color: orangered;
-             
+                width: 92%;
+                height: auto;
+
+                .forgett {
+                    width: 92%;
+                    height: auto;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    margin-top: 0px;
+
+                    input {
+                        display: block;
+                        width: 71%;
+                        height: 40px;
+                        margin: 10px 13px;
+                        padding: 10px;
+                        font-size: 1.1em;
+                        color: rgba(11, 177, 224, 0.82);
+                        border-radius: 3px;
+                        border: 1px solid gainsboro;
+                    }
+
+                    input[type="submit"] {
+                        width: 71%;
+                        height: 48px;
+                        background-color: orangered;
+                        border: 1px solid orangered;
+                        color: white;
+                        font-weight: 600;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                }
+
+                h3 {
+                    display: block;
+                    margin-top: 30px;
+                    text-align: center;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    color: orangered;
+
+                }
             }
-        }
-    
+
             #forgot div {
                 margin-top: 30px;
             }
+
             p {
                 padding: 10px 15px;
                 font-size: 1.3em;
@@ -417,8 +498,8 @@ main {
 
         }
 
-     
-   
+
+
         .modal-content {
             width: 100%;
             height: 585px;
@@ -430,7 +511,8 @@ main {
             gap: 3px;
             flex-direction: column;
             padding: 14px;
-            .logins{
+
+            .logins {
                 width: 90%;
                 height: 40px;
                 background-color: rgb(233, 233, 233);
@@ -438,7 +520,8 @@ main {
                 border-radius: 21px;
                 color: gray;
             }
-            .forum{
+
+            .forum {
                 width: 100%;
                 height: auto;
                 display: flex;
@@ -446,7 +529,8 @@ main {
                 align-items: center;
                 flex-direction: column;
                 gap: 7px;
-                input{
+
+                input {
                     width: 80%;
                     height: 50px;
                     border-radius: 21px;
@@ -455,48 +539,55 @@ main {
                     background-color: rgb(234, 234, 234);
                 }
             }
-            .or{
+
+            .or {
                 width: 100%;
                 height: auto;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 padding: 7px;
-                p{
+
+                p {
                     width: 66%;
                     text-align: center;
                     display: flex;
                     justify-content: center;
                     align-items: center;
                 }
-                .line{
+
+                .line {
                     width: 100%;
                     height: 1px;
                     background-color: gainsboro;
                 }
             }
-                .sign{
-                    width: 80%;
-                    height: 40px;
-                    background-color: transparent;
-                    border: 1px solid gainsboro;
-                    border-radius: 21px;
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    gap: 14px;
-                    padding: 14px;
-                    i{
-                        font-size: 21px;
-                    }
+
+            .sign {
+                width: 80%;
+                height: 52px;
+                background-color: transparent;
+                border: 1px solid gainsboro;
+                border-radius: 21px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 14px;
+                padding: 14px;
+
+                i {
+                    font-size: 21px;
                 }
-            .buttons{
+            }
+
+            .buttons {
                 width: 100%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 gap: 7px;
-                button{
+
+                button {
                     width: 148px;
                     height: 33px;
                     border: 1px solid orangered;
@@ -505,7 +596,8 @@ main {
                     font-weight: 600;
                     border-radius: 3px;
                     transition: background-color 0.3s ease;
-                    &:hover{
+
+                    &:hover {
                         background-color: white;
                         color: orangered;
                     }
@@ -518,20 +610,21 @@ main {
                 font-size: 15px;
             }
 
-            .cloose{
+            .cloose {
                 display: flex;
                 justify-content: end;
                 align-items: center;
                 width: 100%;
-                 .close {
-                width: 7%;
-                height: 27px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+
+                .close {
+                    width: 7%;
+                    height: 27px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
             }
-            }
-           
+
         }
     }
 
@@ -549,7 +642,8 @@ main {
             display: flex;
             justify-content: start;
             align-items: start;
-            .community{
+
+            .community {
                 position: fixed;
                 top: 14%;
                 right: 5%;
@@ -563,11 +657,13 @@ main {
                 padding-left: 14px;
                 background-color: #F9FAFA;
                 border-radius: 21px;
-                p{
+
+                p {
                     font-size: 12px;
                     color: gray;
                 }
-                .communiti{
+
+                .communiti {
                     width: 100%;
                     height: auto;
                     display: flex;
@@ -576,20 +672,24 @@ main {
                     gap: 7px;
                     padding-top: 7px;
                     padding-left: 7px;
-                    &:hover{
+
+                    &:hover {
                         cursor: pointer;
                         background-color: rgb(229, 229, 229);
                     }
-                    .about{
+
+                    .about {
                         display: flex;
                         justify-content: center;
                         align-items: start;
                         flex-direction: column;
-                        h3{
+
+                        h3 {
                             font-size: 12px;
                         }
                     }
-                    img{
+
+                    img {
                         width: 33px;
                         height: 33px;
                         border-radius: 50%;
@@ -618,20 +718,22 @@ main {
                         padding: 14px;
                         gap: 7px;
 
-                        .comment-section{
+                        .comment-section {
                             display: flex;
                             justify-content: start;
                             align-items: center;
                             gap: 7px;
                             width: 100%;
-                            input{
+
+                            input {
                                 border-radius: 3px;
                                 border: 1px solid gainsboro;
                                 width: 24%;
                                 height: 33px;
                                 padding: 7px;
                             }
-                            button{
+
+                            button {
                                 border-radius: 3px;
                                 border: 1px solid gray;
                                 width: 14%;
@@ -639,7 +741,8 @@ main {
                                 color: black;
                                 font-weight: 600;
                                 transition: background-color 0.3s ease;
-                                &:hover{
+
+                                &:hover {
                                     border: 1px solid orangered;
                                     color: white;
                                     background-color: orangered;
@@ -680,6 +783,7 @@ main {
                                     color: rgb(49, 49, 49);
                                     font-size: 27px;
                                     transition: 0.3s ease;
+
                                     &:hover {
                                         cursor: pointer;
                                         color: rgb(0, 106, 255);
@@ -853,6 +957,10 @@ main {
     header {
 
         nav {
+            #offcanvasNavbar {
+                width: 33%;
+            }
+
             .login {
                 .barcodeButton {
                     display: none;
@@ -872,6 +980,7 @@ main {
 
         .discover {
             width: 100%;
+
             #popular-container {
                 width: 100%;
             }
@@ -893,12 +1002,30 @@ main {
             }
         }
     }
+
+    main {
+        .modal{
+            width: 66%;
+            left: 18%;
+        }
+        .discover {
+            .news {
+                .community {
+                    width: 222px;
+                    right: 1%;
+                }
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 600px) {
     header {
         nav {
             gap: 10px;
+            #offcanvasNavbar{
+                width: 40%;
+            }
 
             .login {
                 width: 33%;
@@ -910,13 +1037,43 @@ main {
 
         }
     }
+
+    main {
+        .discover {
+            .news {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                #posts-container {
+                    width: 100%;
+                }
+
+                .community {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    header {
+        nav {
+            #offcanvasNavbar{
+                width: 50%;
+            }    
+        }
+    }
 }
 
 @media screen and (max-width: 450px) {
     header {
         nav {
             gap: 10px;
-
+            #offcanvasNavbar{
+                width: 71%;
+            }   
             .login {
                 .dropdownes {
                     display: none;
@@ -924,6 +1081,12 @@ main {
             }
 
 
+        }
+    }
+    main{
+        .modal{
+            width: 80%;
+            left: 11%;
         }
     }
 }
