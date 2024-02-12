@@ -6,6 +6,8 @@
 
 body {
   transition: background-color 0.3s ease;
+  background-color: #fff;
+  color: #000;
 }
 
 .dark-mode {
@@ -31,6 +33,12 @@ header nav {
   align-items: center;
   border-bottom: 1px solid gainsboro;
   padding: 14px;
+}
+header nav #loginFirst a {
+  text-decoration: none;
+}
+header nav #loginSecond a {
+  text-decoration: none;
 }
 header nav .offcanvas {
   overflow-y: auto;
@@ -139,8 +147,9 @@ header nav .login .slider.round:before {
   border-radius: 50%;
 }
 header nav .login .dark-mode {
-  background-color: #1a1a1a;
-  color: #ffffff;
+  /* Define your dark mode styles here */
+  background-color: #333;
+  color: #fff;
 }
 header nav .login a {
   display: flex;
@@ -219,6 +228,164 @@ main {
   align-items: center;
   padding-top: 58px;
 }
+main .proporties {
+  width: 80%;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+main .proporties .karma {
+  width: 40%;
+  min-height: 340px;
+  border-radius: 14px;
+  position: relative;
+  border: 1px solid gainsboro;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid orangered;
+}
+main .proporties .karma .userPassAbout {
+  width: 90%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main .proporties .karma .userPassAbout .blue {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  flex-direction: column;
+  padding: 14px;
+}
+main .proporties .karma .userPassAbout .blue #messages {
+  display: none;
+}
+main .proporties .karma .userPassAbout .blue h1 {
+  display: contents;
+}
+main .proporties .karma .userPassAbout .blue button {
+  width: 66%;
+  height: 33px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid orangered;
+  color: orangered;
+  font-weight: 600;
+  font-size: 14px;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+main .proporties .karma .userPassAbout .blue button:hover {
+  background-color: orangered;
+  color: white;
+}
+main .proporties .karma .userPassAbout .blue input {
+  width: 100%;
+  height: 33px;
+  border: 1px solid green;
+  padding: 7px;
+  border-radius: 7px;
+  background-color: transparent;
+}
+main .proporties .karma .userPassAbout .blue #message {
+  display: none;
+}
+main .proporties .karma .userPassAbout .blue p {
+  width: 100%;
+  height: auto;
+  padding: 3px;
+  border-radius: 3px;
+  border: 1px solid green;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 7px;
+}
+main .proporties .karma .userAbout {
+  width: 90%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main .proporties .karma .userAbout .blue {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 95%;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+  padding: 7px;
+}
+main .proporties .karma .userAbout .blue button {
+  width: 50%;
+  height: 40px;
+  background-color: transparent;
+  border: 1px solid orangered;
+  color: orangered;
+  transition: background-color 0.3s ease;
+  font-weight: 600;
+}
+main .proporties .karma .userAbout .blue button:hover {
+  background-color: orangered;
+  color: white;
+}
+main .proporties .karma .userAbout .blue #message {
+  display: none;
+}
+main .proporties .karma .userAbout .blue p {
+  width: 100%;
+  height: auto;
+  padding: 3px;
+  border-radius: 3px;
+  border: 1px solid green;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 7px;
+}
+main .proporties .karma .userAbout .blue p button {
+  width: 21%;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid orangered;
+  color: orangered;
+  font-weight: 600;
+  font-size: 11px;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+main .proporties .karma .userAbout .blue p button:hover {
+  background-color: orangered;
+  color: white;
+}
+main .proporties .karma .userAbout .blue p input {
+  width: 40%;
+  height: 24px;
+  border: 1px solid gainsboro;
+  padding: 3px;
+  background-color: transparent;
+}
 main #loginModal {
   display: block;
 }
@@ -231,7 +398,7 @@ main .modal {
   align-items: center;
   width: 40%;
   height: auto;
-  z-index: 1;
+  z-index: 2;
 }
 main .modal #container {
   width: 300px;
@@ -673,7 +840,6 @@ main .discover .news .community {
   flex-direction: column;
   padding: 14px;
   padding-left: 14px;
-  background-color: #F9FAFA;
   border-radius: 21px;
 }
 main .discover .news .community p {
@@ -897,7 +1063,7 @@ main .offcanva {
   display: block;
   position: fixed;
   overflow-y: auto;
-  max-height: 100vh;
+  max-height: 120vh;
 }
 main .offcanva .reserved {
   width: 100%;
@@ -942,6 +1108,13 @@ main .offcanva .offcanvas::-webkit-scrollbar-thumb {
   header nav .reddit-images p {
     display: none;
   }
+  main .proporties .karma {
+    height: 400px;
+  }
+  main .proporties .karma .userAbout .blue button {
+    width: 66%;
+    height: 55px;
+  }
   main .modal {
     width: 66%;
     left: 18%;
@@ -949,6 +1122,19 @@ main .offcanva .offcanvas::-webkit-scrollbar-thumb {
   main .discover .news .community {
     width: 222px;
     right: 1%;
+  }
+}
+@media screen and (max-width: 750px) {
+  main .proporties {
+    width: 92%;
+  }
+  main .proporties .karma {
+    width: 45%;
+  }
+  main .proporties .karma .userAbout .blue button {
+    padding: 3px;
+    width: 80%;
+    height: 55px;
   }
 }
 @media screen and (max-width: 600px) {
@@ -963,6 +1149,12 @@ main .offcanva .offcanvas::-webkit-scrollbar-thumb {
   }
   header nav #Searchform {
     width: 36%;
+  }
+  main .proporties {
+    flex-direction: column;
+  }
+  main .proporties .karma {
+    width: 90%;
   }
   main .discover .news {
     display: flex;
@@ -984,11 +1176,13 @@ main .offcanva .offcanvas::-webkit-scrollbar-thumb {
 @media screen and (max-width: 450px) {
   header nav {
     gap: 10px;
+    justify-content: space-around;
+    width: 90%;
   }
   header nav #offcanvasNavbar {
     width: 71%;
   }
-  header nav .login .dropdownes {
+  header nav #Searchform {
     display: none;
   }
   main .modal {

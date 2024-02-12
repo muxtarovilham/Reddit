@@ -36,7 +36,7 @@ async function getPostz() {
         const res = await axios.get('http://localhost:3000/post');
         const data = res.data;
         db = data;
-        db.map(item => {
+        db.map(item => {np
             const box = document.createElement('div');
             box.className = 'box col-12';
             box.innerHTML = `

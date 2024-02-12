@@ -336,7 +336,7 @@ document.addEventListener("DOMContentLoaded", function() {
         let user = userData[0];
 
         // Access the "firstname" property from the user object
-        let firstname = user.firstname;
+        let firstname = user.username;
 
         // Display the firstname in the paragraph element
         document.getElementById("usernamee").textContent = firstname;
@@ -381,10 +381,26 @@ function toggleLoginSections() {
 document.body.onload = toggleLoginSections;
 
 
-fetch('db.json') // Eğer HTML ve JSON aynı dizinde ise
-    .then(response => response.json())
-    .then(data => {
-        const gamingData = data.gaming;
-        console.log(gamingData);
-    })
-    .catch(error => console.error('Veri getirme hatası:', error));
+
+
+
+    // Darkmod
+
+ function myFunction() {
+  var element = document.body;
+  element.classList.toggle("dark-mode");
+}
+    
+
+
+
+function endAccount() {
+    // localStorage'dan "user" adlı öğeyi sil
+    localStorage.removeItem("user");
+
+    // İsteğe bağlı olarak kullanıcıyı başka bir sayfaya yönlendirebilirsiniz
+    // window.location.href = "sign-out-page.html";
+
+    // İsteğe bağlı olarak kullanıcıya bir mesaj gösterebilirsiniz
+    console.log("User signed out. LocalStorage key 'user' removed.");
+}

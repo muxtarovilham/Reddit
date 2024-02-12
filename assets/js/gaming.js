@@ -376,3 +376,49 @@ document.addEventListener("DOMContentLoaded", function () {
         loginModalElement.style.display = "block";
     }
 });
+
+
+
+function toggleLoginSections() {
+    var usernameElement = document.getElementById("usernamee");
+    var loginFirst = document.getElementById("loginFirst");
+    var loginSecond = document.getElementById("loginSecond");
+
+    if (usernameElement.innerHTML.trim() === "") {
+        // Username is empty, show loginFirst, hide loginSecond
+        loginFirst.style.display = "block";
+        loginSecond.style.display = "none";
+    } else {
+        // Username is not empty, show loginSecond, hide loginFirst
+        loginFirst.style.display = "none";
+        loginSecond.style.display = "block";
+    }
+}
+
+// Call the function on page load (assuming you have a body element)
+document.body.onload = toggleLoginSections;
+
+
+
+
+
+    // Darkmod
+
+ function myFunction() {
+  var element = document.body;
+  element.classList.toggle("dark-mode");
+}
+    
+
+
+
+function endAccount() {
+    // localStorage'dan "user" adlı öğeyi sil
+    localStorage.removeItem("user");
+
+    // İsteğe bağlı olarak kullanıcıyı başka bir sayfaya yönlendirebilirsiniz
+    // window.location.href = "sign-out-page.html";
+
+    // İsteğe bağlı olarak kullanıcıya bir mesaj gösterebilirsiniz
+    console.log("User signed out. LocalStorage key 'user' removed.");
+}

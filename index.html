@@ -83,10 +83,10 @@
                   </div>
                 </div>
               </nav>
-            <div class="reddit-images">
+              <a href="./index.html" style="text-decoration: none;" class="reddit-images">
                 <img src="https://seeklogo.com/images/R/reddit-icon-new-2023-logo-3F12137D65-seeklogo.com.png" alt="">
                 <p>reddit</p>
-            </div>
+            </a>
             <img src="" alt="">
             <form id="Searchform">
                 <i class="fa-solid fa-magnifying-glass"></i>
@@ -114,13 +114,15 @@
                   <i class="fa-solid fa-chevron-down" style="color: #000000; font-size: 12px;"></i>
                 </button>
                 <div class="dropdown-menu dropdown-menu-right">
-                  <button class="dropdown-item" type="button"><a href=""><i class="fa-solid fa-right-to-bracket" style="color: #000000;"></i>My account</a></button>
-                  <button class="dropdown-item" type="button"><a href=""><i class="fa-solid fa-arrow-pointer" style="color: #000000;"></i>Interactions</a></button>
-                  <button class="dropdown-item" type="button"> <label class="switch">
+                  <button class="dropdown-item" type="button"><a href="./account.html"><i class="fa-solid fa-right-to-bracket" style="color: #000000;"></i>My account</a></button>
+                  <button class="dropdown-item" type="button"><a href=""><i class="fa-solid fa-clock-rotate-left"></i>Interaction</a></button>
+                  <button class="dropdown-item" type="button"> 
+                    <label class="switch">
                     <input onclick="myFunction()" type="checkbox">
                     <span class="slider round"></span>
-                  </label></button>
-                 
+                  </label>
+                </button>
+                <button onclick="endAccount()" class="dropdown-item" type="button"><a href=""><i class="fa-solid fa-right-from-bracket"></i>Sign out</a></button>                 
                 </div>
               </div>
           </div>
@@ -256,7 +258,6 @@
           </div>
 
         </div>
-        
       </div>
     </main>
 
