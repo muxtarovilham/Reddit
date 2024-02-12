@@ -5,8 +5,8 @@ const productPost = document.getElementById('posts-container');
 
 async function getPostz() {
     try {
-        const res = await axios.get('http://localhost:5500/assets/json/db.json');
-        const data = res.data.gaming;
+        const res = await axios.get('http://localhost:3000/gaming');
+        const data = res.data;
         db = data;
         db.map(item => {
             const box = document.createElement('div');
@@ -54,9 +54,9 @@ const nameInput = document.getElementById('nameInput');
 
 function formSearch() {
     productPost.innerHTML = ''
-    axios.get('http://localhost:5500/assets/json/db.json')
+    axios.get('http://localhost:3000/gaming')
     .then(res => {
-        db = res.data.gaming
+        db = res.data
         const filteredData = db.filter(item => item.name.toLowerCase().includes(nameInput.value.toLowerCase()))
         filteredData.map(item => {
             const box = document.createElement('div')
@@ -193,8 +193,8 @@ const community = document.getElementById('community');
 
 async function getPopulars() {
     try {
-        const res = await axios.get('http://localhost:5500/assets/json/db.json');
-        const data = res.data.popular;
+        const res = await axios.get('http://localhost:3000/popular');
+        const data = res.data;
         db = data
         db.map(item => {
             const box = document.createElement('div');
@@ -278,9 +278,9 @@ function forTabFun(){
 
 
 async function getData() {
-    await axios.get('http://localhost:5500/assets/json/db.json')
+    await axios.get('https://655e356a9f1e1093c59ab81c.mockapi.io/Api3/Api3')
     .then(res => {
-        findData = res.data.user
+        findData = res.data
     })
 }
 
@@ -292,15 +292,15 @@ async function checkUser(e) {
 
     await getData()
 
-    let checkEmail = findData.find(item => item.email === email.value)
-    let checkPassword = findData.find(item => item.password === password.value)
+    let checkEmail = findData.find(item => item.email == email.value)
+    let checkPassword = findData.find(item => item.password == password.value)
 
     if (checkEmail && checkPassword) {
         let user = JSON.parse(localStorage.getItem("user")) || []
         user.push(checkEmail)
         localStorage.setItem("user", JSON.stringify(user))
         console.log("Hos geldiniz")
-        window.location.href = "./account.html"
+        window.location.href = "./gaming.html"
     } else {
         console.log("wrong password or email");
         
@@ -330,16 +330,49 @@ function forgot(){
 
 
 
-const loginbuton = document.getElementById('loginbuton')
 
-loginbuton.addEventListener('click', (e) => {
-    e.preventDefault()
-    loginModal.style.display = 'block';
-})
 
-const loginbutonn = document.getElementById('loginbutonn')
 
-loginbutonn.addEventListener('click', (e) => {
-    e.preventDefault()
-    loginModal.style.display = 'block';
-})
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Retrieve the user data from localStorage
+    let userData = JSON.parse(localStorage.getItem("user"));
+
+    // Check if userData is not null or undefined and if it has at least one user
+    if (userData && userData.length > 0) {
+        // Assuming that the first item in the array is the user object
+        let user = userData[0];
+
+        // Access the "firstname" property from the user object
+        let firstname = user.firstname;
+
+        // Display the firstname in the paragraph element
+        document.getElementById("usernamee").textContent = firstname;
+    } else {
+        // If userData is not available or doesn't have any users, handle it accordingly
+        document.getElementById("usernamee").textContent = "";
+    }
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    var usernameeElement = document.getElementById("usernamee");
+    var loginSecondElement = document.getElementById("LoginSecond");
+
+    if (usernameeElement.innerHTML.trim() === "") {
+        loginSecondElement.style.display = "none";
+    } else {
+        loginSecondElement.style.display = "block";
+    }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    var usernameeElement = document.getElementById("usernamee");
+    var loginModalElement = document.getElementById("loginModal");
+
+    if (usernameeElement.innerHTML.trim() !== "") {
+        loginModalElement.style.display = "none";
+    } else {
+        loginModalElement.style.display = "block";
+    }
+});

@@ -4,9 +4,9 @@ const productPost = document.getElementById('posts-container');
 // Post
 async function getSportPost() {
     try {
-        const res = await axios.get('http://localhost:5500/assets/json/db.json');
-        const data = res.data.sports;
-        db = data;
+        const res = await axios.get('http://localhost:3000/sports');
+        const data = res.data
+        db = data
         db.map(item => {
             const box = document.createElement('div');
             box.className = 'box col-12';
@@ -52,9 +52,9 @@ const nameInput = document.getElementById('nameInput');
 
 function formSearch() {
     productPost.innerHTML = ''
-    axios.get('http://localhost:5500/assets/json/db.json')
+    axios.get('http://localhost:3000/sports')
     .then(res => {
-        db = res.data.sports
+        db = res.data
         const filteredData = db.filter(item => item.name.toLowerCase().includes(nameInput.value.toLowerCase()))
         filteredData.map(item => {
             const box = document.createElement('div')
@@ -191,8 +191,8 @@ const community = document.getElementById('community');
 
 async function getPopulars() {
     try {
-        const res = await axios.get('http://localhost:5500/assets/json/db.json');
-        const data = res.data.popular;
+        const res = await axios.get('http://localhost:3000/popular');
+        const data = res.data;
         db = data
         db.map(item => {
             const box = document.createElement('div');
@@ -225,17 +225,13 @@ getPopulars();
 
 
 
-
-
 // Login Forum
 
 
 
 
-var emailArray=[];
-var passwordArray=[];
 
-var loginBox = document.getElementById("login");
+var lgin = document.getElementById("login");
 var regBox = document.getElementById("register");
 var forgetBox = document.getElementById("forgot");
 
@@ -275,77 +271,40 @@ function forTabFun(){
 }
 
 
-function register(){
-    event.preventDefault();
 
-    var email = document.getElementById("re").value;
-    var password = document.getElementById("rp").value;
-    var passwordRetype = document.getElementById("rrp").value;
+async function getData() {
+    await axios.get('https://655e356a9f1e1093c59ab81c.mockapi.io/Api3/Api3')
+    .then(res => {
+        findData = res.data
+    })
+}
 
-    if (email == ""){
-        alert("Email required.");
-        return ;
-    }
-    else if (password == ""){
-        alert("Password required.");
-        return ;
-    }
-    else if (passwordRetype == ""){
-        alert("Password required.");
-        return ;
-    }
-    else if ( password != passwordRetype ){
-        alert("Password don't match retype your Password.");
-        return;
-    }
-    else if(emailArray.indexOf(email) == -1){
-        emailArray.push(email);
-        passwordArray.push(password);
+async function checkUser(e) {
+    e.preventDefault()
 
-        alert(email + "  Thanks for registration. \nTry to login Now");
+    var email = document.getElementById("se");
+    var password = document.getElementById("sp");
 
-        document.getElementById("re").value ="";
-        document.getElementById("rp").value="";
-        document.getElementById("rrp").value="";
-    }
-    else{
-        alert(email + " is already register.");
-        return ;
+    await getData()
+
+    let checkEmail = findData.find(item => item.email == email.value)
+    let checkPassword = findData.find(item => item.password == password.value)
+
+    if (checkEmail && checkPassword) {
+        let user = JSON.parse(localStorage.getItem("user")) || []
+        user.push(checkEmail)
+        localStorage.setItem("user", JSON.stringify(user))
+        console.log("Hos geldiniz")
+        window.location.href = "./index.html"
+    } else {
+        console.log("wrong password or email");
+        
     }
 }
-function login(){
-    event.preventDefault();
 
-    var email = document.getElementById("se").value;
-    var password = document.getElementById("sp").value;
+lgin.addEventListener('submit', checkUser)
 
-    var i = emailArray.indexOf(email);
 
-    if(emailArray.indexOf(email) == -1){
-        if (email == ""){
-            alert("Email required.");
-            return ;
-        }
-        alert("Email does not exist.");
-        return ;
-    }
-    else if(passwordArray[i] != password){
-        if (password == ""){
-            alert("Password required.");
-            return ;
-        }
-        alert("Password does not match.");
-        return ;
-    }
-    else {
-        alert(email + "You are login now, welcome to our website.");
-        window.location.href = "index.html";
-        document.getElementById("se").value ="";
-        document.getElementById("sp").value="";
-        return ;
-    }
-
-}
 function forgot(){
     event.preventDefault();
 
@@ -366,16 +325,68 @@ function forgot(){
 
 
 
-const loginbuton = document.getElementById('loginbuton')
+// ---
 
-loginbuton.addEventListener('click', (e) => {
-    e.preventDefault()
-    loginModal.style.display = 'block';
-})
 
-const loginbutonn = document.getElementById('loginbutonn')
+document.addEventListener("DOMContentLoaded", function() {
+    // Retrieve the user data from localStorage
+    let userData = JSON.parse(localStorage.getItem("user"));
 
-loginbutonn.addEventListener('click', (e) => {
-    e.preventDefault()
-    loginModal.style.display = 'block';
-})
+    // Check if userData is not null or undefined and if it has at least one user
+    if (userData && userData.length > 0) {
+        // Assuming that the first item in the array is the user object
+        let user = userData[0];
+
+        // Access the "firstname" property from the user object
+        let firstname = user.firstname;
+
+        // Display the firstname in the paragraph element
+        document.getElementById("usernamee").textContent = firstname;
+    } else {
+        // If userData is not available or doesn't have any users, handle it accordingly
+        document.getElementById("usernamee").textContent = "";
+    }
+});
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    var usernameeElement = document.getElementById("usernamee");
+    var loginModalElement = document.getElementById("loginModal");
+
+    if (usernameeElement.innerHTML.trim() !== "") {
+        loginModalElement.style.display = "none";
+    } else {
+        loginModalElement.style.display = "block";
+    }
+});
+
+
+function toggleLoginSections() {
+    var usernameElement = document.getElementById("usernamee");
+    var loginFirst = document.getElementById("loginFirst");
+    var loginSecond = document.getElementById("loginSecond");
+
+    if (usernameElement.innerHTML.trim() === "") {
+        // Username is empty, show loginFirst, hide loginSecond
+        loginFirst.style.display = "block";
+        loginSecond.style.display = "none";
+    } else {
+        // Username is not empty, show loginSecond, hide loginFirst
+        loginFirst.style.display = "none";
+        loginSecond.style.display = "block";
+    }
+}
+
+// Call the function on page load (assuming you have a body element)
+document.body.onload = toggleLoginSections;
+
+
+fetch('db.json') // Eğer HTML ve JSON aynı dizinde ise
+    .then(response => response.json())
+    .then(data => {
+        const gamingData = data.gaming;
+        console.log(gamingData);
+    })
+    .catch(error => console.error('Veri getirme hatası:', error));

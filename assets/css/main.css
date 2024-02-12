@@ -219,6 +219,9 @@ main {
   align-items: center;
   padding-top: 58px;
 }
+main #loginModal {
+  display: block;
+}
 main .modal {
   position: fixed;
   top: 9%;

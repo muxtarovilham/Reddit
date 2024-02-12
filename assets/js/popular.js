@@ -5,8 +5,8 @@ const productPost = document.getElementById('posts-container');
 // Popular Posts
 async function getProducts() {
     try {
-        const res = await axios.get('http://localhost:5500/assets/json/db.json');
-        const data = res.data.posts;
+        const res = await axios.get('http://localhost:3000/posts');
+        const data = res.data;
         db = data;
         db.map(item => {
             const box = document.createElement('div');
@@ -33,8 +33,8 @@ getProducts();
 
 async function getPostz() {
     try {
-        const res = await axios.get('http://localhost:5500/assets/json/db.json');
-        const data = res.data.post;
+        const res = await axios.get('http://localhost:3000/post');
+        const data = res.data;
         db = data;
         db.map(item => {
             const box = document.createElement('div');

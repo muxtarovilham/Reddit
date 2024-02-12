@@ -2,7 +2,7 @@ const productPost = document.getElementById('posts-container');
 
 async function getPosts() {
     try {
-        const res = await axios.get('http://localhost:5500/assets/json/db.json');
+        const res = await axios.get('http://localhost:3000');
         const data = res.data.post;
         db = data;
         db.map(item => {
@@ -79,7 +79,7 @@ const nameInput = document.getElementById('nameInput');
 
 function formSearch() {
     productPost.innerHTML = ''
-    axios.get('http://localhost:5500/assets/json/db.json')
+    axios.get('http://localhost:3000')
     .then(res => {
         db = res.data.post
         const filteredData = db.filter(item => item.name.toLowerCase().includes(nameInput.value.toLowerCase()))
@@ -199,7 +199,7 @@ const community = document.getElementById('community');
 
 async function getPopulars() {
     try {
-        const res = await axios.get('http://localhost:5500/assets/json/db.json');
+        const res = await axios.get('http://localhost:3000');
         const data = res.data.popular;
         db = data
         db.map(item => {
@@ -224,21 +224,23 @@ async function getPopulars() {
 getPopulars();
 
 
-// localStorage'den "user" adlı anahtarın değerini al
-var storedUserData = localStorage.getItem("user");
 
-// JSON formatındaki veriyi JavaScript nesnesine dönüştür
-var userData = JSON.parse(storedUserData);
+document.addEventListener("DOMContentLoaded", function() {
+    // Retrieve the user data from localStorage
+    let userData = JSON.parse(localStorage.getItem("user"));
 
-// En son elemanın "name" alanını al
-var lastName = userData && userData.length > 0 ? userData[userData.length - 1].name : null;
+    // Check if userData is not null or undefined and if it has at least one user
+    if (userData && userData.length > 0) {
+        // Assuming that the first item in the array is the user object
+        let user = userData[0];
 
-// "usernamee" id'li <p> elementine yazdır
-var usernameElement = document.getElementById("usernamee");
+        // Access the "firstname" property from the user object
+        let firstname = user.firstname;
 
-if (lastName) {
-    usernameElement.textContent = lastName
-} else {
-    usernameElement.textContent = "Name not found in user data.";
-}
-
+        // Display the firstname in the paragraph element
+        document.getElementById("usernamee").textContent = firstname;
+    } else {
+        // If userData is not available or doesn't have any users, handle it accordingly
+        document.getElementById("usernamee").textContent = "Guest";
+    }
+});

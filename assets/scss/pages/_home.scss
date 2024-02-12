@@ -32,6 +32,7 @@ header {
         border-bottom: 1px solid gainsboro;
         padding: 14px;
 
+  
         .offcanvas {
             overflow-y: auto;
             max-height: 100vh;
@@ -256,6 +257,10 @@ main {
     justify-content: end;
     align-items: center;
     padding-top: 58px;
+    
+    #loginModal {
+        display: block;
+    }
 
     .modal {
         position: fixed;
