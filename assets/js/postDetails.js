@@ -1,45 +1,118 @@
-const productPost = document.getElementById('posts-container');
-
-
-async function getPosts() {
+async function getPostDetails(postId) {
     try {
-        const res = await axios.get('http://localhost:3000/post');
-        const data = res.data;
-        db = data
-        db.map(item => {
-            const box = document.createElement('div');
-            box.className = 'box col-12';
-            box.innerHTML = `
-                <div class="boxes">
-                    <div class="users">
-                        <img src="${item.userimage}" alt="${item.username}">
-                        <h1>${item.username}</h1>
-                    </div>
-                    <a style="cursor: pointer" onclick="showPostDetails(${item.id})">${item.name}</a>
-                    <img class="postImg" src="${item.media}" alt="${item.name}">
-                    <div class="interaction-icons">
-                        <div class="sends">
-                            <button onclick="like(${item.id})"><i class="fa-solid fa-heart"></i></button>     
-                            <button onclick="toggleCommentSection(${item.id})"><i class="fa-regular fa-comment"></i></button>     
-                            <i class="fa-solid fa-share"></i>
-                        </div>
-                        <button onclick="bookmark(${item.id})"><i class="fa-solid fa-bookmark"></i></button>     
+        const res = await axios.get(`http://localhost:3000/post/${postId}`);
+        const post = res.data;
+
+        const postDetails = document.getElementById('postsDetails');
+        postDetails.innerHTML = `
+            <div class="boxes">
+                <div class="users">
+                <img src="${post.userimage}" alt="${post.username}">
+                <h1>${post.username}</h1>
+                </div>
+                <a>${post.name}</a>
+                <p>${post.description}</p>
+                <img class="gonderiResmi" src="${post.media}" alt="${post.name}">
+                <div class="comment-section">
+    <input type="text" id="commentInput" placeholder="Add a comment...">
+    <button onclick="addComment(${post.id})">Add Comment</button>
+</div>
+                <div class="interaction-icons">
+                    <div class="send">
+                        <button onclick="yorumAlaniniGoster(${post.id})"><i class="fa-regular fa-comment"></i>Comments</button>     
                     </div>
                 </div>
-            `;
-            productPost.appendChild(box);
-        });
-    } catch (error) {
-        console.error('Error fetching posts:', error);
+            </div>
+        `;
+        
+
+        // Yorumları göster
+        const commentsSection = document.createElement('div');
+commentsSection.className = 'comments-section';
+post.comments.forEach(comment => {
+    commentsSection.innerHTML += `
+        <div class="comment">
+            <img src="${comment.userimage}" alt="${comment.username}">
+            <p>${comment.text}</p>
+        </div>
+    `;
+});
+postDetails.appendChild(commentsSection);
+
+    } catch (hata) {
+        console.error('Gönderi detayları getirme hatası:', hata);
     }
 }
 
-function showPostDetails(postId) {
-    // Navigate to the post details page with the post ID
-    window.location.href = `postDetails.html?id=${postId}`;
+// Yorum alanını gösterme fonksiyonu (İhtiyacınıza göre uyarlayabilirsiniz)
+function yorumAlaniniGoster(postId) {
+    
 }
 
-getPosts();
+// Belirli bir gönderi ID'si ile getPostDetails fonksiyonunu çağırın (Gönderi ID'sini URL veya başka bir kaynaktan almanız gerekir)
+const postId = window.location.search.split('=')[1];
+getPostDetails(postId);
+var usernameeElement = document.getElementById("usernamee");
+
+async function addComment(postId) {
+    try {
+        const commentInput = document.getElementById('commentInput');
+        const commentText = commentInput.value;
+
+        if (!commentText) {
+            alert('Please enter a comment before submitting.');
+            return;
+        }
+
+        // Use axios or your preferred method to send a POST request to add a new comment
+        await axios.post('http://localhost:3000/comments', {
+            postId: postId,
+            username: usernameeElement.textContent,
+            text: commentText,
+            
+            // You may need to include additional information like user ID, etc.
+        });
+
+        // After adding the comment, refresh the post details to display the updated comments
+        getPostDetails(postId);
+
+        // Optionally, clear the comment input field
+        commentInput.value = '';
+
+    } catch (error) {
+        console.error('Error adding comment:', error);
+    }
+}
+
+async function yorumAlaniniGoster(postId) {
+    try {
+        // Fetch comments for the specified post ID
+        const commentResponse = await axios.get(`http://localhost:3000/comments?postId=${postId}`);
+        const comments = commentResponse.data;
+
+        // Create a container for comments
+        const commentsContainer = document.createElement('div');
+        commentsContainer.className = 'comments-container';
+
+        // Display each comment
+        comments.forEach(comment => {
+            const commentElement = document.createElement('div');
+            commentElement.className = 'comment';
+            commentElement.innerHTML = `
+            <h1>${comment.username}</h1>
+                <p>${comment.text}</p>
+            `;
+            commentsContainer.appendChild(commentElement);
+        });
+
+        // Append the comments container to the post details section
+        const postDetails = document.getElementById('postsDetails');
+        postDetails.appendChild(commentsContainer);
+
+    } catch (error) {
+        console.error('Error fetching comments:', error);
+    }
+}
 
 
 
@@ -61,77 +134,6 @@ loginbuton.addEventListener('click', (e) => {
 
 
 
-
-function like(id) {
-    const like = JSON.parse(localStorage.getItem('like')) || [];
-    const index = like.findIndex(item => item.id == id);
-
-    if (index !== -1) {
-        like.splice(index, 1);
-        localStorage.setItem('like', JSON.stringify(like));
-    } else {
-        like.push(db.find(item => item.id == id));
-        localStorage.setItem('like', JSON.stringify(like));
-    }
-}
-
-function bookmark(id) {
-    const bookmark = JSON.parse(localStorage.getItem('bookmark')) || [];
-    const index = bookmark.findIndex(item => item.id == id);
-
-    if (index !== -1) {
-        bookmark.splice(index, 1);
-        localStorage.setItem('bookmark', JSON.stringify(bookmark));
-    } else {
-        bookmark.push(db.find(item => item.id == id));
-        localStorage.setItem('bookmark', JSON.stringify(bookmark));
-    }
-}
-
-
-
-
-const searchForm = document.getElementById('Searchform');
-const nameInput = document.getElementById('nameInput');
-
-
-
-function formSearch() {
-    productPost.innerHTML = ''
-    axios.get('http://localhost:3000/post')
-    .then(res => {
-        db = res.data
-        const filteredData = db.filter(item => item.name.toLowerCase().includes(nameInput.value.toLowerCase()))
-        filteredData.map(item => {
-            const box = document.createElement('div')
-            box.className = 'box'
-            box.innerHTML = `
-            <div class="boxes">
-            <div class="users">
-                <img src="${item.userimage}" alt="${item.username}">
-                <h1>${item.username}</h1>
-            </div>
-            <a>${item.name}</a>
-            <img class="postImg" src="${item.media}" alt="${item.name}">
-            <div class="interaction-icons">
-                <div class="sends">
-                    <button onclick="like(${item.id})"><i class="fa-solid fa-heart"></i></button>     
-                    <button onclick="toggleCommentSection(${item.id})"><i class="fa-regular fa-comment"></i></button>     
-                    <i class="fa-solid fa-share"></i>
-                </div>
-                <button onclick="bookmark(${item.id})"><i class="fa-solid fa-bookmark"></i></button>     
-            </div>
-        </div>
-    `;
-    productPost.appendChild(box)
-        })
-    })
-}
-
-searchForm.addEventListener('submit', (e) => {
-    e.preventDefault()
-    formSearch()
-})
 
 
 

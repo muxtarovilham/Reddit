@@ -1,180 +1,237 @@
 {
-    "posts": [
-      { 
-        "id": 1,
-        "userimage": "https://img.freepik.com/free-photo/people-making-hands-heart-shape-silhouette-sunset_53876-15987.jpg?size=626&ext=jpg&ga=GA1.1.1448711260.1706918400&semt=sph",
-        "image": "https://preview.redd.it/eras-tour-coming-to-disney-for-streaming-march-15th-2024-v0-rqswstfzf8hc1.jpeg?width=320&crop=smart&auto=webp&s=a4edcb2d8234abafb39c0dcb141ca2855893d991",
-        "username": "r/television",
-        "name": "Eras Tour on Disney+",
-        "description": "Description 1",
-        "comments": []
-      },
-      { 
-        "id": 2,
-        "userimage": "https://images.pexels.com/photos/2893685/pexels-photo-2893685.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-        "image": "https://external-preview.redd.it/the-traitors-renewed-for-season-3-at-peacock-v0-dwLqfEfb4EFZQSpgN2-eRaxbe0a6IJXMI-9Nog0xWvQ.jpg?width=320&crop=smart&auto=webp&s=24c653fa69b3ad27cf196c6be0d71d90a6831038",
-        "username": "r/nba",
-        "name": "The Traitors season 3",
-        "description": "Description 2",
-        "comments": []
-      },
-      { 
-        "id": 3,
-        "userimage": "https://img.freepik.com/free-photo/people-making-hands-heart-shape-silhouette-sunset_53876-15987.jpg?size=626&ext=jpg&ga=GA1.1.1448711260.1706918400&semt=sph",
-        "image": "https://external-preview.redd.it/moana-2-announcement-v0-dkQYopbHbBivBu3ByHXqiVbLgt3HOK-hHQikbyjmnH8.jpg?width=320&crop=smart&format=pjpg&auto=webp&s=13108575d12e2770c620ef32ec240c78f5acb385",
-        "username": "r/television",
-        "name": "Moana 2",
-        "description": "Description 3",
-        "comments": []
-      },
-      { 
-        "id": 4,
-        "userimage": "https://images.pexels.com/photos/2893685/pexels-photo-2893685.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-        "image": "https://external-preview.redd.it/iceland-volcano-erupts-again-molten-rocks-spew-from-fissures-v0-FAV1G_JmUJbdBd4Y5rJbmeg1rZPTp0DsKA5E6qjy-wc.jpg?width=320&crop=smart&auto=webp&s=94a22eb5b933355c8bd16535badeada85eda81e7",
-        "username": "r/nba",
-        "name": "Iceland volcano erupts",
-        "description": "Description 4",
-        "comments": []
-      },
-      { 
-        "id": 5,
-        "userimage": "https://img.freepik.com/free-photo/people-making-hands-heart-shape-silhouette-sunset_53876-15987.jpg?size=626&ext=jpg&ga=GA1.1.1448711260.1706918400&semt=sph",
-        "image": "https://platinumlist.net/guide/wp-content/uploads/2023/03/8359_img_worlds_of_adventure-big1613913137.jpg-1024x683.webp",
-        "username": "r/television",
-        "name": "Post 5",
-        "description": "Description 5",
-        "comments": []
-      },
-      { 
-        "id": 6,
-        "userimage": "https://images.pexels.com/photos/2893685/pexels-photo-2893685.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png",
-        "username": "r/nba",
-        "name": "Post 6",
-        "description": "Description 6",
-        "comments": []
-      }
-    ],
-
-    "popular": [
-      {
-        "id": 1,
-        "userimage": "https://styles.redditmedia.com/t5_2xbci/styles/communityIcon_32btum6062v91.png",
-        "username": "r/xboxone",
-        "members": "4,571,20"
-      },
-      {
-        "id": 2,
-        "userimage": "https://styles.redditmedia.com/t5_2s84e/styles/communityIcon_g8xlzjxvilbb1.jpg?format=pjpg&s=904e57327bdb1e8dad5b23a60fbe9344e48719a6",
-        "username": "r/NBA2k",
-        "members": "1,453,29"
-      },   {
-        "id": 3,
-        "userimage": "https://styles.redditmedia.com/t5_2rrlp/styles/communityIcon_06pablpo0le21.png",
-        "username": "r/PS6",
-        "members": "1,071,26"
-      },   {
-        "id": 4,
-        "userimage": "https://styles.redditmedia.com/t5_2qh1f/styles/communityIcon_26udmxwqbrwb1.png",
-        "username": "r/apple",
-        "members": "4,637,66"
-      },   {
-        "id": 5,
-        "userimage": "https://styles.redditmedia.com/t5_2qhl2/styles/communityIcon_u1yvm8lizyv41.png",
-        "username": "r/cars",
-        "members": "1,494,6"
-      }
-    ],
-
-
-
-    "post": [
-      {
-        "id": 1,
-        "userimage": "https://img.freepik.com/free-photo/people-making-hands-heart-shape-silhouette-sunset_53876-15987.jpg?size=626&ext=jpg&ga=GA1.1.1448711260.1706918400&semt=sph",
-        "media": "https://preview.redd.it/such-an-action-would-greatly-offend-the-american-public-v0-b7ults9ni7hc1.png?auto=webp&s=ad45e7f33f693f27dc80e442cd2ec536dd8a6f8e",
-        "username": "r/television",
-        "name": "Such an action would greatly offend the American public",
-        "description": "Description 1",
-        "comments": []
-      },
-      {
-        "id": 2,
-        "userimage": "https://images.pexels.com/photos/2893685/pexels-photo-2893685.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-        "media": "https://preview.redd.it/sy4u7hwgi0v81.jpg?width=1080&crop=smart&auto=webp&s=e9e7fd7397cb2229404513ebd999f502e36ba353",
-        "username": "r/nba",
-        "name": "Unions are good!",
-        "description": "Description 2",
-        "comments": []
-      },
-      {
-        "id": 3,
-        "userimage": "https://img.freepik.com/free-photo/people-making-hands-heart-shape-silhouette-sunset_53876-15987.jpg?size=626&ext=jpg&ga=GA1.1.1448711260.1706918400&semt=sph",
-        "media": "https://preview.redd.it/come-out-of-the-grocery-store-to-this-car-on-the-right-v0-915x2lm5u8hc1.jpeg?width=640&crop=smart&auto=webp&s=d2f9185caaf351ad5cbcb0dc70fb25a2c6909b67",
-        "username": "r/television",
-        "name": "Come out of the grocery store to this car on the right.",
-        "description": "Description 3",
-        "comments": []
-      }
-    ],
-    "sports": [
-      {
-        "id": 1,
-        "userimage": "https://styles.redditmedia.com/t5_4tzb0i/styles/communityIcon_lq12c5kqjke71.png",
-        "media": "https://preview.redd.it/tonight-on-the-road-vs-the-team-with-the-best-record-in-the-v0-ispgzwy5plhc1.jpeg?width=640&crop=smart&auto=webp&s=01bfa8857425fa1c847fb0c8fce343548fe96c36",
-        "username": "r/Nba",
-        "name": "Does the NBA fix the draft lottery or is that tin foil hat craziness (year by year analysis)?",
-        "description": "Description 1",
-        "comments": []
-      },
-      {
-        "id": 2,
-        "userimage": "https://styles.redditmedia.com/t5_2qhbp/styles/communityIcon_mbj5yeuhkjyb1.png",
-        "media": "https://external-preview.redd.it/QigkP9bixpQ_F1oh_o3FHJKoffOyzzvJCCFRoSDY61I.jpg?width=640&crop=smart&auto=webp&s=cd2be188bd60796b421048a7365d41318edbc094",
-        "username": "r/Islam",
-        "name": "UFC Champion Khabib: “The Almighty Won't Approve of My Violence”",
-        "description": "Description 2",
-        "comments": []
-      },
-      {
-        "id": 3,
-        "userimage": "https://styles.redditmedia.com/t5_2qsev/styles/communityIcon_eq9p1oy6w8r51.png",
-        "media": "https://preview.redd.it/the-ufc-fumbled-the-bag-never-doing-ufc-africa-v0-re3qw190zamb1.jpg?width=640&crop=smart&auto=webp&s=bee30cca2a26468e6f27de0948e07d1532a47d5c",
-        "username": "r/ufc",
-        "name": "The ufc fumbled the bag never doing ufc africa",
-        "description": "Description 3",
-        "comments": []
-      }
-    ],
-
-    "gaming": [
-      {
-        "id": 1,
-        "userimage": "https://img.freepik.com/free-photo/people-making-hands-heart-shape-silhouette-sunset_53876-15987.jpg?size=626&ext=jpg&ga=GA1.1.1448711260.1706918400&semt=sph",
-        "media": "https://preview.redd.it/minecraft-is-minecraft-v0-eix2pfk45uib1.jpg?width=640&crop=smart&auto=webp&s=d5b9a4227edeb7e0d97817a21712c2e06ca1fad3",
-        "username": "r/mine",
-        "name": "Minecraft is minecraft",
-        "description": "Description 1",
-        "comments": []
-      },
-      {
-        "id": 2,
-        "userimage": "https://images.pexels.com/photos/2893685/pexels-photo-2893685.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-        "media": "https://preview.redd.it/custom-made-escape-from-tarkov-figure-v0-8ofcz2nw6cfc1.jpg?width=640&crop=smart&auto=webp&s=5691ba542aa92b2421c0bfd36e9c66a6900dfd76",
-        "username": "r/tarkov",
-        "name": "Custom made escape from Tarkov figure",
-        "description": "Description 2",
-        "comments": []
-      },
-      {
-        "id": 3,
-        "userimage": "https://img.freepik.com/free-photo/people-making-hands-heart-shape-silhouette-sunset_53876-15987.jpg?size=626&ext=jpg&ga=GA1.1.1448711260.1706918400&semt=sph",
-        "media": "https://preview.redd.it/usf39rzbtjs61.png?width=640&crop=smart&auto=webp&s=5bf8b27cbbafec95a2dd6abc2124500f73ed70e3",
-        "username": "r/wdogs",
-        "name": "Wrench confirmed in watch dogs legion!",
-        "description": "Description 3",
-        "comments": []
-      }
-    ],
-    "comments": []
+  "posts": [
+    {
+      "id": "1",
+      "userimage": "https://img.freepik.com/free-photo/people-making-hands-heart-shape-silhouette-sunset_53876-15987.jpg?size=626&ext=jpg&ga=GA1.1.1448711260.1706918400&semt=sph",
+      "image": "https://preview.redd.it/eras-tour-coming-to-disney-for-streaming-march-15th-2024-v0-rqswstfzf8hc1.jpeg?width=320&crop=smart&auto=webp&s=a4edcb2d8234abafb39c0dcb141ca2855893d991",
+      "username": "r/television",
+      "name": "Eras Tour on Disney+",
+      "description": "Description 1",
+      "comments": []
+    },
+    {
+      "id": "2",
+      "userimage": "https://images.pexels.com/photos/2893685/pexels-photo-2893685.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      "image": "https://external-preview.redd.it/the-traitors-renewed-for-season-3-at-peacock-v0-dwLqfEfb4EFZQSpgN2-eRaxbe0a6IJXMI-9Nog0xWvQ.jpg?width=320&crop=smart&auto=webp&s=24c653fa69b3ad27cf196c6be0d71d90a6831038",
+      "username": "r/nba",
+      "name": "The Traitors season 3",
+      "description": "Description 2",
+      "comments": []
+    },
+    {
+      "id": "3",
+      "userimage": "https://img.freepik.com/free-photo/people-making-hands-heart-shape-silhouette-sunset_53876-15987.jpg?size=626&ext=jpg&ga=GA1.1.1448711260.1706918400&semt=sph",
+      "image": "https://external-preview.redd.it/moana-2-announcement-v0-dkQYopbHbBivBu3ByHXqiVbLgt3HOK-hHQikbyjmnH8.jpg?width=320&crop=smart&format=pjpg&auto=webp&s=13108575d12e2770c620ef32ec240c78f5acb385",
+      "username": "r/television",
+      "name": "Moana 2",
+      "description": "Description 3",
+      "comments": []
+    },
+    {
+      "id": "4",
+      "userimage": "https://images.pexels.com/photos/2893685/pexels-photo-2893685.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      "image": "https://external-preview.redd.it/iceland-volcano-erupts-again-molten-rocks-spew-from-fissures-v0-FAV1G_JmUJbdBd4Y5rJbmeg1rZPTp0DsKA5E6qjy-wc.jpg?width=320&crop=smart&auto=webp&s=94a22eb5b933355c8bd16535badeada85eda81e7",
+      "username": "r/nba",
+      "name": "Iceland volcano erupts",
+      "description": "Description 4",
+      "comments": []
+    },
+    {
+      "id": "5",
+      "userimage": "https://img.freepik.com/free-photo/people-making-hands-heart-shape-silhouette-sunset_53876-15987.jpg?size=626&ext=jpg&ga=GA1.1.1448711260.1706918400&semt=sph",
+      "image": "https://platinumlist.net/guide/wp-content/uploads/2023/03/8359_img_worlds_of_adventure-big1613913137.jpg-1024x683.webp",
+      "username": "r/television",
+      "name": "Post 5",
+      "description": "Description 5",
+      "comments": []
+    },
+    {
+      "id": "6",
+      "userimage": "https://images.pexels.com/photos/2893685/pexels-photo-2893685.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png",
+      "username": "r/nba",
+      "name": "Post 6",
+      "description": "Description 6",
+      "comments": []
+    }
+  ],
+  "popular": [
+    {
+      "id": "1",
+      "userimage": "https://styles.redditmedia.com/t5_2xbci/styles/communityIcon_32btum6062v91.png",
+      "username": "r/xboxone",
+      "members": "4,571,20"
+    },
+    {
+      "id": "2",
+      "userimage": "https://styles.redditmedia.com/t5_2s84e/styles/communityIcon_g8xlzjxvilbb1.jpg?format=pjpg&s=904e57327bdb1e8dad5b23a60fbe9344e48719a6",
+      "username": "r/NBA2k",
+      "members": "1,453,29"
+    },
+    {
+      "id": "3",
+      "userimage": "https://styles.redditmedia.com/t5_2rrlp/styles/communityIcon_06pablpo0le21.png",
+      "username": "r/PS6",
+      "members": "1,071,26"
+    },
+    {
+      "id": "4",
+      "userimage": "https://styles.redditmedia.com/t5_2qh1f/styles/communityIcon_26udmxwqbrwb1.png",
+      "username": "r/apple",
+      "members": "4,637,66"
+    },
+    {
+      "id": "5",
+      "userimage": "https://styles.redditmedia.com/t5_2qhl2/styles/communityIcon_u1yvm8lizyv41.png",
+      "username": "r/cars",
+      "members": "1,494,6"
+    }
+  ],
+  "post": [
+    {
+      "id": "1",
+      "userimage": "https://img.freepik.com/free-photo/people-making-hands-heart-shape-silhouette-sunset_53876-15987.jpg?size=626&ext=jpg&ga=GA1.1.1448711260.1706918400&semt=sph",
+      "media": "https://preview.redd.it/such-an-action-would-greatly-offend-the-american-public-v0-b7ults9ni7hc1.png?auto=webp&s=ad45e7f33f693f27dc80e442cd2ec536dd8a6f8e",
+      "username": "r/television",
+      "name": "Such an action would greatly offend the American public",
+      "description": "Description 1",
+      "comments": []
+    },
+    {
+      "id": "2",
+      "userimage": "https://images.pexels.com/photos/2893685/pexels-photo-2893685.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      "media": "https://preview.redd.it/sy4u7hwgi0v81.jpg?width=1080&crop=smart&auto=webp&s=e9e7fd7397cb2229404513ebd999f502e36ba353",
+      "username": "r/nba",
+      "name": "Unions are good!",
+      "description": "Description 2",
+      "comments": []
+    },
+    {
+      "id": "3",
+      "userimage": "https://img.freepik.com/free-photo/people-making-hands-heart-shape-silhouette-sunset_53876-15987.jpg?size=626&ext=jpg&ga=GA1.1.1448711260.1706918400&semt=sph",
+      "media": "https://preview.redd.it/come-out-of-the-grocery-store-to-this-car-on-the-right-v0-915x2lm5u8hc1.jpeg?width=640&crop=smart&auto=webp&s=d2f9185caaf351ad5cbcb0dc70fb25a2c6909b67",
+      "username": "r/television",
+      "name": "Come out of the grocery store to this car on the right.",
+      "description": "Description 3",
+      "comments": []
+    }
+  ],
+  "sports": [
+    {
+      "id": "1",
+      "userimage": "https://styles.redditmedia.com/t5_4tzb0i/styles/communityIcon_lq12c5kqjke71.png",
+      "media": "https://preview.redd.it/tonight-on-the-road-vs-the-team-with-the-best-record-in-the-v0-ispgzwy5plhc1.jpeg?width=640&crop=smart&auto=webp&s=01bfa8857425fa1c847fb0c8fce343548fe96c36",
+      "username": "r/Nba",
+      "name": "Does the NBA fix the draft lottery or is that tin foil hat craziness (year by year analysis)?",
+      "description": "Description 1",
+      "comments": []
+    },
+    {
+      "id": "2",
+      "userimage": "https://styles.redditmedia.com/t5_2qhbp/styles/communityIcon_mbj5yeuhkjyb1.png",
+      "media": "https://external-preview.redd.it/QigkP9bixpQ_F1oh_o3FHJKoffOyzzvJCCFRoSDY61I.jpg?width=640&crop=smart&auto=webp&s=cd2be188bd60796b421048a7365d41318edbc094",
+      "username": "r/Islam",
+      "name": "UFC Champion Khabib: “The Almighty Won't Approve of My Violence”",
+      "description": "Description 2",
+      "comments": []
+    },
+    {
+      "id": "3",
+      "userimage": "https://styles.redditmedia.com/t5_2qsev/styles/communityIcon_eq9p1oy6w8r51.png",
+      "media": "https://preview.redd.it/the-ufc-fumbled-the-bag-never-doing-ufc-africa-v0-re3qw190zamb1.jpg?width=640&crop=smart&auto=webp&s=bee30cca2a26468e6f27de0948e07d1532a47d5c",
+      "username": "r/ufc",
+      "name": "The ufc fumbled the bag never doing ufc africa",
+      "description": "Description 3",
+      "comments": []
+    }
+  ],
+  "gaming": [
+    {
+      "id": "1",
+      "userimage": "https://img.freepik.com/free-photo/people-making-hands-heart-shape-silhouette-sunset_53876-15987.jpg?size=626&ext=jpg&ga=GA1.1.1448711260.1706918400&semt=sph",
+      "media": "https://preview.redd.it/minecraft-is-minecraft-v0-eix2pfk45uib1.jpg?width=640&crop=smart&auto=webp&s=d5b9a4227edeb7e0d97817a21712c2e06ca1fad3",
+      "username": "r/mine",
+      "name": "Minecraft is minecraft",
+      "description": "Description 1",
+      "comments": []
+    },
+    {
+      "id": "2",
+      "userimage": "https://images.pexels.com/photos/2893685/pexels-photo-2893685.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      "media": "https://preview.redd.it/custom-made-escape-from-tarkov-figure-v0-8ofcz2nw6cfc1.jpg?width=640&crop=smart&auto=webp&s=5691ba542aa92b2421c0bfd36e9c66a6900dfd76",
+      "username": "r/tarkov",
+      "name": "Custom made escape from Tarkov figure",
+      "description": "Description 2",
+      "comments": []
+    },
+    {
+      "id": "3",
+      "userimage": "https://img.freepik.com/free-photo/people-making-hands-heart-shape-silhouette-sunset_53876-15987.jpg?size=626&ext=jpg&ga=GA1.1.1448711260.1706918400&semt=sph",
+      "media": "https://preview.redd.it/usf39rzbtjs61.png?width=640&crop=smart&auto=webp&s=5bf8b27cbbafec95a2dd6abc2124500f73ed70e3",
+      "username": "r/wdogs",
+      "name": "Wrench confirmed in watch dogs legion!",
+      "description": "Description 3",
+      "comments": []
+    }
+  ],
+  "comments": [
+    {
+      "id": "f38a",
+      "postId": 3,
+      "text": "Nice post"
+    },
+    {
+      "id": "3893",
+      "postId": 3,
+      "text": "sfa"
+    },
+    {
+      "id": "598d",
+      "postId": 3,
+      "text": "Nice post"
+    },
+    {
+      "id": "1098",
+      "postId": 3,
+      "text": "Nice post"
+    },
+    {
+      "id": "7b8b",
+      "postId": 3,
+      "text": "deneme1"
+    },
+    {
+      "id": "4a00",
+      "postId": 3,
+      "text": "yorum"
+    },
+    {
+      "id": "ba05",
+      "postId": 3,
+      "text": "a"
+    },
+    {
+      "id": "5ceb",
+      "postId": 1,
+      "text": "Erdogan reiss"
+    },
+    {
+      "id": "5504",
+      "postId": 3,
+      "username": "muxtarovilham",
+      "text": "Good car!"
+    },
+    {
+      "id": "46be",
+      "postId": 2,
+      "username": "muxtarovilham",
+      "text": "Turkish Union!"
+    },
+    {
+      "id": "d397",
+      "postId": 2,
+      "username": "muxtarovilham",
+      "text": "Helloo"
+    }
+  ]
 }

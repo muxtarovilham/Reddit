@@ -83,10 +83,22 @@
                   </div>
                 </div>
               </nav>
-            <a href="./index.html" style="text-decoration: none;" class="reddit-images">
+              <a href="./index.html" style="text-decoration: none;" class="reddit-images">
                 <img src="https://seeklogo.com/images/R/reddit-icon-new-2023-logo-3F12137D65-seeklogo.com.png" alt="">
                 <p>reddit</p>
-            </a>
+            </a>  
+            <div id="loginFirst" class="login">
+                <button id="loginbuton" class="loginButton">Login</button>
+                <div class="btn-group dropdownes">
+                  <button style="background-color: transparent; border: none;" type="button" class="btn btn-secondary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa-solid fa-ellipsis" style="color: #000000;"></i>
+                  </button>
+                  <div class="dropdown-menu dropdown-menu-right">
+                    <button id="loginRegister" class="dropdown-item" type="button"><a href=""><i class="fa-solid fa-right-to-bracket" style="color: #000000;"></i> Log In / Sign Up</a></button>
+                    <button class="dropdown-item" type="button"><a href=""><i class="fa-solid fa-bag-shopping" style="color: #000000;"></i> Shop Collectible Avatars</a></button>
+                  </div>
+                </div>
+            </div>
             <div id="loginSecond" class="login">
               <div class="btn-group dropdownes">
                 <button style="background-color: transparent; border: none; display: flex; justify-content: center; align-items: center; gap: 7px;" type="button" class="btn btn-secondary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -96,14 +108,14 @@
                 </button>
                 <div class="dropdown-menu dropdown-menu-right">
                   <button class="dropdown-item" type="button"><a href="./account.html"><i class="fa-solid fa-right-to-bracket" style="color: #000000;"></i>My account</a></button>
-                  <button class="dropdown-item" type="button"><a href=""><i class="fa-solid fa-clock-rotate-left"></i>Interaction</a></button>
+                  <button class="dropdown-item" type="button"><a href="./interactions.html"><i class="fa-solid fa-clock-rotate-left"></i>Interactions</a></button>
                   <button class="dropdown-item" type="button"> 
                     <label class="switch">
                     <input onclick="myFunction()" type="checkbox">
                     <span class="slider round"></span>
                   </label>
                 </button>
-                <button onclick="endAccount()" class="dropdown-item" type="button"><a href="./index.html"><i class="fa-solid fa-right-from-bracket"></i>Sign out</a></button>                 
+                <button onclick="endAccount()" class="dropdown-item" type="button"><a href=""><i class="fa-solid fa-right-from-bracket"></i>Sign out</a></button>                 
                 </div>
               </div>
           </div>
@@ -115,29 +127,130 @@
 
   
 
-    <main style="justify-content: center; min-height: 500px; flex-direction: column;">
-      <h2 style="padding: 14px 33px 14px 33px; background-color: green; color: orangered; border-radius: 50%;">My Account</h2>
-
-      <div class="proporties">
-        <div class="karma">
-
-          <div id="userAbout" class="userAbout">
-         
-  
+    <main>
+      <div id="loginModal" class="modal">
+        <div class="modal-content">
+          <div class="cloose">
+                        <span class="close" onclick="closeModal()">&times;</span>
           </div>
-         
+            <button class="sign">Sign in Google<i class="fa-brands fa-google" style="color: #0091ff;"></i></button>
+            <button class="sign">Continue with Apple<i class="fa-brands fa-apple" style="color: #000000;"></i></button>
+            <div class="or">
+              <div class="line"></div>
+              <p>or</p>
+              <div class="line"></div>
+            </div>
+            <div id="container">
+              <div id="tabs">
+                  <p id="lt" class="tabs" onclick="loginTabFun()">Log in</p>
+                  <p id="rt" class="tabs" onclick="regTabFun()">Register</p>
+                  <div id="clear"></div>
+              </div>
+      
+              <div id="cont">
+                  <form id="login" class="comm">
+                      <h3>Sign in</h3>
+      
+                      <input id="se" type="email" placeholder="Email" required/>
+                      <input id="sp" type="password" placeholder="Password" required/>
+                      <button type="submit">Submit</button>
+                      <p style="color: orangered; width: 77%;" onclick="forTabFun()">Forget Password?</p>
+                  </form>
+                  <div id="register" class="comm">
+                      <h3>Register</h3>
+                      <input id="re" type="email" placeholder="Email" required/>
+                      <input id="rp" type="password" placeholder="Password" required/>
+                      <input id="rrp" type="password" placeholder="Re write Password" required/>
+                      <input type="submit" onclick="register()" value="Submit"/>
+      
+                  </div >
+                  <div id="forgot" class="comm">
+                  <h3>Forgot Password</h3>
+                  <div class="forgett">
+                      <input id="fe" type="email" placeholder="Email" required/>
+                      <input type="submit" onclick="forgot()" value="Submit"/>
+                  </div>
+                  </div>
+              </div>
+          </div>
         </div>
-        <div id="userDiv" class="karma">
-         <div class="userPassAbout" id="userPassAbout">
-  
-         </div>
-  
+    </div>
+    
+    
+
+    <div class="offcanva" style="left: -1px; top: 58px; width: 21%; border-right: 1px solid gainsboro; position: fixed;" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div style="background-color: transparent;" class="offcanvas-body">    
+        <ul style="padding: 14px; padding-left: 33px; gap: 7px; min-height: 88vh; display: flex; justify-content: start !important; align-items: start; flex-direction: column;" class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./index.html"><i class="fa-solid fa-house"></i> Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./popular.html"><i class="fa-solid fa-up-right-from-square" style="color: #000000;"></i> Popular</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              TOPICS <i class="fa-solid fa-chevron-down" style="color: #000000; font-size: 12px;"></i>
+            </a>
+            <ul style="border: none;" class="dropdown-menu show" data-bs-popper="static">
+              <li><a class="dropdown-item" href="./gaming.html"><i class="fa-solid fa-gamepad"></i> Gaming</a></li>
+              <li><a class="dropdown-item" href="./sports.html"><i class="fa-solid fa-volleyball"></i> Sports</a></li>
+              <li><a class="dropdown-item" href="./business.html"><i class="fa-solid fa-chart-line"></i> Business</a></li>
+              <li><a class="dropdown-item" href="./cyrpto.html"><i class="fa-brands fa-bitcoin"></i> Cyrpto</a></li>
+              <li><a class="dropdown-item" href="./tv.html"><i class="fa-solid fa-tv"></i> Television</a></li>
+              <li><a class="dropdown-item" href="./celebrity.html"><i class="fa-solid fa-cake-candles"></i> Celebrity</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              RESOURCES <i class="fa-solid fa-chevron-down" style="color: #000000; font-size: 12px;"></i>
+            </a>
+            <ul style="border: none;" class="dropdown-menu show" data-bs-popper="static">
+              <li><a class="dropdown-item" href="./about.html"><i class="fa-brands fa-reddit"></i> About Reddit</a></li>
+              <li><a class="dropdown-item" href="./advertise.html"><i class="fa-solid fa-rectangle-ad"></i> Advertise</a></li>
+              <li><a class="dropdown-item" href="./help.html"><i class="fa-solid fa-info"></i>Help</a></li>
+              <li><a class="dropdown-item" href="./blog.html"><i class="fa-solid fa-book"></i> Blog</a></li>
+              <li><a class="dropdown-item" href="./careers.html"><i class="fa-solid fa-arrow-up-right-dots"></i> Careers</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              POPULAR POSTS <i class="fa-solid fa-chevron-down" style="color: #000000; font-size: 12px;"></i>
+            </a>
+            <ul style="border: none;" class="dropdown-menu show" data-bs-popper="static">
+              <li><a class="dropdown-item" href="#">Turkish</a></li>
+              <li><a class="dropdown-item" href="#">English / Global</a></li>
+              <li><a class="dropdown-item" href="#">Deutsch</a></li>
+              <li><a class="dropdown-item" href="#">Español</a></li>
+              <li>
+                <hr style="border-top: white;" class="dropdown-divider">
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <a class="reserved" href="">Reddit, Inc. © 2024. All rights reserved.</a>
+      </div>
+    </div>
+
+
+
+      <div class="discover">
+        
+        <div class="news">
+          <div id="postsDetails">
+            
+          </div>
+          <div id="community" class="community">
+            <p>POPULAR COMMUNITIES</p>
+          </div>
+
         </div>
       </div>
-
-
-
-
     </main>
 
 
@@ -158,6 +271,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-        <script src="./assets/js/account.js"></script>
+        <script src="./assets/js/postDetails.js"></script>
 </body>
 </html>

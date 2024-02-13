@@ -86,22 +86,20 @@
               <a href="./index.html" style="text-decoration: none;" class="reddit-images">
                 <img src="https://seeklogo.com/images/R/reddit-icon-new-2023-logo-3F12137D65-seeklogo.com.png" alt="">
                 <p>reddit</p>
-            </a>
+            </a>  
             <img src="" alt="">
             <form id="Searchform">
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <input id="nameInput" type="text" placeholder="Search Reddit">
             </form>
             <div id="loginFirst" class="login">
-                <button class="barcodeButton"><i class="fa-solid fa-qrcode"></i></button>
                 <button id="loginbuton" class="loginButton">Login</button>
                 <div class="btn-group dropdownes">
                   <button style="background-color: transparent; border: none;" type="button" class="btn btn-secondary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fa-solid fa-ellipsis" style="color: #000000;"></i>
                   </button>
                   <div class="dropdown-menu dropdown-menu-right">
-                    <button class="dropdown-item" type="button"><a href=""><i class="fa-solid fa-right-to-bracket" style="color: #000000;"></i> Log In / Sign Up</a></button>
-                    <button class="dropdown-item" type="button"><a href=""><i class="fa-solid fa-arrow-pointer" style="color: #000000;"></i> Advertise on Reddit</a></button>
+                    <button id="loginRegister" class="dropdown-item" type="button"><a href=""><i class="fa-solid fa-right-to-bracket" style="color: #000000;"></i> Log In / Sign Up</a></button>
                     <button class="dropdown-item" type="button"><a href=""><i class="fa-solid fa-bag-shopping" style="color: #000000;"></i> Shop Collectible Avatars</a></button>
                   </div>
                 </div>
@@ -115,7 +113,7 @@
                 </button>
                 <div class="dropdown-menu dropdown-menu-right">
                   <button class="dropdown-item" type="button"><a href="./account.html"><i class="fa-solid fa-right-to-bracket" style="color: #000000;"></i>My account</a></button>
-                  <button class="dropdown-item" type="button"><a href=""><i class="fa-solid fa-clock-rotate-left"></i>Interaction</a></button>
+                  <button class="dropdown-item" type="button"><a href="./interactions.html"><i class="fa-solid fa-clock-rotate-left"></i>Interactions</a></button>
                   <button class="dropdown-item" type="button"> 
                     <label class="switch">
                     <input onclick="myFunction()" type="checkbox">
@@ -151,7 +149,6 @@
               <div id="tabs">
                   <p id="lt" class="tabs" onclick="loginTabFun()">Log in</p>
                   <p id="rt" class="tabs" onclick="regTabFun()">Register</p>
-      
                   <div id="clear"></div>
               </div>
       

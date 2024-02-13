@@ -136,6 +136,9 @@ function usernameChange() {
         // En sonuncu elemanı al
         var latestUser = userArray[userArray.length - 1];
 
+        // API'ye gönderilmek üzere eski veriyi sil
+        deleteUserDataFromApi(latestUser.id);
+
         // "username" öğesini güncelle
         latestUser.username = newUsername;
 
@@ -151,6 +154,27 @@ function usernameChange() {
         // Eğer userArray boşsa veya eleman içermiyorsa bir mesaj ekle
         showErrorMessage("No user information available.");
     }
+}
+
+
+function deleteUserDataFromApi(userId) {
+    // API endpoint
+    var apiUrl = "https://655e356a9f1e1093c59ab81c.mockapi.io/Api3/Api3";
+
+    // DELETE request ayarları
+    var deleteOptions = {
+        method: 'DELETE',
+    };
+
+    // Fetch API kullanarak DELETE request gönder
+    fetch(`${apiUrl}/${userId}`, deleteOptions)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Error deleting data from API: ${response.statusText}`);
+            }
+            console.log("Data successfully deleted from API.");
+        })
+        .catch(error => console.error("Error deleting data from API:", error));
 }
 
 function showSuccessMessage(message) {
@@ -265,6 +289,9 @@ function passwordChange() {
         if (currentPassword === latestUser.password) {
             // Check if the new password and confirm password match
             if (newPassword === confirmPassword) {
+                // Delete the old password from the API
+                deletePasswordFromApi(latestUser.id);
+
                 // Update the password in the user data
                 latestUser.password = newPassword;
 
@@ -273,9 +300,9 @@ function passwordChange() {
 
                 // Display success message
                 showSuccessMessages("Password changed successfully.");
+                
+                // Post updated user data to the API
                 postUserDataToApi(latestUser);
-
-
             } else {
                 showErrorMessages("New password and confirm password do not match.");
             }
@@ -286,6 +313,29 @@ function passwordChange() {
         showErrorMessages("No user information available.");
     }
 }
+
+
+function deletePasswordFromApi(userId) {
+    // API endpoint for deleting password data
+    var apiUrl = "https://655e356a9f1e1093c59ab81c.mockapi.io/Api3/Api3";
+
+    // DELETE request settings
+    var deleteOptions = {
+        method: 'DELETE',
+    };
+
+    // Fetch API using DELETE request to remove old password data
+    fetch(`${apiUrl}/${userId}`, deleteOptions)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Error deleting password data from API: ${response.statusText}`);
+            }
+            console.log("Password data successfully deleted from API.");
+        })
+        .catch(error => console.error("Error deleting password data from API:", error));
+}
+
+
 
 function showSuccessMessages(message) {
     // Başarı mesajını ekrana yazdır
