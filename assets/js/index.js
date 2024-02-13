@@ -34,10 +34,19 @@ async function getPosts() {
     }
 }
 
+
+
+
+
+
+
+
 function showPostDetails(postId) {
     // Navigate to the post details page with the post ID
     window.location.href = `postDetails.html?id=${postId}`;
 }
+
+
 
 getPosts();
 
@@ -62,31 +71,6 @@ loginbuton.addEventListener('click', (e) => {
 
 
 
-function like(id) {
-    const like = JSON.parse(localStorage.getItem('like')) || [];
-    const index = like.findIndex(item => item.id == id);
-
-    if (index !== -1) {
-        like.splice(index, 1);
-        localStorage.setItem('like', JSON.stringify(like));
-    } else {
-        like.push(db.find(item => item.id == id));
-        localStorage.setItem('like', JSON.stringify(like));
-    }
-}
-
-function bookmark(id) {
-    const bookmark = JSON.parse(localStorage.getItem('bookmark')) || [];
-    const index = bookmark.findIndex(item => item.id == id);
-
-    if (index !== -1) {
-        bookmark.splice(index, 1);
-        localStorage.setItem('bookmark', JSON.stringify(bookmark));
-    } else {
-        bookmark.push(db.find(item => item.id == id));
-        localStorage.setItem('bookmark', JSON.stringify(bookmark));
-    }
-}
 
 
 
@@ -134,6 +118,33 @@ searchForm.addEventListener('submit', (e) => {
 })
 
 
+function like(id) {
+    const like = JSON.parse(localStorage.getItem('like')) || [];
+    const index = like.findIndex(item => item.id == id);
+
+    if (index !== -1) {
+        like.splice(index, 1);
+        localStorage.setItem('like', JSON.stringify(like));
+    } else {
+        like.push(db.find(item => item.id == id));
+        localStorage.setItem('like', JSON.stringify(like));
+    }
+}
+
+function bookmark(id) {
+    const bookmark = JSON.parse(localStorage.getItem('bookmark')) || [];
+    const index = bookmark.findIndex(item => item.id == id);
+
+    if (index !== -1) {
+        bookmark.splice(index, 1);
+        localStorage.setItem('bookmark', JSON.stringify(bookmark));
+    } else {
+        bookmark.push(db.find(item => item.id == id));
+        localStorage.setItem('bookmark', JSON.stringify(bookmark));
+    }
+}
+
+
 
 
 function toggleCommentSection(postId) {
@@ -170,8 +181,8 @@ async function getPopulars() {
     try {
         const res = await axios.get('http://localhost:3000/popular');
         const data = res.data;
-        db = data
-        db.map(item => {
+        popularDb = data
+        popularDb.map(item => {
             const box = document.createElement('div');
             box.className = 'box col-12';
             box.innerHTML = `

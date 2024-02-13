@@ -282,7 +282,218 @@ main {
         flex-wrap: wrap;
         gap: 14px;
 
-      
+        .selections {
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            flex-direction: column;
+            gap: 7px;
+
+            .selects {
+                width: 100%;
+                height: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 14px;
+
+                button {
+                    width: 14%;
+                    height: 40px;
+                    background-color: transparent;
+                    color: orangered;
+                    font-weight: 600;
+                    border: 1px solid green;
+                    transition: background-color 0.3s ease;
+
+                    &:hover {
+                        background-color: green;
+                        color: white;
+                    }
+                }
+            }
+
+            .likes {
+                width: 66%;
+                display: none;
+                .box {
+                    width: 98%;
+                    height: 98%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    .boxes {
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: start;
+                        flex-direction: column;
+                        padding: 14px;
+                        gap: 7px;
+                        border-bottom: 1px solid green;
+
+                        .interaction-icons {
+                            padding-left: 7px;
+                            width: 99%;
+                            height: auto;
+                            display: flex;
+                            justify-content: end;
+                            align-items: center;
+
+                            button {
+                                background-color: transparent;
+                                color: orangered;
+                                border: 1px solid orangered;
+                                font-weight: 600;
+                                max-width: 148px;
+                                height: 40px;
+                                transition: background-color 0.3s ease;
+                                padding: 7px;
+
+                                &:hover {
+                                    background-color: orangered;
+                                    color: white;
+                                }
+                            }
+                        }
+
+                        .users {
+                            width: 100%;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            gap: 7px;
+
+                            .user {
+                                display: flex;
+                                justify-content: start;
+                                align-items: center;
+                                gap: 7px;
+
+                                h1 {
+                                    display: contents;
+                                    font-size: 14px;
+                                    color: orangered;
+                                }
+
+                                img {
+                                    width: 27px;
+                                    height: 27px;
+                                    border-radius: 50%;
+                                }
+                            }
+                        }
+
+                        a {
+                            font-size: 25px;
+                            color: orangered;
+                            font-weight: 600;
+                        }
+
+                        .postImg {
+                            width: 60%;
+                            height: 100%;
+                            border-radius: 14px;
+                        }
+                    }
+                }
+            }
+
+            .bookmarks {
+                width: 66%;
+                display: none;
+
+                .box {
+                    width: 98%;
+                    height: 98%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    .boxes {
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: start;
+                        flex-direction: column;
+                        padding: 14px;
+                        gap: 7px;
+                        border-bottom: 1px solid green;
+
+                        .interaction-icons {
+                            padding-left: 7px;
+                            width: 99%;
+                            height: auto;
+                            display: flex;
+                            justify-content: end;
+                            align-items: center;
+
+                            button {
+                                background-color: transparent;
+                                color: orangered;
+                                border: 1px solid orangered;
+                                font-weight: 600;
+                                max-width: 148px;
+                                height: 40px;
+                                transition: background-color 0.3s ease;
+                                padding: 7px;
+
+                                &:hover {
+                                    background-color: orangered;
+                                    color: white;
+                                }
+                            }
+                        }
+
+                        .users {
+                            width: 100%;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            gap: 7px;
+
+                            .user {
+                                display: flex;
+                                justify-content: start;
+                                align-items: center;
+                                gap: 7px;
+
+                                h1 {
+                                    display: contents;
+                                    font-size: 14px;
+                                    color: orangered;
+                                }
+
+                                img {
+                                    width: 27px;
+                                    height: 27px;
+                                    border-radius: 50%;
+                                }
+                            }
+                        }
+
+                        a {
+                            font-size: 25px;
+                            color: orangered;
+                            font-weight: 600;
+                        }
+
+                        .postImg {
+                            width: 60%;
+                            height: 100%;
+                            border-radius: 14px;
+                        }
+                    }
+                }
+            }
+        }
+
+
         .karma {
             width: 40%;
             min-height: 340px;
@@ -302,7 +513,7 @@ main {
                 align-items: center;
                 flex-direction: column;
 
-               
+
 
                 .blue {
                     position: absolute;
@@ -316,11 +527,12 @@ main {
                     align-items: start;
                     flex-direction: column;
                     padding: 14px;
-               
+
                     #messages {
                         display: none;
                     }
-                    h1{
+
+                    h1 {
                         display: contents;
                     }
 
@@ -336,12 +548,13 @@ main {
                         font-size: 14px;
                         background-color: transparent;
                         transition: background-color 0.3s ease;
+
                         &:hover {
                             background-color: orangered;
                             color: white;
                         }
                     }
-    
+
                     input {
                         width: 100%;
                         height: 33px;
@@ -392,7 +605,8 @@ main {
                     align-items: start;
                     flex-direction: column;
                     padding: 7px;
-                    button{
+
+                    button {
                         width: 50%;
                         height: 40px;
                         background-color: transparent;
@@ -400,6 +614,7 @@ main {
                         color: orangered;
                         transition: background-color 0.3s ease;
                         font-weight: 600;
+
                         &:hover {
                             background-color: orangered;
                             color: white;
@@ -1014,57 +1229,117 @@ main {
                     }
                 }
             }
-            #postsDetails{
+
+            #postsDetails {
                 width: 66%;
                 display: flex;
                 justify-content: center;
                 align-items: start;
                 flex-direction: column;
                 gap: 14px;
-                .comments-container{
+
+                .comments-container {
                     width: 100%;
                     height: auto;
-                    .comment{
+
+                    .comment {
                         min-height: 99px;
                         border-bottom: 1px solid gainsboro;
                         border-top: 1px solid gainsboro;
-                        h1{
-                            font-size: 21px;
+                        padding: 7px;
+
+                        p {
+                            color: gray;
+                            font-size: 18px;
+                        }
+
+                        a {
+                            font-size: 16px;
+                            display: flex;
+                            justify-content: start;
+                            align-items: center;
+                            gap: 7px;
+                            text-decoration: none;
+                            cursor: pointer;
+
+                            i {
+                                font-size: 21px;
+                                color: orangered;
+                            }
                         }
                     }
                 }
-                    .boxes{
+
+                .boxes {
+                    display: flex;
+                    justify-content: center;
+                    align-items: start;
+                    flex-direction: column;
+                    gap: 10px;
+
+                    .comment-section {
+                        width: 100%;
+                        height: auto;
                         display: flex;
-                        justify-content: center;
-                        align-items: start;
-                        flex-direction: column;
-                        gap: 10px;
-                        .interaction-icons {
-                            padding-left: 7px;
-                            width: 99%;
-                            height: auto;
+                        justify-content: start;
+                        align-items: center;
+
+                        input {
+                            width: 148px;
+                            height: 33px;
+                            border-top-left-radius: 3px;
+                            border-bottom-left-radius: 3px;
+                            border: 1px solid gainsboro;
+                            padding: 7px;
+                        }
+
+                        button {
                             display: flex;
-                            justify-content: space-between;
+                            justify-content: center;
                             align-items: center;
+                            width: 66px;
+                            height: 33px;
+                            border: none;
+                            background-color: transparent;
+                            color: orangered;
+                            font-weight: 600;
+                            transition: background-color 0.3s ease;
+                            font-size: 21px;
+
+                            &:hover {
+                                background-color: orangered;
+                                color: white;
+                            }
+                        }
+                    }
+
+                    .interaction-icons {
+                        padding-left: 7px;
+                        width: 99%;
+                        height: auto;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        button {
+                            background-color: transparent;
+                            border: transparent;
+                        }
+
+                        .send {
+                            display: flex;
+                            justify-content: start;
+                            align-items: center;
+                            gap: 14px;
 
                             button {
-                                background-color: transparent;
-                                border: transparent;
-                            }
-
-                            .send {
                                 display: flex;
                                 justify-content: start;
                                 align-items: center;
-                                gap: 14px;
+                                gap: 7px;
+                                font-weight: 600;
 
-                                button{
-                                    display: flex;
-                                    justify-content: start;
-                                    align-items: center;
-                                    gap: 7px;
-                                    font-weight: 600;
-                                     .fa-comment {
+                                .fa-comment {
                                     color: rgb(49, 49, 49);
                                     font-size: 27px;
                                     transition: 0.3s ease;
@@ -1073,42 +1348,47 @@ main {
                                         color: rgb(203, 203, 203);
                                     }
                                 }
-                                }
-                               
                             }
-                        
 
                         }
-                        .gonderiResmi{
-                            width: 100%;
-                            height: 100%;
-                            border-radius: 14px;
+
+
+                    }
+
+                    .gonderiResmi {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 14px;
+                    }
+
+                    a {
+                        font-size: 21px;
+                        font-weight: 600;
+                    }
+
+                    .users {
+                        width: 100%;
+                        height: auto;
+                        display: flex;
+                        justify-content: start;
+                        align-items: center;
+                        gap: 14px;
+
+                        h1 {
+                            font-size: 18px;
+                            font-weight: 700;
                         }
-                        a{
-                            font-size: 21px;
-                            font-weight: 600;
-                        }
-                        .users{
-                            width: 100%;
-                            height: auto;
-                            display: flex;
-                            justify-content: start;
-                            align-items: center;
-                            gap: 14px;
-                            h1{
-                                font-size: 18px;
-                                font-weight: 700;
-                            }
-                            img{
-                                border-radius: 50%;
-                                width: 40px;
-                                height: 40px;
-                            }
+
+                        img {
+                            border-radius: 50%;
+                            width: 40px;
+                            height: 40px;
                         }
                     }
+                }
             }
 
-            #posts-container {
+            .posts-container {
                 width: 66%;
 
                 .box {
@@ -1333,6 +1613,7 @@ main {
         position: fixed;
         overflow-y: auto;
         max-height: 102vh;
+      
 
         .reserved {
             width: 100%;
@@ -1415,12 +1696,13 @@ main {
     }
 
     main {
-        .proporties{
-            .karma{
+        .proporties {
+            .karma {
                 height: 400px;
-                .userAbout{
-                    .blue{
-                        button{
+
+                .userAbout {
+                    .blue {
+                        button {
                             width: 66%;
                             height: 55px;
                         }
@@ -1428,6 +1710,7 @@ main {
                 }
             }
         }
+
         .modal {
             width: 66%;
             left: 18%;
@@ -1446,14 +1729,30 @@ main {
 
 @media screen and (max-width: 750px) {
 
-    main{
-        .proporties{
+    main {
+        .proporties {
             width: 92%;
-            .karma{
+            .selections{
+                .selects{
+                    button{
+                        width: 21%;
+                    }
+                }
+                .likes{
+                    width: 90%;
+                }
+                .bookmarks{
+                    width: 90%;
+                }
+            }
+           
+
+            .karma {
                 width: 45%;
-                .userAbout{
-                    .blue{
-                        button{
+
+                .userAbout {
+                    .blue {
+                        button {
                             padding: 3px;
                             width: 80%;
                             height: 55px;
@@ -1487,15 +1786,25 @@ main {
     }
 
     main {
-        .mainImage{
+        .mainImage {
             height: 991px;
         }
-        .proporties{
+
+        .proporties {
             flex-direction: column;
-            .karma{
+            .selections{
+                .selects{
+                    button{
+                        width: 33%;
+                    }
+                }
+            }
+
+            .karma {
                 width: 90%;
             }
         }
+
         .discover {
             .news {
                 display: flex;
@@ -1536,7 +1845,7 @@ main {
             }
 
             #Searchform {
-                    display: none;
+                display: none;
             }
 
 

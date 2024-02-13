@@ -158,26 +158,26 @@ function updateCommentsUI(postId) {
 
 function like(id) {
     const like = JSON.parse(localStorage.getItem('like')) || [];
-    const index = like.findIndex(item => item.id === id);
+    const index = like.findIndex(item => item.id == id);
 
     if (index !== -1) {
         like.splice(index, 1);
         localStorage.setItem('like', JSON.stringify(like));
     } else {
-        like.push(db.find(item => item.id === id));
+        like.push(db.find(item => item.id == id));
         localStorage.setItem('like', JSON.stringify(like));
     }
 }
 
 function bookmark(id) {
     const bookmark = JSON.parse(localStorage.getItem('bookmark')) || [];
-    const index = bookmark.findIndex(item => item.id === id);
+    const index = bookmark.findIndex(item => item.id == id);
 
     if (index !== -1) {
         bookmark.splice(index, 1);
         localStorage.setItem('bookmark', JSON.stringify(bookmark));
     } else {
-        bookmark.push(db.find(item => item.id === id));
+        bookmark.push(db.find(item => item.id == id));
         localStorage.setItem('bookmark', JSON.stringify(bookmark));
     }
 }

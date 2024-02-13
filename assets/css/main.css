@@ -237,6 +237,190 @@ main .proporties {
   flex-wrap: wrap;
   gap: 14px;
 }
+main .proporties .selections {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  flex-direction: column;
+  gap: 7px;
+}
+main .proporties .selections .selects {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+}
+main .proporties .selections .selects button {
+  width: 14%;
+  height: 40px;
+  background-color: transparent;
+  color: orangered;
+  font-weight: 600;
+  border: 1px solid green;
+  transition: background-color 0.3s ease;
+}
+main .proporties .selections .selects button:hover {
+  background-color: green;
+  color: white;
+}
+main .proporties .selections .likes {
+  width: 66%;
+  display: none;
+}
+main .proporties .selections .likes .box {
+  width: 98%;
+  height: 98%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .proporties .selections .likes .box .boxes {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  padding: 14px;
+  gap: 7px;
+  border-bottom: 1px solid green;
+}
+main .proporties .selections .likes .box .boxes .interaction-icons {
+  padding-left: 7px;
+  width: 99%;
+  height: auto;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+main .proporties .selections .likes .box .boxes .interaction-icons button {
+  background-color: transparent;
+  color: orangered;
+  border: 1px solid orangered;
+  font-weight: 600;
+  max-width: 148px;
+  height: 40px;
+  transition: background-color 0.3s ease;
+  padding: 7px;
+}
+main .proporties .selections .likes .box .boxes .interaction-icons button:hover {
+  background-color: orangered;
+  color: white;
+}
+main .proporties .selections .likes .box .boxes .users {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 7px;
+}
+main .proporties .selections .likes .box .boxes .users .user {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 7px;
+}
+main .proporties .selections .likes .box .boxes .users .user h1 {
+  display: contents;
+  font-size: 14px;
+  color: orangered;
+}
+main .proporties .selections .likes .box .boxes .users .user img {
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+}
+main .proporties .selections .likes .box .boxes a {
+  font-size: 25px;
+  color: orangered;
+  font-weight: 600;
+}
+main .proporties .selections .likes .box .boxes .postImg {
+  width: 60%;
+  height: 100%;
+  border-radius: 14px;
+}
+main .proporties .selections .bookmarks {
+  width: 66%;
+  display: none;
+}
+main .proporties .selections .bookmarks .box {
+  width: 98%;
+  height: 98%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .proporties .selections .bookmarks .box .boxes {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  padding: 14px;
+  gap: 7px;
+  border-bottom: 1px solid green;
+}
+main .proporties .selections .bookmarks .box .boxes .interaction-icons {
+  padding-left: 7px;
+  width: 99%;
+  height: auto;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+main .proporties .selections .bookmarks .box .boxes .interaction-icons button {
+  background-color: transparent;
+  color: orangered;
+  border: 1px solid orangered;
+  font-weight: 600;
+  max-width: 148px;
+  height: 40px;
+  transition: background-color 0.3s ease;
+  padding: 7px;
+}
+main .proporties .selections .bookmarks .box .boxes .interaction-icons button:hover {
+  background-color: orangered;
+  color: white;
+}
+main .proporties .selections .bookmarks .box .boxes .users {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 7px;
+}
+main .proporties .selections .bookmarks .box .boxes .users .user {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 7px;
+}
+main .proporties .selections .bookmarks .box .boxes .users .user h1 {
+  display: contents;
+  font-size: 14px;
+  color: orangered;
+}
+main .proporties .selections .bookmarks .box .boxes .users .user img {
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+}
+main .proporties .selections .bookmarks .box .boxes a {
+  font-size: 25px;
+  color: orangered;
+  font-weight: 600;
+}
+main .proporties .selections .bookmarks .box .boxes .postImg {
+  width: 60%;
+  height: 100%;
+  border-radius: 14px;
+}
 main .proporties .karma {
   width: 40%;
   min-height: 340px;
@@ -890,9 +1074,24 @@ main .discover .news #postsDetails .comments-container .comment {
   min-height: 99px;
   border-bottom: 1px solid gainsboro;
   border-top: 1px solid gainsboro;
+  padding: 7px;
 }
-main .discover .news #postsDetails .comments-container .comment h1 {
+main .discover .news #postsDetails .comments-container .comment p {
+  color: gray;
+  font-size: 18px;
+}
+main .discover .news #postsDetails .comments-container .comment a {
+  font-size: 16px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 7px;
+  text-decoration: none;
+  cursor: pointer;
+}
+main .discover .news #postsDetails .comments-container .comment a i {
   font-size: 21px;
+  color: orangered;
 }
 main .discover .news #postsDetails .boxes {
   display: flex;
@@ -900,6 +1099,38 @@ main .discover .news #postsDetails .boxes {
   align-items: start;
   flex-direction: column;
   gap: 10px;
+}
+main .discover .news #postsDetails .boxes .comment-section {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+main .discover .news #postsDetails .boxes .comment-section input {
+  width: 148px;
+  height: 33px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border: 1px solid gainsboro;
+  padding: 7px;
+}
+main .discover .news #postsDetails .boxes .comment-section button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 66px;
+  height: 33px;
+  border: none;
+  background-color: transparent;
+  color: orangered;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  font-size: 21px;
+}
+main .discover .news #postsDetails .boxes .comment-section button:hover {
+  background-color: orangered;
+  color: white;
 }
 main .discover .news #postsDetails .boxes .interaction-icons {
   padding-left: 7px;
@@ -960,17 +1191,17 @@ main .discover .news #postsDetails .boxes .users img {
   width: 40px;
   height: 40px;
 }
-main .discover .news #posts-container {
+main .discover .news .posts-container {
   width: 66%;
 }
-main .discover .news #posts-container .box {
+main .discover .news .posts-container .box {
   width: 98%;
   height: 98%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-main .discover .news #posts-container .box .boxes {
+main .discover .news .posts-container .box .boxes {
   width: 100%;
   height: 100%;
   display: flex;
@@ -981,21 +1212,21 @@ main .discover .news #posts-container .box .boxes {
   padding: 14px;
   gap: 7px;
 }
-main .discover .news #posts-container .box .boxes .comment-section {
+main .discover .news .posts-container .box .boxes .comment-section {
   display: flex;
   justify-content: start;
   align-items: center;
   gap: 7px;
   width: 100%;
 }
-main .discover .news #posts-container .box .boxes .comment-section input {
+main .discover .news .posts-container .box .boxes .comment-section input {
   border-radius: 3px;
   border: 1px solid gainsboro;
   width: 24%;
   height: 33px;
   padding: 7px;
 }
-main .discover .news #posts-container .box .boxes .comment-section button {
+main .discover .news .posts-container .box .boxes .comment-section button {
   border-radius: 3px;
   border: 1px solid gray;
   width: 14%;
@@ -1004,12 +1235,12 @@ main .discover .news #posts-container .box .boxes .comment-section button {
   font-weight: 600;
   transition: background-color 0.3s ease;
 }
-main .discover .news #posts-container .box .boxes .comment-section button:hover {
+main .discover .news .posts-container .box .boxes .comment-section button:hover {
   border: 1px solid orangered;
   color: white;
   background-color: orangered;
 }
-main .discover .news #posts-container .box .boxes .interaction-icons {
+main .discover .news .posts-container .box .boxes .interaction-icons {
   padding-left: 7px;
   width: 99%;
   height: auto;
@@ -1017,71 +1248,71 @@ main .discover .news #posts-container .box .boxes .interaction-icons {
   justify-content: space-between;
   align-items: center;
 }
-main .discover .news #posts-container .box .boxes .interaction-icons button {
+main .discover .news .posts-container .box .boxes .interaction-icons button {
   background-color: transparent;
   border: transparent;
 }
-main .discover .news #posts-container .box .boxes .interaction-icons .sends {
+main .discover .news .posts-container .box .boxes .interaction-icons .sends {
   display: flex;
   justify-content: start;
   align-items: center;
   gap: 14px;
 }
-main .discover .news #posts-container .box .boxes .interaction-icons .sends .fa-comment {
+main .discover .news .posts-container .box .boxes .interaction-icons .sends .fa-comment {
   color: rgb(49, 49, 49);
   font-size: 27px;
   transition: 0.3s ease;
 }
-main .discover .news #posts-container .box .boxes .interaction-icons .sends .fa-comment:hover {
+main .discover .news .posts-container .box .boxes .interaction-icons .sends .fa-comment:hover {
   color: rgb(203, 203, 203);
 }
-main .discover .news #posts-container .box .boxes .interaction-icons .sends .fa-share {
+main .discover .news .posts-container .box .boxes .interaction-icons .sends .fa-share {
   color: rgb(49, 49, 49);
   font-size: 27px;
   transition: 0.3s ease;
 }
-main .discover .news #posts-container .box .boxes .interaction-icons .sends .fa-share:hover {
+main .discover .news .posts-container .box .boxes .interaction-icons .sends .fa-share:hover {
   cursor: pointer;
   color: rgb(0, 106, 255);
 }
-main .discover .news #posts-container .box .boxes .interaction-icons .sends .fa-heart {
+main .discover .news .posts-container .box .boxes .interaction-icons .sends .fa-heart {
   color: rgb(49, 49, 49);
   font-size: 27px;
   transition: 0.3s ease;
 }
-main .discover .news #posts-container .box .boxes .interaction-icons .sends .fa-heart:hover {
+main .discover .news .posts-container .box .boxes .interaction-icons .sends .fa-heart:hover {
   color: red;
 }
-main .discover .news #posts-container .box .boxes .interaction-icons .fa-bookmark {
+main .discover .news .posts-container .box .boxes .interaction-icons .fa-bookmark {
   color: rgb(49, 49, 49);
   font-size: 27px;
   transition: 0.3s ease;
 }
-main .discover .news #posts-container .box .boxes .interaction-icons .fa-bookmark:hover {
+main .discover .news .posts-container .box .boxes .interaction-icons .fa-bookmark:hover {
   color: black;
 }
-main .discover .news #posts-container .box .boxes .users {
+main .discover .news .posts-container .box .boxes .users {
   display: flex;
   justify-content: start;
   align-items: center;
   gap: 7px;
 }
-main .discover .news #posts-container .box .boxes .users h1 {
+main .discover .news .posts-container .box .boxes .users h1 {
   display: contents;
   font-size: 14px;
   color: rgb(33, 33, 33);
 }
-main .discover .news #posts-container .box .boxes .users img {
+main .discover .news .posts-container .box .boxes .users img {
   width: 27px;
   height: 27px;
   border-radius: 50%;
 }
-main .discover .news #posts-container .box .boxes a {
+main .discover .news .posts-container .box .boxes a {
   font-size: 25px;
   color: black;
   font-weight: 600;
 }
-main .discover .news #posts-container .box .boxes .postImg {
+main .discover .news .posts-container .box .boxes .postImg {
   width: 100%;
   height: 100%;
   border-radius: 14px;
@@ -1214,6 +1445,15 @@ main .offcanva .offcanvas::-webkit-scrollbar-thumb {
   main .proporties {
     width: 92%;
   }
+  main .proporties .selections .selects button {
+    width: 21%;
+  }
+  main .proporties .selections .likes {
+    width: 90%;
+  }
+  main .proporties .selections .bookmarks {
+    width: 90%;
+  }
   main .proporties .karma {
     width: 45%;
   }
@@ -1241,6 +1481,9 @@ main .offcanva .offcanvas::-webkit-scrollbar-thumb {
   }
   main .proporties {
     flex-direction: column;
+  }
+  main .proporties .selections .selects button {
+    width: 33%;
   }
   main .proporties .karma {
     width: 90%;

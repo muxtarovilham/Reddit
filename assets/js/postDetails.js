@@ -11,11 +11,11 @@ async function getPostDetails(postId) {
                 <h1>${post.username}</h1>
                 </div>
                 <a>${post.name}</a>
-                <p>${post.description}</p>
+                <p style="color: gray; font-weight: 600; font-size: 18px">${post.description}</p>
                 <img class="gonderiResmi" src="${post.media}" alt="${post.name}">
                 <div class="comment-section">
     <input type="text" id="commentInput" placeholder="Add a comment...">
-    <button onclick="addComment(${post.id})">Add Comment</button>
+    <button onclick="addComment(${post.id})"><i class="fa-regular fa-paper-plane"></i></button>
 </div>
                 <div class="interaction-icons">
                     <div class="send">
@@ -26,17 +26,7 @@ async function getPostDetails(postId) {
         `;
         
 
-        // Yorumları göster
-        const commentsSection = document.createElement('div');
-commentsSection.className = 'comments-section';
-post.comments.forEach(comment => {
-    commentsSection.innerHTML += `
-        <div class="comment">
-            <img src="${comment.userimage}" alt="${comment.username}">
-            <p>${comment.text}</p>
-        </div>
-    `;
-});
+
 postDetails.appendChild(commentsSection);
 
     } catch (hata) {
@@ -60,7 +50,7 @@ async function addComment(postId) {
         const commentText = commentInput.value;
 
         if (!commentText) {
-            alert('Please enter a comment before submitting.');
+            alert('Please enter a comment before sending.');
             return;
         }
 
@@ -84,35 +74,55 @@ async function addComment(postId) {
     }
 }
 
+let isCommentsVisible = false; // Global state variable to track visibility
+
 async function yorumAlaniniGoster(postId) {
     try {
-        // Fetch comments for the specified post ID
-        const commentResponse = await axios.get(`http://localhost:3000/comments?postId=${postId}`);
-        const comments = commentResponse.data;
+        // Toggle the visibility state
+        isCommentsVisible = !isCommentsVisible;
 
-        // Create a container for comments
-        const commentsContainer = document.createElement('div');
-        commentsContainer.className = 'comments-container';
+        // If comments are visible, fetch and display them
+        if (isCommentsVisible) {
+            // Fetch comments for the specified post ID
+            const commentResponse = await axios.get(`http://localhost:3000/comments?postId=${postId}`);
+            const comments = commentResponse.data;
 
-        // Display each comment
-        comments.forEach(comment => {
-            const commentElement = document.createElement('div');
-            commentElement.className = 'comment';
-            commentElement.innerHTML = `
-            <h1>${comment.username}</h1>
-                <p>${comment.text}</p>
-            `;
-            commentsContainer.appendChild(commentElement);
-        });
+            // Create a container for comments
+            const commentsContainer = document.createElement('div');
+            commentsContainer.className = 'comments-container';
 
-        // Append the comments container to the post details section
-        const postDetails = document.getElementById('postsDetails');
-        postDetails.appendChild(commentsContainer);
+            // Display each comment
+            comments.forEach(comment => {
+                const commentElement = document.createElement('div');
+                commentElement.className = 'comment';
+                commentElement.innerHTML = `
+                    <a><i class="fab fa-reddit-alien"></i>@${comment.username}</a>
+                    <p>${comment.text}</p>
+                `;
+                commentsContainer.appendChild(commentElement);
+            });
+
+            // Append the comments container to the post details section
+            const postDetails = document.getElementById('postsDetails');
+            postDetails.appendChild(commentsContainer);
+        } else {
+            // If comments are not visible, remove the comments container
+            const existingCommentsContainer = document.querySelector('.comments-container');
+            if (existingCommentsContainer) {
+                existingCommentsContainer.remove();
+            }
+        }
 
     } catch (error) {
         console.error('Error fetching comments:', error);
     }
 }
+
+
+
+
+
+
 
 
 

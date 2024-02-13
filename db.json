@@ -55,38 +55,6 @@
       "comments": []
     }
   ],
-  "popular": [
-    {
-      "id": "1",
-      "userimage": "https://styles.redditmedia.com/t5_2xbci/styles/communityIcon_32btum6062v91.png",
-      "username": "r/xboxone",
-      "members": "4,571,20"
-    },
-    {
-      "id": "2",
-      "userimage": "https://styles.redditmedia.com/t5_2s84e/styles/communityIcon_g8xlzjxvilbb1.jpg?format=pjpg&s=904e57327bdb1e8dad5b23a60fbe9344e48719a6",
-      "username": "r/NBA2k",
-      "members": "1,453,29"
-    },
-    {
-      "id": "3",
-      "userimage": "https://styles.redditmedia.com/t5_2rrlp/styles/communityIcon_06pablpo0le21.png",
-      "username": "r/PS6",
-      "members": "1,071,26"
-    },
-    {
-      "id": "4",
-      "userimage": "https://styles.redditmedia.com/t5_2qh1f/styles/communityIcon_26udmxwqbrwb1.png",
-      "username": "r/apple",
-      "members": "4,637,66"
-    },
-    {
-      "id": "5",
-      "userimage": "https://styles.redditmedia.com/t5_2qhl2/styles/communityIcon_u1yvm8lizyv41.png",
-      "username": "r/cars",
-      "members": "1,494,6"
-    }
-  ],
   "post": [
     {
       "id": "1",
@@ -94,7 +62,7 @@
       "media": "https://preview.redd.it/such-an-action-would-greatly-offend-the-american-public-v0-b7ults9ni7hc1.png?auto=webp&s=ad45e7f33f693f27dc80e442cd2ec536dd8a6f8e",
       "username": "r/television",
       "name": "Such an action would greatly offend the American public",
-      "description": "Description 1",
+      "description": "This event could deeply impact the American public and spark controversies. What event are they referring to?",
       "comments": []
     },
     {
@@ -103,7 +71,7 @@
       "media": "https://preview.redd.it/sy4u7hwgi0v81.jpg?width=1080&crop=smart&auto=webp&s=e9e7fd7397cb2229404513ebd999f502e36ba353",
       "username": "r/nba",
       "name": "Unions are good!",
-      "description": "Description 2",
+      "description": "A post about the importance and benefits of unions. Perhaps a positive message about unions from an NBA player.",
       "comments": []
     },
     {
@@ -112,7 +80,7 @@
       "media": "https://preview.redd.it/come-out-of-the-grocery-store-to-this-car-on-the-right-v0-915x2lm5u8hc1.jpeg?width=640&crop=smart&auto=webp&s=d2f9185caaf351ad5cbcb0dc70fb25a2c6909b67",
       "username": "r/television",
       "name": "Come out of the grocery store to this car on the right.",
-      "description": "Description 3",
+      "description": "An interesting vehicle spotted on the right after leaving the grocery store. It could be an exciting situation or an intriguing observation.",
       "comments": []
     }
   ],
@@ -174,6 +142,38 @@
       "comments": []
     }
   ],
+  "popular": [
+    {
+      "id": "1",
+      "userimage": "https://styles.redditmedia.com/t5_2xbci/styles/communityIcon_32btum6062v91.png",
+      "username": "r/xboxone",
+      "members": "4,571,20"
+    },
+    {
+      "id": "2",
+      "userimage": "https://styles.redditmedia.com/t5_2s84e/styles/communityIcon_g8xlzjxvilbb1.jpg?format=pjpg&s=904e57327bdb1e8dad5b23a60fbe9344e48719a6",
+      "username": "r/NBA2k",
+      "members": "1,453,29"
+    },
+    {
+      "id": "3",
+      "userimage": "https://styles.redditmedia.com/t5_2rrlp/styles/communityIcon_06pablpo0le21.png",
+      "username": "r/PS6",
+      "members": "1,071,26"
+    },
+    {
+      "id": "4",
+      "userimage": "https://styles.redditmedia.com/t5_2qh1f/styles/communityIcon_26udmxwqbrwb1.png",
+      "username": "r/apple",
+      "members": "4,637,66"
+    },
+    {
+      "id": "5",
+      "userimage": "https://styles.redditmedia.com/t5_2qhl2/styles/communityIcon_u1yvm8lizyv41.png",
+      "username": "r/cars",
+      "members": "1,494,6"
+    }
+  ],
   "comments": [
     {
       "id": "f38a",
@@ -232,6 +232,12 @@
       "postId": 2,
       "username": "muxtarovilham",
       "text": "Helloo"
+    },
+    {
+      "id": "6fb2",
+      "postId": 3,
+      "username": "muxtarovilham",
+      "text": "Jeep"
     }
   ]
 }
