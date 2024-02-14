@@ -7,7 +7,6 @@ async function getPosts() {
         const data = res.data;
         db = data
 
-        // Filter posts based on the category "gaming"
         const gamingPosts = db.filter(item => item.category === 'post');
 
         gamingPosts.forEach(item => {
@@ -46,7 +45,6 @@ async function getPosts() {
 
 
 function showPostDetails(postId) {
-    // Navigate to the post details page with the post ID
     window.location.href = `postDetails.html?id=${postId}`;
 }
 
@@ -323,21 +321,15 @@ function forgot(){
 
 
 document.addEventListener("DOMContentLoaded", function() {
-    // Retrieve the user data from localStorage
     let userData = JSON.parse(localStorage.getItem("user"));
 
-    // Check if userData is not null or undefined and if it has at least one user
     if (userData && userData.length > 0) {
-        // Assuming that the first item in the array is the user object
         let user = userData[0];
 
-        // Access the "firstname" property from the user object
         let firstname = user.username;
 
-        // Display the firstname in the paragraph element
         document.getElementById("usernamee").textContent = firstname;
     } else {
-        // If userData is not available or doesn't have any users, handle it accordingly
         document.getElementById("usernamee").textContent = "";
     }
 });
@@ -363,17 +355,14 @@ function toggleLoginSections() {
     var loginSecond = document.getElementById("loginSecond");
 
     if (usernameElement.innerHTML.trim() === "") {
-        // Username is empty, show loginFirst, hide loginSecond
         loginFirst.style.display = "block";
         loginSecond.style.display = "none";
     } else {
-        // Username is not empty, show loginSecond, hide loginFirst
         loginFirst.style.display = "none";
         loginSecond.style.display = "block";
     }
 }
 
-// Call the function on page load (assuming you have a body element)
 document.body.onload = toggleLoginSections;
 
 
@@ -391,12 +380,11 @@ document.body.onload = toggleLoginSections;
 
 
 function endAccount() {
-    // localStorage'dan "user" adlı öğeyi sil
     localStorage.removeItem("user");
 
-    // İsteğe bağlı olarak kullanıcıyı başka bir sayfaya yönlendirebilirsiniz
-    // window.location.href = "sign-out-page.html";
 
-    // İsteğe bağlı olarak kullanıcıya bir mesaj gösterebilirsiniz
     console.log("User signed out. LocalStorage key 'user' removed.");
 }
+
+
+

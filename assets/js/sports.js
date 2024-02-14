@@ -1,13 +1,15 @@
-const productPost = document.getElementById('posts-container');
+const productPost = document.getElementById('posts-others');
 
 
-// Post
-async function getSportPost() {
+async function getPosts() {
     try {
-        const res = await axios.get('http://localhost:3000/sports');
-        const data = res.data
+        const res = await axios.get('http://localhost:3000/otherPosts');
+        const data = res.data;
         db = data
-        db.map(item => {
+
+        const gamingPosts = db.filter(item => item.category === 'sports');
+
+        gamingPosts.forEach(item => {
             const box = document.createElement('div');
             box.className = 'box col-12';
             box.innerHTML = `
@@ -16,20 +18,15 @@ async function getSportPost() {
                         <img src="${item.userimage}" alt="${item.username}">
                         <h1>${item.username}</h1>
                     </div>
-                    <a>${item.name}</a>
+                    <a style="cursor: pointer" onclick="showPostDetails(${item.id})">${item.name}</a>
                     <img class="postImg" src="${item.media}" alt="${item.name}">
                     <div class="interaction-icons">
                         <div class="sends">
                             <button onclick="like(${item.id})"><i class="fa-solid fa-heart"></i></button>     
-                            <button onclick="toggleCommentSection(${item.id})"><i class="fa-regular fa-comment"></i></button>     
+                            <button onclick="showPostDetails(${item.id})"><i class="fa-regular fa-comment"></i></button>     
                             <i class="fa-solid fa-share"></i>
                         </div>
                         <button onclick="bookmark(${item.id})"><i class="fa-solid fa-bookmark"></i></button>     
-                    </div>
-                    <div class="comment-section" id="commentSection-${item.id}" style="display:none;">
-                        <input type="text" placeholder="Add a comment" id="commentInput-${item.id}">
-                        <button onclick="postComment(${item.id})">Post</button>
-                        <div id="comments-${item.id}"></div>
                     </div>
                 </div>
             `;
@@ -41,118 +38,7 @@ async function getSportPost() {
 }
 
 
-
-getSportPost()
-
-
-const searchForm = document.getElementById('Searchform');
-const nameInput = document.getElementById('nameInput');
-
-
-
-function formSearch() {
-    productPost.innerHTML = ''
-    axios.get('http://localhost:3000/sports')
-    .then(res => {
-        db = res.data
-        const filteredData = db.filter(item => item.name.toLowerCase().includes(nameInput.value.toLowerCase()))
-        filteredData.map(item => {
-            const box = document.createElement('div')
-            box.className = 'box'
-            box.innerHTML = `
-            <div class="boxes">
-            <div class="users">
-                <img src="${item.userimage}" alt="${item.username}">
-                <h1>${item.username}</h1>
-            </div>
-            <a>${item.name}</a>
-            <img class="postImg" src="${item.media}" alt="${item.name}">
-            <div class="interaction-icons">
-                <div class="sends">
-                    <button onclick="like(${item.id})"><i class="fa-solid fa-heart"></i></button>     
-                    <button onclick="toggleCommentSection(${item.id})"><i class="fa-regular fa-comment"></i></button>     
-                    <i class="fa-solid fa-share"></i>
-                </div>
-                <button onclick="bookmark(${item.id})"><i class="fa-solid fa-bookmark"></i></button>     
-            </div>
-            <div class="comment-section" id="commentSection-${item.id}" style="display:none;">
-                <input type="text" placeholder="Add a comment" id="commentInput-${item.id}">
-                <button onclick="postComment(${item.id})">Post</button>
-                <div id="comments-${item.id}"></div>
-            </div>
-        </div>
-    `;
-    productPost.appendChild(box)
-        })
-    })
-}
-
-searchForm.addEventListener('submit', (e) => {
-    e.preventDefault()
-    formSearch()
-})
-
-
-
-function toggleCommentSection(postId) {
-    const commentSection = document.getElementById(`commentSection-${postId}`);
-    const isCommentSectionVisible = commentSection.style.display === "block";
-
-    commentSection.style.display = isCommentSectionVisible ? "none" : "block";
-}
-
-function closeModal() {
-    const loginModal = document.getElementById('loginModal');
-    loginModal.style.display = 'none';
-}
-
-function postComment(postId) {
-    const commentInput = document.getElementById(`commentInput-${postId}`);
-    const commentText = commentInput.value.trim();
-
-    if (commentText !== "") {
-        // Check if user is logged in
-        if (isLoggedIn()) {
-            const comment = {
-                postId: postId,
-                text: commentText
-            };
-
-            db.find(item => item.id === postId).comments.push(comment);
-
-            updateCommentsUI(postId);
-
-            commentInput.value = "";
-        } else {
-            // Display the login modal
-            const loginModal = document.getElementById('loginModal');
-            loginModal.style.display = 'block';
-        }
-    }
-}
-
-function isLoggedIn() {
-    return false; 
-}
-
-
-function updateCommentsUI(postId) {
-    const commentsContainer = document.getElementById(`comments-${postId}`);
-    const postComments = db.find(item => item.id === postId).comments;
-
-    commentsContainer.innerHTML = "";
-
-    postComments.forEach(comment => {
-        const commentElement = document.createElement('div');
-        commentElement.className = 'comment';
-        commentElement.innerHTML = `<strong>User:</strong> ${comment.text}`;
-        commentsContainer.appendChild(commentElement);
-    });
-}
-
-
-
-
+getPosts()
 
 
 
@@ -181,6 +67,111 @@ function bookmark(id) {
         localStorage.setItem('bookmark', JSON.stringify(bookmark));
     }
 }
+
+
+
+
+
+
+
+function showPostDetails(postId) {
+    window.location.href = `otherPostDetails.html?id=${postId}`;
+}
+
+
+
+
+
+
+
+
+
+
+const loginbuton = document.getElementById('loginbuton')
+
+loginbuton.addEventListener('click', (e) => {
+    e.preventDefault()
+    loginModal.style.display = 'block';
+})
+
+
+
+
+
+
+
+
+
+
+
+
+const searchForm = document.getElementById('Searchform');
+const nameInput = document.getElementById('nameInput');
+
+
+
+function formSearch() {
+    productPost.innerHTML = ''
+    axios.get('http://localhost:3000/otherPosts')
+    .then(res => {
+        const data = res.data;
+        const gamingPosts = data.filter(item => item.category === 'sports');
+        db = gamingPosts
+        const filteredData = db.filter(item => item.name.toLowerCase().includes(nameInput.value.toLowerCase()))
+        filteredData.map(item => {
+            const box = document.createElement('div')
+            box.className = 'box'
+            box.innerHTML = `
+            <div class="boxes">
+            <div class="users">
+                <img src="${item.userimage}" alt="${item.username}">
+                <h1>${item.username}</h1>
+            </div>
+            <a style="cursor: pointer" onclick="showPostDetails(${item.id})">${item.name}</a>
+            <img class="postImg" src="${item.media}" alt="${item.name}">
+            <div class="interaction-icons">
+                <div class="sends">
+                    <button onclick="like(${item.id})"><i class="fa-solid fa-heart"></i></button>     
+                    <button onclick="showPostDetails(${item.id})"><i class="fa-regular fa-comment"></i></button>     
+                    <i class="fa-solid fa-share"></i>
+                </div>
+                <button onclick="bookmark(${item.id})"><i class="fa-solid fa-bookmark"></i></button>     
+            </div>
+        </div>
+    `;
+    productPost.appendChild(box)
+        })
+    })
+}
+
+searchForm.addEventListener('submit', (e) => {
+    e.preventDefault()
+    formSearch()
+})
+
+
+
+
+
+
+
+
+
+function closeModal() {
+    const loginModal = document.getElementById('loginModal');
+    loginModal.style.display = 'none';
+}
+
+
+
+function isLoggedIn() {
+
+    return false; 
+}
+
+
+
+
 // Popular
 
 
@@ -193,8 +184,8 @@ async function getPopulars() {
     try {
         const res = await axios.get('http://localhost:3000/popular');
         const data = res.data;
-        db = data
-        db.map(item => {
+        popularDb = data
+        popularDb.map(item => {
             const box = document.createElement('div');
             box.className = 'box col-12';
             box.innerHTML = `
@@ -214,6 +205,8 @@ async function getPopulars() {
 }
 
 getPopulars();
+
+
 
 
 
@@ -271,6 +264,11 @@ function forTabFun(){
 }
 
 
+function regTabFun() {
+    window.location.href = './signup.html'
+}
+
+
 
 async function getData() {
     await axios.get('https://655e356a9f1e1093c59ab81c.mockapi.io/Api3/Api3')
@@ -297,7 +295,7 @@ async function checkUser(e) {
         console.log("Hos geldiniz")
         window.location.href = "./index.html"
     } else {
-        console.log("wrong password or email");
+        alert("wrong password or email");
         
     }
 }
@@ -329,21 +327,15 @@ function forgot(){
 
 
 document.addEventListener("DOMContentLoaded", function() {
-    // Retrieve the user data from localStorage
     let userData = JSON.parse(localStorage.getItem("user"));
 
-    // Check if userData is not null or undefined and if it has at least one user
     if (userData && userData.length > 0) {
-        // Assuming that the first item in the array is the user object
         let user = userData[0];
 
-        // Access the "firstname" property from the user object
-        let firstname = user.firstname;
+        let firstname = user.username;
 
-        // Display the firstname in the paragraph element
         document.getElementById("usernamee").textContent = firstname;
     } else {
-        // If userData is not available or doesn't have any users, handle it accordingly
         document.getElementById("usernamee").textContent = "";
     }
 });
@@ -369,24 +361,31 @@ function toggleLoginSections() {
     var loginSecond = document.getElementById("loginSecond");
 
     if (usernameElement.innerHTML.trim() === "") {
-        // Username is empty, show loginFirst, hide loginSecond
         loginFirst.style.display = "block";
         loginSecond.style.display = "none";
     } else {
-        // Username is not empty, show loginSecond, hide loginFirst
         loginFirst.style.display = "none";
         loginSecond.style.display = "block";
     }
 }
 
-// Call the function on page load (assuming you have a body element)
 document.body.onload = toggleLoginSections;
 
 
-fetch('db.json') // Eğer HTML ve JSON aynı dizinde ise
-    .then(response => response.json())
-    .then(data => {
-        const gamingData = data.gaming;
-        console.log(gamingData);
-    })
-    .catch(error => console.error('Veri getirme hatası:', error));
+
+
+
+    // Darkmod
+
+ function myFunction() {
+  var element = document.body;
+  element.classList.toggle("dark-mode");
+}
+    
+
+
+
+function endAccount() {
+    localStorage.removeItem("user");
+    console.log("User signed out. LocalStorage key 'user' removed.");
+}

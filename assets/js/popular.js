@@ -31,12 +31,15 @@ getProducts();
 
 // Post
 
-async function getPostz() {
+async function getPosts() {
     try {
-        const res = await axios.get('http://localhost:3000/post');
+        const res = await axios.get('http://localhost:3000/otherPosts');
         const data = res.data;
-        db = data;
-        db.map(item => {np
+        db = data
+
+        const gamingPosts = db.filter(item => item.category === 'posts');
+
+        gamingPosts.forEach(item => {
             const box = document.createElement('div');
             box.className = 'box col-12';
             box.innerHTML = `
@@ -45,20 +48,15 @@ async function getPostz() {
                         <img src="${item.userimage}" alt="${item.username}">
                         <h1>${item.username}</h1>
                     </div>
-                    <a>${item.name}</a>
+                    <a style="cursor: pointer" onclick="showPostDetails(${item.id})">${item.name}</a>
                     <img class="postImg" src="${item.media}" alt="${item.name}">
                     <div class="interaction-icons">
                         <div class="sends">
                             <button onclick="like(${item.id})"><i class="fa-solid fa-heart"></i></button>     
-                            <button onclick="toggleCommentSection(${item.id})"><i class="fa-regular fa-comment"></i></button>     
+                            <button onclick="showPostDetails(${item.id})"><i class="fa-regular fa-comment"></i></button>     
                             <i class="fa-solid fa-share"></i>
                         </div>
                         <button onclick="bookmark(${item.id})"><i class="fa-solid fa-bookmark"></i></button>     
-                    </div>
-                    <div class="comment-section" id="commentSection-${item.id}" style="display:none;">
-                        <input type="text" placeholder="Add a comment" id="commentInput-${item.id}">
-                        <button onclick="postComment(${item.id})">Post</button>
-                        <div id="comments-${item.id}"></div>
                     </div>
                 </div>
             `;
@@ -71,6 +69,45 @@ async function getPostz() {
 
 
 
+
+
+
+
+
+function showPostDetails(postId) {
+    // Navigate to the post details page with the post ID
+    window.location.href = `postDetails.html?id=${postId}`;
+}
+
+
+
+getPosts();
+
+
+
+
+
+
+
+
+const loginbuton = document.getElementById('loginbuton')
+
+loginbuton.addEventListener('click', (e) => {
+    e.preventDefault()
+    loginModal.style.display = 'block';
+})
+
+
+
+
+
+
+
+
+
+
+
+
 const searchForm = document.getElementById('Searchform');
 const nameInput = document.getElementById('nameInput');
 
@@ -78,9 +115,11 @@ const nameInput = document.getElementById('nameInput');
 
 function formSearch() {
     productPost.innerHTML = ''
-    axios.get('http://localhost:5500/assets/json/db.json')
+    axios.get('http://localhost:3000/otherPosts')
     .then(res => {
-        db = res.data.post
+        const data = res.data;
+        const gamingPosts = data.filter(item => item.category === 'posts');
+        db = gamingPosts
         const filteredData = db.filter(item => item.name.toLowerCase().includes(nameInput.value.toLowerCase()))
         filteredData.map(item => {
             const box = document.createElement('div')
@@ -88,24 +127,20 @@ function formSearch() {
             box.innerHTML = `
             <div class="boxes">
             <div class="users">
-            <img src="${item.userimage}" alt="${item.username}">
-            <h1>${item.username}</h1>
+                <img src="${item.userimage}" alt="${item.username}">
+                <h1>${item.username}</h1>
             </div>
-            <a>${item.name}</a>
+            <a style="cursor: pointer" onclick="showPostDetails(${item.id})">${item.name}</a>
             <img class="postImg" src="${item.media}" alt="${item.name}">
             <div class="interaction-icons">
-            <div class="sends">
-            <button onclick="like(${item.id})"><i class="fa-solid fa-heart"></i></button>     
-            <button><i class="fa-solid fa-share"></i></button>  
+                <div class="sends">
+                    <button onclick="like(${item.id})"><i class="fa-solid fa-heart"></i></button>     
+                    <button onclick="showPostDetails(${item.id})"><i class="fa-regular fa-comment"></i></button>     
+                    <i class="fa-solid fa-share"></i>
+                </div>
+                <button onclick="bookmark(${item.id})"><i class="fa-solid fa-bookmark"></i></button>     
             </div>
-            <button onclick="bookmark(${item.id})"><i class="fa-solid fa-bookmark"></i></button>     
-            </div>
-            <div class="comment-section" id="commentSection-${item.id}" style="display:none;">
-            <input type="text" placeholder="Add a comment" id="commentInput-${item.id}">
-            <button onclick="postComment(${item.id})">Post</button>
-            <div id="comments-${item.id}"></div>
-            </div>
-            </div>
+        </div>
     `;
     productPost.appendChild(box)
         })
@@ -118,104 +153,59 @@ searchForm.addEventListener('submit', (e) => {
 })
 
 
-
-
-getPostz()
-
-
-function toggleCommentSection(postId) {
-    const commentSection = document.getElementById(`commentSection-${postId}`);
-    const isCommentSectionVisible = commentSection.style.display === "block";
-
-    commentSection.style.display = isCommentSectionVisible ? "none" : "block";
-}
-
-function closeModal() {
-    const loginModal = document.getElementById('loginModal');
-    loginModal.style.display = 'none';
-}
-
-function postComment(postId) {
-    const commentInput = document.getElementById(`commentInput-${postId}`);
-    const commentText = commentInput.value.trim();
-
-    if (commentText !== "") {
-        // Check if user is logged in
-        if (isLoggedIn()) {
-            const comment = {
-                postId: postId,
-                text: commentText
-            };
-
-            db.find(item => item.id === postId).comments.push(comment);
-
-            updateCommentsUI(postId);
-
-            commentInput.value = "";
-        } else {
-            // Display the login modal
-            const loginModal = document.getElementById('loginModal');
-            loginModal.style.display = 'block';
-        }
-    }
-}
-
-function isLoggedIn() {
-    return false; 
-}
-
-
-function updateCommentsUI(postId) {
-    const commentsContainer = document.getElementById(`comments-${postId}`);
-    const postComments = db.find(item => item.id === postId).comments;
-
-    commentsContainer.innerHTML = "";
-
-    postComments.forEach(comment => {
-        const commentElement = document.createElement('div');
-        commentElement.className = 'comment';
-        commentElement.innerHTML = `<strong>User:</strong> ${comment.text}`;
-        commentsContainer.appendChild(commentElement);
-    });
-}
-
-
-
-
-
-
-
 function like(id) {
     const like = JSON.parse(localStorage.getItem('like')) || [];
-    const index = like.findIndex(item => item.id === id);
+    const index = like.findIndex(item => item.id == id);
 
     if (index !== -1) {
         like.splice(index, 1);
         localStorage.setItem('like', JSON.stringify(like));
     } else {
-        like.push(db.find(item => item.id === id));
+        like.push(db.find(item => item.id == id));
         localStorage.setItem('like', JSON.stringify(like));
     }
 }
 
 function bookmark(id) {
     const bookmark = JSON.parse(localStorage.getItem('bookmark')) || [];
-    const index = bookmark.findIndex(item => item.id === id);
+    const index = bookmark.findIndex(item => item.id == id);
 
     if (index !== -1) {
         bookmark.splice(index, 1);
         localStorage.setItem('bookmark', JSON.stringify(bookmark));
     } else {
-        bookmark.push(db.find(item => item.id === id));
+        bookmark.push(db.find(item => item.id == id));
         localStorage.setItem('bookmark', JSON.stringify(bookmark));
     }
 }
 
 
-var emailArray=[];
-var passwordArray=[];
 
-var loginBox = document.getElementById("login");
+
+
+
+function closeModal() {
+    const loginModal = document.getElementById('loginModal');
+    loginModal.style.display = 'none';
+}
+
+
+
+function isLoggedIn() {
+
+    return false; 
+}
+
+
+
+
+// Login Forum
+
+
+
+
+
+var lgin = document.getElementById("login");
 var regBox = document.getElementById("register");
 var forgetBox = document.getElementById("forgot");
 
@@ -255,77 +245,45 @@ function forTabFun(){
 }
 
 
-function register(){
-    event.preventDefault();
+function regTabFun() {
+    window.location.href = './signup.html'
+}
 
-    var email = document.getElementById("re").value;
-    var password = document.getElementById("rp").value;
-    var passwordRetype = document.getElementById("rrp").value;
 
-    if (email == ""){
-        alert("Email required.");
-        return ;
-    }
-    else if (password == ""){
-        alert("Password required.");
-        return ;
-    }
-    else if (passwordRetype == ""){
-        alert("Password required.");
-        return ;
-    }
-    else if ( password != passwordRetype ){
-        alert("Password don't match retype your Password.");
-        return;
-    }
-    else if(emailArray.indexOf(email) == -1){
-        emailArray.push(email);
-        passwordArray.push(password);
 
-        alert(email + "  Thanks for registration. \nTry to login Now");
+async function getData() {
+    await axios.get('https://655e356a9f1e1093c59ab81c.mockapi.io/Api3/Api3')
+    .then(res => {
+        findData = res.data
+    })
+}
 
-        document.getElementById("re").value ="";
-        document.getElementById("rp").value="";
-        document.getElementById("rrp").value="";
-    }
-    else{
-        alert(email + " is already register.");
-        return ;
+async function checkUser(e) {
+    e.preventDefault()
+
+    var email = document.getElementById("se");
+    var password = document.getElementById("sp");
+
+    await getData()
+
+    let checkEmail = findData.find(item => item.email == email.value)
+    let checkPassword = findData.find(item => item.password == password.value)
+
+    if (checkEmail && checkPassword) {
+        let user = JSON.parse(localStorage.getItem("user")) || []
+        user.push(checkEmail)
+        localStorage.setItem("user", JSON.stringify(user))
+        console.log("Hos geldiniz")
+        window.location.href = "./index.html"
+    } else {
+        alert("wrong password or email");
+        
     }
 }
-function login(){
-    event.preventDefault();
 
-    var email = document.getElementById("se").value;
-    var password = document.getElementById("sp").value;
+lgin.addEventListener('submit', checkUser)
 
-    var i = emailArray.indexOf(email);
 
-    if(emailArray.indexOf(email) == -1){
-        if (email == ""){
-            alert("Email required.");
-            return ;
-        }
-        alert("Email does not exist.");
-        return ;
-    }
-    else if(passwordArray[i] != password){
-        if (password == ""){
-            alert("Password required.");
-            return ;
-        }
-        alert("Password does not match.");
-        return ;
-    }
-    else {
-        alert(email + "You are login now, welcome to our website.");
-        window.location.href = "account.html";
-        document.getElementById("se").value ="";
-        document.getElementById("sp").value="";
-        return ;
-    }
-
-}
 function forgot(){
     event.preventDefault();
 
@@ -346,16 +304,84 @@ function forgot(){
 
 
 
-const loginbuton = document.getElementById('loginbuton')
+// ---
 
-loginbuton.addEventListener('click', (e) => {
-    e.preventDefault()
-    loginModal.style.display = 'block';
-})
 
-const loginbutonn = document.getElementById('loginbutonn')
+document.addEventListener("DOMContentLoaded", function() {
+    // Retrieve the user data from localStorage
+    let userData = JSON.parse(localStorage.getItem("user"));
 
-loginbutonn.addEventListener('click', (e) => {
-    e.preventDefault()
-    loginModal.style.display = 'block';
-})
+    // Check if userData is not null or undefined and if it has at least one user
+    if (userData && userData.length > 0) {
+        // Assuming that the first item in the array is the user object
+        let user = userData[0];
+
+        // Access the "firstname" property from the user object
+        let firstname = user.username;
+
+        // Display the firstname in the paragraph element
+        document.getElementById("usernamee").textContent = firstname;
+    } else {
+        // If userData is not available or doesn't have any users, handle it accordingly
+        document.getElementById("usernamee").textContent = "";
+    }
+});
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    var usernameeElement = document.getElementById("usernamee");
+    var loginModalElement = document.getElementById("loginModal");
+
+    if (usernameeElement.innerHTML.trim() !== "") {
+        loginModalElement.style.display = "none";
+    } else {
+        loginModalElement.style.display = "block";
+    }
+});
+
+
+function toggleLoginSections() {
+    var usernameElement = document.getElementById("usernamee");
+    var loginFirst = document.getElementById("loginFirst");
+    var loginSecond = document.getElementById("loginSecond");
+
+    if (usernameElement.innerHTML.trim() === "") {
+        // Username is empty, show loginFirst, hide loginSecond
+        loginFirst.style.display = "block";
+        loginSecond.style.display = "none";
+    } else {
+        // Username is not empty, show loginSecond, hide loginFirst
+        loginFirst.style.display = "none";
+        loginSecond.style.display = "block";
+    }
+}
+
+// Call the function on page load (assuming you have a body element)
+document.body.onload = toggleLoginSections;
+
+
+
+
+
+    // Darkmod
+
+ function myFunction() {
+  var element = document.body;
+  element.classList.toggle("dark-mode");
+}
+    
+
+
+
+function endAccount() {
+    // localStorage'dan "user" adlı öğeyi sil
+    localStorage.removeItem("user");
+
+    // İsteğe bağlı olarak kullanıcıyı başka bir sayfaya yönlendirebilirsiniz
+    // window.location.href = "sign-out-page.html";
+
+    // İsteğe bağlı olarak kullanıcıya bir mesaj gösterebilirsiniz
+    console.log("User signed out. LocalStorage key 'user' removed.");
+}

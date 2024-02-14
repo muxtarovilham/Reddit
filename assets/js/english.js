@@ -7,7 +7,7 @@ async function getPosts() {
         const data = res.data;
         db = data
 
-        const gamingPosts = db.filter(item => item.category === 'business');
+        const gamingPosts = db.filter(item => item.category === 'english');
 
         gamingPosts.forEach(item => {
             const box = document.createElement('div');
@@ -115,7 +115,7 @@ function formSearch() {
     axios.get('http://localhost:3000/otherPosts')
     .then(res => {
         const data = res.data;
-        const gamingPosts = data.filter(item => item.category === 'business');
+        const gamingPosts = data.filter(item => item.category === 'english');
         db = gamingPosts
         const filteredData = db.filter(item => item.name.toLowerCase().includes(nameInput.value.toLowerCase()))
         filteredData.map(item => {
