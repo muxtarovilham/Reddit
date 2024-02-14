@@ -1,14 +1,16 @@
-const productPost = document.getElementById('posts-container');
+const productPost = document.getElementById('posts-gaming');
 
 
-// Post
-
-async function getPostz() {
+async function getPosts() {
     try {
-        const res = await axios.get('http://localhost:3000/gaming');
+        const res = await axios.get('http://localhost:3000/otherPosts');
         const data = res.data;
-        db = data;
-        db.map(item => {
+        db = data
+
+        // Filter posts based on the category "gaming"
+        const gamingPosts = db.filter(item => item.category === 'gaming');
+
+        gamingPosts.forEach(item => {
             const box = document.createElement('div');
             box.className = 'box col-12';
             box.innerHTML = `
@@ -17,20 +19,15 @@ async function getPostz() {
                         <img src="${item.userimage}" alt="${item.username}">
                         <h1>${item.username}</h1>
                     </div>
-                    <a>${item.name}</a>
+                    <a style="cursor: pointer" onclick="showPostDetails(${item.id})">${item.name}</a>
                     <img class="postImg" src="${item.media}" alt="${item.name}">
                     <div class="interaction-icons">
                         <div class="sends">
                             <button onclick="like(${item.id})"><i class="fa-solid fa-heart"></i></button>     
-                            <button onclick="toggleCommentSection(${item.id})"><i class="fa-regular fa-comment"></i></button>     
+                            <button onclick="showPostDetails(${item.id})"><i class="fa-regular fa-comment"></i></button>     
                             <i class="fa-solid fa-share"></i>
                         </div>
                         <button onclick="bookmark(${item.id})"><i class="fa-solid fa-bookmark"></i></button>     
-                    </div>
-                    <div class="comment-section" id="commentSection-${item.id}" style="display:none;">
-                        <input type="text" placeholder="Add a comment" id="commentInput-${item.id}">
-                        <button onclick="postComment(${item.id})">Post</button>
-                        <div id="comments-${item.id}"></div>
                     </div>
                 </div>
             `;
@@ -42,8 +39,71 @@ async function getPostz() {
 }
 
 
+getPosts()
 
-getPostz()
+
+
+function like(id) {
+    const like = JSON.parse(localStorage.getItem('like')) || [];
+    const index = like.findIndex(item => item.id == id);
+
+    if (index !== -1) {
+        like.splice(index, 1);
+        localStorage.setItem('like', JSON.stringify(like));
+    } else {
+        like.push(db.find(item => item.id == id));
+        localStorage.setItem('like', JSON.stringify(like));
+    }
+}
+
+function bookmark(id) {
+    const bookmark = JSON.parse(localStorage.getItem('bookmark')) || [];
+    const index = bookmark.findIndex(item => item.id == id);
+
+    if (index !== -1) {
+        bookmark.splice(index, 1);
+        localStorage.setItem('bookmark', JSON.stringify(bookmark));
+    } else {
+        bookmark.push(db.find(item => item.id == id));
+        localStorage.setItem('bookmark', JSON.stringify(bookmark));
+    }
+}
+
+
+
+
+
+
+
+function showPostDetails(postId) {
+    // Navigate to the post details page with the post ID
+    window.location.href = `otherPostDetails.html?id=${postId}`;
+}
+
+
+
+
+
+
+
+
+
+
+const loginbuton = document.getElementById('loginbuton')
+
+loginbuton.addEventListener('click', (e) => {
+    e.preventDefault()
+    loginModal.style.display = 'block';
+})
+
+
+
+
+
+
+
+
+
 
 
 
@@ -54,9 +114,11 @@ const nameInput = document.getElementById('nameInput');
 
 function formSearch() {
     productPost.innerHTML = ''
-    axios.get('http://localhost:3000/gaming')
+    axios.get('http://localhost:3000/otherPosts')
     .then(res => {
-        db = res.data
+        const data = res.data;
+        const gamingPosts = data.filter(item => item.category === 'gaming');
+        db = gamingPosts
         const filteredData = db.filter(item => item.name.toLowerCase().includes(nameInput.value.toLowerCase()))
         filteredData.map(item => {
             const box = document.createElement('div')
@@ -67,20 +129,15 @@ function formSearch() {
                 <img src="${item.userimage}" alt="${item.username}">
                 <h1>${item.username}</h1>
             </div>
-            <a>${item.name}</a>
+            <a style="cursor: pointer" onclick="showPostDetails(${item.id})">${item.name}</a>
             <img class="postImg" src="${item.media}" alt="${item.name}">
             <div class="interaction-icons">
                 <div class="sends">
                     <button onclick="like(${item.id})"><i class="fa-solid fa-heart"></i></button>     
-                    <button onclick="toggleCommentSection(${item.id})"><i class="fa-regular fa-comment"></i></button>     
+                    <button onclick="showPostDetails(${item.id})"><i class="fa-regular fa-comment"></i></button>     
                     <i class="fa-solid fa-share"></i>
                 </div>
                 <button onclick="bookmark(${item.id})"><i class="fa-solid fa-bookmark"></i></button>     
-            </div>
-            <div class="comment-section" id="commentSection-${item.id}" style="display:none;">
-                <input type="text" placeholder="Add a comment" id="commentInput-${item.id}">
-                <button onclick="postComment(${item.id})">Post</button>
-                <div id="comments-${item.id}"></div>
             </div>
         </div>
     `;
@@ -96,93 +153,27 @@ searchForm.addEventListener('submit', (e) => {
 
 
 
-function toggleCommentSection(postId) {
-    const commentSection = document.getElementById(`commentSection-${postId}`);
-    const isCommentSectionVisible = commentSection.style.display === "block";
 
-    commentSection.style.display = isCommentSectionVisible ? "none" : "block";
-}
+
+
+
+
 
 function closeModal() {
     const loginModal = document.getElementById('loginModal');
     loginModal.style.display = 'none';
 }
 
-function postComment(postId) {
-    const commentInput = document.getElementById(`commentInput-${postId}`);
-    const commentText = commentInput.value.trim();
 
-    if (commentText !== "") {
-        // Check if user is logged in
-        if (isLoggedIn()) {
-            const comment = {
-                postId: postId,
-                text: commentText
-            };
-
-            db.find(item => item.id === postId).comments.push(comment);
-
-            updateCommentsUI(postId);
-
-            commentInput.value = "";
-        } else {
-            // Display the login modal
-            const loginModal = document.getElementById('loginModal');
-            loginModal.style.display = 'block';
-        }
-    }
-}
 
 function isLoggedIn() {
+
     return false; 
 }
 
 
-function updateCommentsUI(postId) {
-    const commentsContainer = document.getElementById(`comments-${postId}`);
-    const postComments = db.find(item => item.id === postId).comments;
-
-    commentsContainer.innerHTML = "";
-
-    postComments.forEach(comment => {
-        const commentElement = document.createElement('div');
-        commentElement.className = 'comment';
-        commentElement.innerHTML = `<strong>User:</strong> ${comment.text}`;
-        commentsContainer.appendChild(commentElement);
-    });
-}
 
 
-
-
-
-
-
-function like(id) {
-    const like = JSON.parse(localStorage.getItem('like')) || [];
-    const index = like.findIndex(item => item.id === id);
-
-    if (index !== -1) {
-        like.splice(index, 1);
-        localStorage.setItem('like', JSON.stringify(like));
-    } else {
-        like.push(db.find(item => item.id === id));
-        localStorage.setItem('like', JSON.stringify(like));
-    }
-}
-
-function bookmark(id) {
-    const bookmark = JSON.parse(localStorage.getItem('bookmark')) || [];
-    const index = bookmark.findIndex(item => item.id === id);
-
-    if (index !== -1) {
-        bookmark.splice(index, 1);
-        localStorage.setItem('bookmark', JSON.stringify(bookmark));
-    } else {
-        bookmark.push(db.find(item => item.id === id));
-        localStorage.setItem('bookmark', JSON.stringify(bookmark));
-    }
-}
 // Popular
 
 
@@ -195,8 +186,8 @@ async function getPopulars() {
     try {
         const res = await axios.get('http://localhost:3000/popular');
         const data = res.data;
-        db = data
-        db.map(item => {
+        popularDb = data
+        popularDb.map(item => {
             const box = document.createElement('div');
             box.className = 'box col-12';
             box.innerHTML = `
@@ -230,7 +221,6 @@ getPopulars();
 
 
 // Login Forum
-
 
 
 
@@ -276,6 +266,11 @@ function forTabFun(){
 }
 
 
+function regTabFun() {
+    window.location.href = './signup.html'
+}
+
+
 
 async function getData() {
     await axios.get('https://655e356a9f1e1093c59ab81c.mockapi.io/Api3/Api3')
@@ -300,9 +295,9 @@ async function checkUser(e) {
         user.push(checkEmail)
         localStorage.setItem("user", JSON.stringify(user))
         console.log("Hos geldiniz")
-        window.location.href = "./gaming.html"
+        window.location.href = "./index.html"
     } else {
-        console.log("wrong password or email");
+        alert("wrong password or email");
         
     }
 }
@@ -330,8 +325,7 @@ function forgot(){
 
 
 
-
-
+// ---
 
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -344,7 +338,7 @@ document.addEventListener("DOMContentLoaded", function() {
         let user = userData[0];
 
         // Access the "firstname" property from the user object
-        let firstname = user.firstname;
+        let firstname = user.username;
 
         // Display the firstname in the paragraph element
         document.getElementById("usernamee").textContent = firstname;
@@ -355,16 +349,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-document.addEventListener("DOMContentLoaded", function () {
-    var usernameeElement = document.getElementById("usernamee");
-    var loginSecondElement = document.getElementById("LoginSecond");
 
-    if (usernameeElement.innerHTML.trim() === "") {
-        loginSecondElement.style.display = "none";
-    } else {
-        loginSecondElement.style.display = "block";
-    }
-});
 
 document.addEventListener("DOMContentLoaded", function () {
     var usernameeElement = document.getElementById("usernamee");
@@ -376,7 +361,6 @@ document.addEventListener("DOMContentLoaded", function () {
         loginModalElement.style.display = "block";
     }
 });
-
 
 
 function toggleLoginSections() {

@@ -314,6 +314,50 @@ main {
                     }
                 }
             }
+            .comments{
+                width: 66%;
+                display: none;
+                tbody{
+                    width: 100%;
+                    height: auto;
+                    display: flex;
+                    justify-content: center;
+                    align-items: start;
+                    flex-direction: column;
+                    gap: 10px;
+                    tr{
+                        width: 100%;
+                        height: auto;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        gap: 7px;
+                        border-bottom: 1px solid gainsboro;
+                        padding: 7px;
+                        td{
+                            height: auto;
+                            display: flex;
+                            align-items: center;
+                            font-size: 18px;
+                            color: rgb(58, 58, 58);
+                            font-weight: 600;
+                            button{
+                                width: 148px;
+                                height: 33px;
+                                border: 1px solid orangered;
+                                color: orangered;
+                                background-color: transparent;
+                                font-weight: 600;
+                                transition: background-color 0.3s ease;
+                                &:hover{
+                                    background-color: orangered;
+                                    color: white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
 
             .likes {
                 width: 66%;
@@ -334,7 +378,8 @@ main {
                         flex-direction: column;
                         padding: 14px;
                         gap: 7px;
-                        border-bottom: 1px solid green;
+                        border-bottom: 1px solid orangered;
+                        border-top: 1px solid orangered;
 
                         .interaction-icons {
                             padding-left: 7px;
@@ -378,6 +423,7 @@ main {
                                     display: contents;
                                     font-size: 14px;
                                     color: orangered;
+                                    font-weight: 700;
                                 }
 
                                 img {
@@ -424,6 +470,7 @@ main {
                         padding: 14px;
                         gap: 7px;
                         border-bottom: 1px solid green;
+                        border-top: 1px solid green;
 
                         .interaction-icons {
                             padding-left: 7px;
@@ -466,7 +513,8 @@ main {
                                 h1 {
                                     display: contents;
                                     font-size: 14px;
-                                    color: orangered;
+                                    color: green;
+                                    font-weight: 700;
                                 }
 
                                 img {
@@ -479,7 +527,7 @@ main {
 
                         a {
                             font-size: 25px;
-                            color: orangered;
+                            color: green;
                             font-weight: 600;
                         }
 
@@ -1237,6 +1285,7 @@ main {
                 align-items: start;
                 flex-direction: column;
                 gap: 14px;
+                padding: 7px;
 
                 .comments-container {
                     width: 100%;
@@ -1775,7 +1824,7 @@ main {
             }
 
             .login {
-                width: 40%;
+                width: 50%;
             }
 
             #Searchform {
@@ -1796,6 +1845,7 @@ main {
                 .selects{
                     button{
                         width: 33%;
+                        padding: 3px;
                     }
                 }
             }
@@ -1812,6 +1862,9 @@ main {
                 align-items: center;
 
                 #posts-container {
+                    width: 100%;
+                }
+                #posts-gaming {
                     width: 100%;
                 }
 
@@ -1837,8 +1890,8 @@ main {
     header {
         nav {
             gap: 10px;
-            justify-content: space-around;
-            width: 90%;
+            justify-content: start;
+            width: 100%;
 
             #offcanvasNavbar {
                 width: 71%;

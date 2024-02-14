@@ -3,10 +3,14 @@ const productPost = document.getElementById('posts-container');
 
 async function getPosts() {
     try {
-        const res = await axios.get('http://localhost:3000/post');
+        const res = await axios.get('http://localhost:3000/otherPosts');
         const data = res.data;
         db = data
-        db.map(item => {
+
+        // Filter posts based on the category "gaming"
+        const gamingPosts = db.filter(item => item.category === 'post');
+
+        gamingPosts.forEach(item => {
             const box = document.createElement('div');
             box.className = 'box col-12';
             box.innerHTML = `
@@ -20,7 +24,7 @@ async function getPosts() {
                     <div class="interaction-icons">
                         <div class="sends">
                             <button onclick="like(${item.id})"><i class="fa-solid fa-heart"></i></button>     
-                            <button onclick="toggleCommentSection(${item.id})"><i class="fa-regular fa-comment"></i></button>     
+                            <button onclick="showPostDetails(${item.id})"><i class="fa-regular fa-comment"></i></button>     
                             <i class="fa-solid fa-share"></i>
                         </div>
                         <button onclick="bookmark(${item.id})"><i class="fa-solid fa-bookmark"></i></button>     
@@ -95,12 +99,12 @@ function formSearch() {
                 <img src="${item.userimage}" alt="${item.username}">
                 <h1>${item.username}</h1>
             </div>
-            <a>${item.name}</a>
+            <a style="cursor: pointer" onclick="showPostDetails(${item.id})">${item.name}</a>
             <img class="postImg" src="${item.media}" alt="${item.name}">
             <div class="interaction-icons">
                 <div class="sends">
                     <button onclick="like(${item.id})"><i class="fa-solid fa-heart"></i></button>     
-                    <button onclick="toggleCommentSection(${item.id})"><i class="fa-regular fa-comment"></i></button>     
+                    <button onclick="showPostDetails(${item.id})"><i class="fa-regular fa-comment"></i></button>     
                     <i class="fa-solid fa-share"></i>
                 </div>
                 <button onclick="bookmark(${item.id})"><i class="fa-solid fa-bookmark"></i></button>     
@@ -147,12 +151,7 @@ function bookmark(id) {
 
 
 
-function toggleCommentSection(postId) {
-    const commentSection = document.getElementById(`commentSection-${postId}`);
-    const isCommentSectionVisible = commentSection.style.display === "block";
 
-    commentSection.style.display = isCommentSectionVisible ? "none" : "block";
-}
 
 function closeModal() {
     const loginModal = document.getElementById('loginModal');

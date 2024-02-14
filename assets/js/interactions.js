@@ -167,11 +167,81 @@ function deleteBookmark(index) {
 
 
 function displayLike() {
-    likes.style.display = 'block';
-    bookmarks.style.display = 'none';
+    var commentsTable = document.getElementById("comments");
+    
+    // Tablonun görünürlüğünü toggle et
+    if (likes.style.display === "none" || likes.style.display === "") {
+        likes.style.display = "flex"; // "table" olarak ayarlanarak tablo görünür hale getirilir
+    } else {
+        likes.style.display = "none"; // Görünüyorsa gizle
+    }
 }
 
 function displayBookmark() {
-    likes.style.display = 'none';
-    bookmarks.style.display = 'block';
+    var commentsTable = document.getElementById("comments");
+    
+    // Tablonun görünürlüğünü toggle et
+    if (bookmarks.style.display === "none" || bookmarks.style.display === "") {
+        bookmarks.style.display = "flex"; // "table" olarak ayarlanarak tablo görünür hale getirilir
+    } else {
+        bookmarks.style.display = "none"; // Görünüyorsa gizle
+    }
 }
+
+
+
+
+
+var commentsTable = document.getElementById("comments");
+var usernameeElement = document.getElementById("usernamee");
+
+// Veriyi almak için fetch kullanıyoruz
+fetch('http://localhost:3000/comments')
+    .then(response => response.json())
+    .then(data => {
+        // data içinde döngü yaparak username'e sahip olanları bulup ekrana yazdırıyoruz
+        data.forEach(comment => {
+            if (comment.username) {
+                // Kullanıcı adı ile eşleşen yorumları commentsTable içine ekliyoruz
+                if (comment.username === usernameeElement.textContent) {
+                    var row = commentsTable.insertRow();
+                    var cell = row.insertCell(0);
+                    cell.textContent = comment.text;
+
+                    // Delete butonunu oluşturuyoruz
+                    var deleteButton = document.createElement("button");
+                    deleteButton.textContent = "Delete";
+                    deleteButton.addEventListener("click", function() {
+                        // Delete butonuna tıklandığında API'ye DELETE isteği gönderiyoruz
+                        fetch(`http://localhost:3000/comments/${comment.id}`, {
+                            method: 'DELETE',
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            // Yorum başarıyla silindiğinde tablodan da kaldırıyoruz
+                            commentsTable.deleteRow(row.rowIndex);
+                        })
+                        .catch(error => console.error('Hata:', error));
+                    });
+
+                    // Delete butonunu hücreye ekliyoruz
+                    var cellDeleteButton = row.insertCell(1);
+                    cellDeleteButton.appendChild(deleteButton);
+                }
+            }
+        });
+    })
+    .catch(error => console.error('Hata:', error));
+
+
+
+    function displayComment() {
+        var commentsTable = document.getElementById("comments");
+        
+        // Tablonun görünürlüğünü toggle et
+        if (commentsTable.style.display === "none" || commentsTable.style.display === "") {
+            commentsTable.style.display = "table"; // "table" olarak ayarlanarak tablo görünür hale getirilir
+        } else {
+            commentsTable.style.display = "none"; // Görünüyorsa gizle
+        }
+    }

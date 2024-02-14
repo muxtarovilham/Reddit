@@ -55,7 +55,7 @@
       "comments": []
     }
   ],
-  "post": [
+  "otherPosts": [
     {
       "id": "1",
       "userimage": "https://img.freepik.com/free-photo/people-making-hands-heart-shape-silhouette-sunset_53876-15987.jpg?size=626&ext=jpg&ga=GA1.1.1448711260.1706918400&semt=sph",
@@ -63,6 +63,7 @@
       "username": "r/television",
       "name": "Such an action would greatly offend the American public",
       "description": "This event could deeply impact the American public and spark controversies. What event are they referring to?",
+      "category": "post",
       "comments": []
     },
     {
@@ -72,6 +73,7 @@
       "username": "r/nba",
       "name": "Unions are good!",
       "description": "A post about the importance and benefits of unions. Perhaps a positive message about unions from an NBA player.",
+      "category": "post",
       "comments": []
     },
     {
@@ -81,64 +83,67 @@
       "username": "r/television",
       "name": "Come out of the grocery store to this car on the right.",
       "description": "An interesting vehicle spotted on the right after leaving the grocery store. It could be an exciting situation or an intriguing observation.",
+      "category": "post",
       "comments": []
-    }
-  ],
-  "sports": [
+    },
     {
-      "id": "1",
+      "id": "4",
       "userimage": "https://styles.redditmedia.com/t5_4tzb0i/styles/communityIcon_lq12c5kqjke71.png",
       "media": "https://preview.redd.it/tonight-on-the-road-vs-the-team-with-the-best-record-in-the-v0-ispgzwy5plhc1.jpeg?width=640&crop=smart&auto=webp&s=01bfa8857425fa1c847fb0c8fce343548fe96c36",
       "username": "r/Nba",
       "name": "Does the NBA fix the draft lottery or is that tin foil hat craziness (year by year analysis)?",
       "description": "Description 1",
+      "category": "sports",
       "comments": []
     },
     {
-      "id": "2",
+      "id": "5",
       "userimage": "https://styles.redditmedia.com/t5_2qhbp/styles/communityIcon_mbj5yeuhkjyb1.png",
       "media": "https://external-preview.redd.it/QigkP9bixpQ_F1oh_o3FHJKoffOyzzvJCCFRoSDY61I.jpg?width=640&crop=smart&auto=webp&s=cd2be188bd60796b421048a7365d41318edbc094",
       "username": "r/Islam",
       "name": "UFC Champion Khabib: “The Almighty Won't Approve of My Violence”",
       "description": "Description 2",
+      "category": "sports",
       "comments": []
     },
     {
-      "id": "3",
+      "id": "6",
       "userimage": "https://styles.redditmedia.com/t5_2qsev/styles/communityIcon_eq9p1oy6w8r51.png",
       "media": "https://preview.redd.it/the-ufc-fumbled-the-bag-never-doing-ufc-africa-v0-re3qw190zamb1.jpg?width=640&crop=smart&auto=webp&s=bee30cca2a26468e6f27de0948e07d1532a47d5c",
       "username": "r/ufc",
       "name": "The ufc fumbled the bag never doing ufc africa",
       "description": "Description 3",
+      "category": "sports",
       "comments": []
-    }
-  ],
-  "gaming": [
+    },
     {
-      "id": "1",
+      "id": "7",
       "userimage": "https://img.freepik.com/free-photo/people-making-hands-heart-shape-silhouette-sunset_53876-15987.jpg?size=626&ext=jpg&ga=GA1.1.1448711260.1706918400&semt=sph",
       "media": "https://preview.redd.it/minecraft-is-minecraft-v0-eix2pfk45uib1.jpg?width=640&crop=smart&auto=webp&s=d5b9a4227edeb7e0d97817a21712c2e06ca1fad3",
       "username": "r/mine",
       "name": "Minecraft is minecraft",
       "description": "Description 1",
+      "category": "gaming",
       "comments": []
     },
     {
-      "id": "2",
+      "id": "8",
       "userimage": "https://images.pexels.com/photos/2893685/pexels-photo-2893685.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
       "media": "https://preview.redd.it/custom-made-escape-from-tarkov-figure-v0-8ofcz2nw6cfc1.jpg?width=640&crop=smart&auto=webp&s=5691ba542aa92b2421c0bfd36e9c66a6900dfd76",
       "username": "r/tarkov",
       "name": "Custom made escape from Tarkov figure",
       "description": "Description 2",
+      "category": "gaming",
       "comments": []
     },
     {
-      "id": "3",
+      "id": "9",
       "userimage": "https://img.freepik.com/free-photo/people-making-hands-heart-shape-silhouette-sunset_53876-15987.jpg?size=626&ext=jpg&ga=GA1.1.1448711260.1706918400&semt=sph",
       "media": "https://preview.redd.it/usf39rzbtjs61.png?width=640&crop=smart&auto=webp&s=5bf8b27cbbafec95a2dd6abc2124500f73ed70e3",
       "username": "r/wdogs",
       "name": "Wrench confirmed in watch dogs legion!",
       "description": "Description 3",
+      "category": "gaming",
       "comments": []
     }
   ],
@@ -216,28 +221,34 @@
       "text": "Erdogan reiss"
     },
     {
-      "id": "5504",
+      "id": "9c8c",
       "postId": 3,
       "username": "muxtarovilham",
-      "text": "Good car!"
+      "text": "Nice car"
     },
     {
-      "id": "46be",
-      "postId": 2,
-      "username": "muxtarovilham",
-      "text": "Turkish Union!"
+      "id": "a332",
+      "postId": 1,
+      "username": "",
+      "text": "fads"
     },
     {
-      "id": "d397",
-      "postId": 2,
-      "username": "muxtarovilham",
-      "text": "Helloo"
+      "id": "21a7",
+      "postId": 1,
+      "username": "",
+      "text": "heloo"
     },
     {
-      "id": "6fb2",
-      "postId": 3,
+      "id": "d1b0",
+      "postId": 5,
       "username": "muxtarovilham",
-      "text": "Jeep"
+      "text": "bunela"
+    },
+    {
+      "id": "195d",
+      "postId": 9,
+      "username": "muxtarovilham",
+      "text": "Bu ne oyun gardas"
     }
   ]
 }

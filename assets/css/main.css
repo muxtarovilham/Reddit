@@ -267,6 +267,50 @@ main .proporties .selections .selects button:hover {
   background-color: green;
   color: white;
 }
+main .proporties .selections .comments {
+  width: 66%;
+  display: none;
+}
+main .proporties .selections .comments tbody {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  gap: 10px;
+}
+main .proporties .selections .comments tbody tr {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 7px;
+  border-bottom: 1px solid gainsboro;
+  padding: 7px;
+}
+main .proporties .selections .comments tbody tr td {
+  height: auto;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  color: rgb(58, 58, 58);
+  font-weight: 600;
+}
+main .proporties .selections .comments tbody tr td button {
+  width: 148px;
+  height: 33px;
+  border: 1px solid orangered;
+  color: orangered;
+  background-color: transparent;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+main .proporties .selections .comments tbody tr td button:hover {
+  background-color: orangered;
+  color: white;
+}
 main .proporties .selections .likes {
   width: 66%;
   display: none;
@@ -287,7 +331,8 @@ main .proporties .selections .likes .box .boxes {
   flex-direction: column;
   padding: 14px;
   gap: 7px;
-  border-bottom: 1px solid green;
+  border-bottom: 1px solid orangered;
+  border-top: 1px solid orangered;
 }
 main .proporties .selections .likes .box .boxes .interaction-icons {
   padding-left: 7px;
@@ -328,6 +373,7 @@ main .proporties .selections .likes .box .boxes .users .user h1 {
   display: contents;
   font-size: 14px;
   color: orangered;
+  font-weight: 700;
 }
 main .proporties .selections .likes .box .boxes .users .user img {
   width: 27px;
@@ -365,6 +411,7 @@ main .proporties .selections .bookmarks .box .boxes {
   padding: 14px;
   gap: 7px;
   border-bottom: 1px solid green;
+  border-top: 1px solid green;
 }
 main .proporties .selections .bookmarks .box .boxes .interaction-icons {
   padding-left: 7px;
@@ -404,7 +451,8 @@ main .proporties .selections .bookmarks .box .boxes .users .user {
 main .proporties .selections .bookmarks .box .boxes .users .user h1 {
   display: contents;
   font-size: 14px;
-  color: orangered;
+  color: green;
+  font-weight: 700;
 }
 main .proporties .selections .bookmarks .box .boxes .users .user img {
   width: 27px;
@@ -413,7 +461,7 @@ main .proporties .selections .bookmarks .box .boxes .users .user img {
 }
 main .proporties .selections .bookmarks .box .boxes a {
   font-size: 25px;
-  color: orangered;
+  color: green;
   font-weight: 600;
 }
 main .proporties .selections .bookmarks .box .boxes .postImg {
@@ -1065,6 +1113,7 @@ main .discover .news #postsDetails {
   align-items: start;
   flex-direction: column;
   gap: 14px;
+  padding: 7px;
 }
 main .discover .news #postsDetails .comments-container {
   width: 100%;
@@ -1471,7 +1520,7 @@ main .offcanva .offcanvas::-webkit-scrollbar-thumb {
     width: 40%;
   }
   header nav .login {
-    width: 40%;
+    width: 50%;
   }
   header nav #Searchform {
     width: 36%;
@@ -1484,6 +1533,7 @@ main .offcanva .offcanvas::-webkit-scrollbar-thumb {
   }
   main .proporties .selections .selects button {
     width: 33%;
+    padding: 3px;
   }
   main .proporties .karma {
     width: 90%;
@@ -1494,6 +1544,9 @@ main .offcanva .offcanvas::-webkit-scrollbar-thumb {
     align-items: center;
   }
   main .discover .news #posts-container {
+    width: 100%;
+  }
+  main .discover .news #posts-gaming {
     width: 100%;
   }
   main .discover .news .community {
@@ -1508,8 +1561,8 @@ main .offcanva .offcanvas::-webkit-scrollbar-thumb {
 @media screen and (max-width: 450px) {
   header nav {
     gap: 10px;
-    justify-content: space-around;
-    width: 90%;
+    justify-content: start;
+    width: 100%;
   }
   header nav #offcanvasNavbar {
     width: 71%;
