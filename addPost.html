@@ -94,12 +94,11 @@
             </form>
             <div id="loginFirst" class="login">
                 <button id="loginbuton" class="loginButton">Login</button>
-               
             </div>
             <div id="loginSecond" class="login">
               <div class="btn-group dropdownes">
                 <button style="background-color: transparent; border: none; display: flex; justify-content: center; align-items: center; gap: 7px;" type="button" class="btn btn-secondary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="fa-solid fa-user" style="color: orangered;"></i>
+                  <i id="userimagee" class="fa-solid fa-user" style="color: orangered;"></i>
                   <p id="usernamee" style="color: black; display: contents; font-weight: 600;"></p>
                   <i class="fa-solid fa-chevron-down" style="color: #000000; font-size: 12px;"></i>
                 </button>
@@ -124,7 +123,9 @@
 
   
 
-    <main>
+    <main style="justify-content: center; flex-direction: column;">
+      <h2 style="padding: 14px 21px 14px 21px; background-color: green; color: orangered; border-radius: 50%;">Add Post</h2>
+
       <div id="loginModal" class="modal">
         <div class="modal-content">
           <div class="cloose">
@@ -175,78 +176,33 @@
     
     
 
-    <div class="offcanva" style="left: -1px; top: 58px; width: 21%; border-right: 1px solid gainsboro; position: fixed;" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-      <div style="background-color: transparent;" class="offcanvas-body">    
-        <ul style="padding: 14px; padding-left: 33px; gap: 7px; min-height: 88vh; display: flex; justify-content: start !important; align-items: start; flex-direction: column;" class="navbar-nav justify-content-end flex-grow-1 pe-3">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="./index.html"><i class="fa-solid fa-house"></i> Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="./popular.html"><i class="fa-solid fa-up-right-from-square" style="color: #000000;"></i> Popular</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              TOPICS <i class="fa-solid fa-chevron-down" style="color: #000000; font-size: 12px;"></i>
-            </a>
-            <ul style="border: none;" class="dropdown-menu show" data-bs-popper="static">
-              <li><a class="dropdown-item" href="./gaming.html"><i class="fa-solid fa-gamepad"></i> Gaming</a></li>
-              <li><a class="dropdown-item" href="./sports.html"><i class="fa-solid fa-volleyball"></i> Sports</a></li>
-              <li><a class="dropdown-item" href="./business.html"><i class="fa-solid fa-chart-line"></i> Business</a></li>
-              <li><a class="dropdown-item" href="./cyrpto.html"><i class="fa-brands fa-bitcoin"></i> Cyrpto</a></li>
-              <li><a class="dropdown-item" href="./tv.html"><i class="fa-solid fa-tv"></i> Television</a></li>
-              <li><a class="dropdown-item" href="./celebrity.html"><i class="fa-solid fa-cake-candles"></i> Celebrity</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              RESOURCES <i class="fa-solid fa-chevron-down" style="color: #000000; font-size: 12px;"></i>
-            </a>
-            <ul style="border: none;" class="dropdown-menu show" data-bs-popper="static">
-              <li><a class="dropdown-item" href="https://www.redditinc.com/"><i class="fa-brands fa-reddit"></i> About Reddit</a></li>
-              <li><a class="dropdown-item" href="https://accounts.reddit.com/adsregister"><i class="fa-solid fa-rectangle-ad"></i> Advertise</a></li>
-              <li><a class="dropdown-item" href="https://support.reddithelp.com/hc/en-us"><i class="fa-solid fa-info"></i>Help</a></li>
-              <li><a class="dropdown-item" href="https://www.redditinc.com/blog"><i class="fa-solid fa-book"></i> Blog</a></li>
-              <li><a class="dropdown-item" href="https://www.redditinc.com/careers"><i class="fa-solid fa-arrow-up-right-dots"></i> Careers</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              POPULAR POSTS <i class="fa-solid fa-chevron-down" style="color: #000000; font-size: 12px;"></i>
-            </a>
-            <ul style="border: none;" class="dropdown-menu show" data-bs-popper="static">
-              <li><a class="dropdown-item" href="./turkish.html">Turkish</a></li>
-              <li><a class="dropdown-item" href="./english.html">English / Global</a></li>
-              <li><a class="dropdown-item" href="./deutsch.html">Deutsch</a></li>
-              <li><a class="dropdown-item" href="./espanol.html">Español</a></li>
-              <li>
-                <hr style="border-top: white;" class="dropdown-divider">
-              </li>
-            </ul>
-          </li>
-        </ul>
-        <a class="reserved" href="">Reddit, Inc. © 2024. All rights reserved.</a>
-      </div>
-    </div>
 
 
 
-      <div class="discover">
-        
-        <div class="news">
-          <div id="posts-others" class="row posts-container">
-            
-          </div>
-          <div id="community" class="community">
-            <p>POPULAR COMMUNITIES</p>
-          </div>
 
-        </div>
+    <div id="post-add">
+        <form id="postForm">
+          <label for="media">Media URL:</label>
+          <input type="file" id="media" name="media" accept="image/*">
+      
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" placeholder="Add name" required>
+
+          <label for="name">Categories:</label>
+          <select id="categories" name="category" required>
+            <option value="gaming">Gaming</option>
+            <option value="sports">Sports</option>
+            <option value="business">Business</option>
+            <option value="crypto">Crypto</option>
+            <option value="television">Television</option>
+            <option value="celebrity">Celebrity</option>
+          </select>
+      
+          <label for="description">Description:</label>
+          <textarea id="description" name="description" required></textarea>
+      
+          <button type="button" onclick="submitForm()">Post Ekle</button>
+        </form>
       </div>
     </main>
 
@@ -268,6 +224,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-        <script src="./assets/js/espanol.js"></script>
+        <script src="./assets/js/addPost.js"></script>
 </body>
 </html>

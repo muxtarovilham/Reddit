@@ -22,7 +22,9 @@ async function getPosts() {
                     <img class="postImg" src="${item.media}" alt="${item.name}">
                     <div class="interaction-icons">
                         <div class="sends">
-                            <button onclick="like(${item.id})"><i class="fa-solid fa-heart"></i></button>     
+                        <div class="likess">
+                            <button onclick="like(${item.id})"><i class="fa-solid fa-heart"></i></button>  
+                            </div>   
                             <button onclick="showPostDetails(${item.id})"><i class="fa-regular fa-comment"></i></button>     
                             <i class="fa-solid fa-share"></i>
                         </div>
@@ -131,6 +133,7 @@ function like(id) {
         like.push(db.find(item => item.id == id));
         localStorage.setItem('like', JSON.stringify(like));
     }
+ 
 }
 
 function bookmark(id) {
@@ -385,6 +388,24 @@ function endAccount() {
 
     console.log("User signed out. LocalStorage key 'user' removed.");
 }
+
+
+
+
+function addPost() {
+    window.location.href = './addPost.html'
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    var usernameElement = document.getElementById("usernamee");
+    var addButton = document.getElementById("addButton");
+
+    if (usernameElement.innerHTML.trim() === "") {
+      addButton.style.display = "none";
+    } else {
+      addButton.style.display = "block";
+    }
+  });
 
 
 

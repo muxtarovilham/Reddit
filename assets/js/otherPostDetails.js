@@ -34,12 +34,10 @@ postDetails.appendChild(commentsSection);
     }
 }
 
-// Yorum alanını gösterme fonksiyonu (İhtiyacınıza göre uyarlayabilirsiniz)
 function yorumAlaniniGoster(postId) {
     
 }
 
-// Belirli bir gönderi ID'si ile getPostDetails fonksiyonunu çağırın (Gönderi ID'sini URL veya başka bir kaynaktan almanız gerekir)
 const postId = window.location.search.split('=')[1];
 getPostDetails(postId);
 var usernameeElement = document.getElementById("usernamee");
@@ -54,19 +52,20 @@ async function addComment(postId) {
             return;
         }
 
-        // Use axios or your preferred method to send a POST request to add a new comment
+        const generateRandomId = () => {
+            return Math.floor(Math.random() * 1000000).toString();
+          };
+        
         await axios.post('http://localhost:3000/comments', {
             postId: postId,
             username: usernameeElement.textContent,
             text: commentText,
+            id: generateRandomId()
             
-            // You may need to include additional information like user ID, etc.
         });
 
-        // After adding the comment, refresh the post details to display the updated comments
         getPostDetails(postId);
 
-        // Optionally, clear the comment input field
         commentInput.value = '';
 
     } catch (error) {
@@ -74,24 +73,19 @@ async function addComment(postId) {
     }
 }
 
-let isCommentsVisible = false; // Global state variable to track visibility
+let isCommentsVisible = false; 
 
 async function yorumAlaniniGoster(postId) {
     try {
-        // Toggle the visibility state
         isCommentsVisible = !isCommentsVisible;
 
-        // If comments are visible, fetch and display them
         if (isCommentsVisible) {
-            // Fetch comments for the specified post ID
             const commentResponse = await axios.get(`http://localhost:3000/comments?postId=${postId}`);
             const comments = commentResponse.data;
 
-            // Create a container for comments
             const commentsContainer = document.createElement('div');
             commentsContainer.className = 'comments-container';
 
-            // Display each comment
             comments.forEach(comment => {
                 const commentElement = document.createElement('div');
                 commentElement.className = 'comment';
@@ -102,11 +96,9 @@ async function yorumAlaniniGoster(postId) {
                 commentsContainer.appendChild(commentElement);
             });
 
-            // Append the comments container to the post details section
             const postDetails = document.getElementById('postsDetails');
             postDetails.appendChild(commentsContainer);
         } else {
-            // If comments are not visible, remove the comments container
             const existingCommentsContainer = document.querySelector('.comments-container');
             if (existingCommentsContainer) {
                 existingCommentsContainer.remove();
@@ -325,21 +317,15 @@ function forgot(){
 
 
 document.addEventListener("DOMContentLoaded", function() {
-    // Retrieve the user data from localStorage
     let userData = JSON.parse(localStorage.getItem("user"));
 
-    // Check if userData is not null or undefined and if it has at least one user
     if (userData && userData.length > 0) {
-        // Assuming that the first item in the array is the user object
         let user = userData[0];
 
-        // Access the "firstname" property from the user object
         let firstname = user.username;
 
-        // Display the firstname in the paragraph element
         document.getElementById("usernamee").textContent = firstname;
     } else {
-        // If userData is not available or doesn't have any users, handle it accordingly
         document.getElementById("usernamee").textContent = "";
     }
 });
@@ -365,17 +351,14 @@ function toggleLoginSections() {
     var loginSecond = document.getElementById("loginSecond");
 
     if (usernameElement.innerHTML.trim() === "") {
-        // Username is empty, show loginFirst, hide loginSecond
         loginFirst.style.display = "block";
         loginSecond.style.display = "none";
     } else {
-        // Username is not empty, show loginSecond, hide loginFirst
         loginFirst.style.display = "none";
         loginSecond.style.display = "block";
     }
 }
 
-// Call the function on page load (assuming you have a body element)
 document.body.onload = toggleLoginSections;
 
 
@@ -393,12 +376,8 @@ document.body.onload = toggleLoginSections;
 
 
 function endAccount() {
-    // localStorage'dan "user" adlı öğeyi sil
     localStorage.removeItem("user");
 
-    // İsteğe bağlı olarak kullanıcıyı başka bir sayfaya yönlendirebilirsiniz
-    // window.location.href = "sign-out-page.html";
 
-    // İsteğe bağlı olarak kullanıcıya bir mesaj gösterebilirsiniz
     console.log("User signed out. LocalStorage key 'user' removed.");
 }

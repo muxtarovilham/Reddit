@@ -272,6 +272,60 @@ main {
     justify-content: end;
     align-items: center;
     padding-top: 58px;
+    #post-add{
+        width: 80%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        form{
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: start;
+            flex-direction: column;
+            color: orangered;
+            gap: 14px;
+            font-weight: 600;
+            button{
+                border: 1px solid green;
+                color: orangered;
+                background-color: transparent;
+                width: 148px;
+                height: 33px;
+                transition: background-color 0.3s ease;
+                font-weight: 600;
+                &:hover{
+                    background-color: green;
+                    color: white;
+                }
+            }
+            select{
+                border: none;
+                background-color: transparent;
+                color: orangered;
+                font-weight: 600;
+            }
+            textarea{
+                width: 30%;
+                height: 66px;
+                border: 1px solid green;
+                background-color: transparent;
+            }
+            #media{
+                border: none;
+
+            }
+            input{
+                width: 24%;
+                height: 33px;
+                border: 1px solid green;
+                background-color: transparent;
+                padding: 3px;
+            }
+        }
+    }
 
     .proporties {
         width: 80%;
@@ -1325,6 +1379,7 @@ main {
                     align-items: start;
                     flex-direction: column;
                     gap: 10px;
+                    width: 90%;
 
                     .comment-section {
                         width: 100%;
@@ -1439,6 +1494,24 @@ main {
 
             .posts-container {
                 width: 66%;
+                #addButton{
+                    width: 200px; 
+                    height: 66px; 
+                    border: none; 
+                    background-color: transparent; 
+                    font-size: 21px;
+                    transition: font-size 0.4s ease;
+                    display: block;
+                    i{
+                        font-size: 21px;
+                        &:hover{
+                            font-size: 24px;
+                        }
+                    }
+                    &:hover{
+                        font-size: 24px;
+                    }
+                }
 
                 .box {
                     width: 98%;
@@ -1589,7 +1662,6 @@ main {
         }
 
         #popular-container {
-            background-color: red;
             width: 100%;
             height: 210px;
             overflow: hidden;
@@ -1745,6 +1817,16 @@ main {
     }
 
     main {
+        #post-add{
+            form{
+                textarea{
+                    width: 66%;
+                }
+                input{
+                    width: 66%;
+                }
+            }
+        }
         .proporties {
             .karma {
                 height: 400px;
@@ -1860,8 +1942,11 @@ main {
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                #postsDetails {
+                    width: 90%;
+                }
 
-                #posts-container {
+                .posts-container {
                     width: 100%;
                 }
                 #posts-gaming {
@@ -1907,6 +1992,16 @@ main {
     }
 
     main {
+        #post-add{
+            form{
+                textarea{
+                    width: 90%;
+                }
+                input{
+                    width: 90%;
+                }
+            }
+        }
         .modal {
             width: 80%;
             left: 11%;

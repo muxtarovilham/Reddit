@@ -2,8 +2,8 @@
   "posts": [
     {
       "id": "1",
-      "userimage": "https://img.freepik.com/free-photo/people-making-hands-heart-shape-silhouette-sunset_53876-15987.jpg?size=626&ext=jpg&ga=GA1.1.1448711260.1706918400&semt=sph",
-      "image": "https://preview.redd.it/eras-tour-coming-to-disney-for-streaming-march-15th-2024-v0-rqswstfzf8hc1.jpeg?width=320&crop=smart&auto=webp&s=a4edcb2d8234abafb39c0dcb141ca2855893d991",
+      "userimage": "https://styles.redditmedia.com/t5_2rlwe/styles/communityIcon_kxzubtaw9ngc1.png",
+      "image": "https://preview.redd.it/eras-tour-coming-to-disney-for-streaming-march-15th-2024-v0-rqswstfzf8hc1.jpeg?width=1080&crop=smart&auto=webp&s=d588d09bf27a79f777910a0836fe9d5c668c856b",
       "username": "r/television",
       "name": "Eras Tour on Disney+",
       "description": "Description 1",
@@ -58,31 +58,31 @@
   "otherPosts": [
     {
       "id": "1",
-      "userimage": "https://img.freepik.com/free-photo/people-making-hands-heart-shape-silhouette-sunset_53876-15987.jpg?size=626&ext=jpg&ga=GA1.1.1448711260.1706918400&semt=sph",
-      "media": "https://preview.redd.it/such-an-action-would-greatly-offend-the-american-public-v0-b7ults9ni7hc1.png?auto=webp&s=ad45e7f33f693f27dc80e442cd2ec536dd8a6f8e",
-      "username": "r/television",
-      "name": "Such an action would greatly offend the American public",
-      "description": "This event could deeply impact the American public and spark controversies. What event are they referring to?",
+      "userimage": "https://styles.redditmedia.com/t5_2v5mb/styles/communityIcon_asab31tnd7f71.jpg?format=pjpg&s=99d178f8f8e6bd3120faf2d337225c0484fba181",
+      "media": "https://preview.redd.it/closest-likeness-v0-cyc4o6qpulic1.jpeg?auto=webp&s=273342a318f39d053b9c3c8ae3e9fb4d9d78dfcc",
+      "username": "r/redditee",
+      "name": "Closest likeness?",
+      "description": "Since I’ve only ever seen JND’s video reveal discussed on this sub",
       "category": "post",
       "comments": []
     },
     {
       "id": "2",
-      "userimage": "https://images.pexels.com/photos/2893685/pexels-photo-2893685.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-      "media": "https://preview.redd.it/sy4u7hwgi0v81.jpg?width=1080&crop=smart&auto=webp&s=e9e7fd7397cb2229404513ebd999f502e36ba353",
-      "username": "r/nba",
-      "name": "Unions are good!",
-      "description": "A post about the importance and benefits of unions. Perhaps a positive message about unions from an NBA player.",
+      "userimage": "https://styles.redditmedia.com/t5_2r5rp/styles/communityIcon_2c4ms7mggreb1.png?width=256&s=52dbbe21d1959c3d4419cf578e179584d40f9ba4",
+      "media": "https://i.redd.it/6n1t2f8bdoic1.jpeg",
+      "username": "r/redditee",
+      "name": "Men who cry are weak",
+      "description": "Comments that are uncivil, racist, misogynistic",
       "category": "post",
       "comments": []
     },
     {
       "id": "3",
-      "userimage": "https://img.freepik.com/free-photo/people-making-hands-heart-shape-silhouette-sunset_53876-15987.jpg?size=626&ext=jpg&ga=GA1.1.1448711260.1706918400&semt=sph",
-      "media": "https://preview.redd.it/come-out-of-the-grocery-store-to-this-car-on-the-right-v0-915x2lm5u8hc1.jpeg?width=640&crop=smart&auto=webp&s=d2f9185caaf351ad5cbcb0dc70fb25a2c6909b67",
-      "username": "r/television",
-      "name": "Come out of the grocery store to this car on the right.",
-      "description": "An interesting vehicle spotted on the right after leaving the grocery store. It could be an exciting situation or an intriguing observation.",
+      "userimage": "https://styles.redditmedia.com/t5_2ubgg/styles/communityIcon_lkxajjefezh51.png",
+      "media": "https://preview.redd.it/90x5fq67roic1.jpg?width=1080&format=pjpg&auto=webp&s=e21ad7498035e97f5573614a2f083a98275fcd3e",
+      "username": "r/games",
+      "name": "Superior Spider-Man Announced",
+      "description": "Game now to grab your rewards.",
       "category": "post",
       "comments": []
     },
@@ -129,7 +129,7 @@
     {
       "id": "8",
       "userimage": "https://images.pexels.com/photos/2893685/pexels-photo-2893685.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-      "media": "https://preview.redd.it/custom-made-escape-from-tarkov-figure-v0-8ofcz2nw6cfc1.jpg?width=640&crop=smart&auto=webp&s=5691ba542aa92b2421c0bfd36e9c66a6900dfd76",
+      "media": "https://i.redd.it/xob1aywx6rl61.jpg",
       "username": "r/tarkov",
       "name": "Custom made escape from Tarkov figure",
       "description": "Description 2",
@@ -451,134 +451,34 @@
   ],
   "comments": [
     {
-      "id": "f38a",
-      "postId": 3,
-      "text": "Nice post"
-    },
-    {
-      "id": "3893",
-      "postId": 3,
-      "text": "sfa"
-    },
-    {
-      "id": "598d",
-      "postId": 3,
-      "text": "Nice post"
-    },
-    {
-      "id": "1098",
-      "postId": 3,
-      "text": "Nice post"
-    },
-    {
-      "id": "7b8b",
-      "postId": 3,
-      "text": "deneme1"
-    },
-    {
-      "id": "4a00",
-      "postId": 3,
-      "text": "yorum"
-    },
-    {
-      "id": "ba05",
-      "postId": 3,
-      "text": "a"
-    },
-    {
-      "id": "5ceb",
-      "postId": 1,
-      "text": "Erdogan reiss"
-    },
-    {
-      "id": "a332",
-      "postId": 1,
-      "username": "",
-      "text": "fads"
-    },
-    {
-      "id": "21a7",
-      "postId": 1,
-      "username": "",
-      "text": "heloo"
-    },
-    {
-      "id": "d1b0",
-      "postId": 5,
-      "username": "muxtarovilham",
-      "text": "bunela"
-    },
-    {
-      "id": "195d",
-      "postId": 9,
-      "username": "muxtarovilham",
-      "text": "Bu ne oyun gardas"
-    },
-    {
-      "id": "e64a",
-      "postId": 6,
-      "username": "muxtarovilham",
-      "text": "Khabib best"
-    },
-    {
-      "id": "cb66",
-      "postId": 13,
-      "username": "muxtarovilham",
-      "text": "Devil's money"
-    },
-    {
-      "id": "cd9c",
-      "postId": 23,
-      "username": "muxtarovilham",
-      "text": "Same John Cena"
-    },
-    {
-      "id": "0678",
-      "postId": 16,
-      "username": "muxtarovilham",
-      "text": "Hahaha!"
-    },
-    {
-      "id": "e39a",
-      "postId": 16,
-      "username": "muxtarovilham",
-      "text": "Kopeek"
-    },
-    {
       "id": "8134",
       "postId": 16,
       "username": "muxtarovilham",
       "text": "Haydır ALLAH"
     },
     {
-      "id": "1211",
+      "id": "570464",
+      "postId": 17,
+      "username": "muxtarovilham",
+      "text": "Sultan Abdulhamid Han Hazretleri"
+    },
+    {
+      "id": "328763",
       "postId": 18,
       "username": "muxtarovilham",
       "text": "1453"
     },
     {
-      "id": "708a",
+      "id": "625037",
       "postId": 18,
       "username": "muxtarovilham",
       "text": "571"
     },
     {
-      "id": "b30e",
-      "postId": 17,
+      "id": "862634",
+      "postId": 3,
       "username": "muxtarovilham",
-      "text": "Sultan Abdülhamid Han "
-    },
-    {
-      "id": "33f1",
-      "postId": 27,
-      "username": "muxtarovilham",
-      "text": "Bunela"
-    },
-    {
-      "id": "23e9",
-      "postId": 30,
-      "username": "muxtarovilham",
-      "text": "Bassss"
+      "text": "BaydırMan"
     }
   ]
 }

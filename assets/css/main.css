@@ -228,6 +228,59 @@ main {
   align-items: center;
   padding-top: 58px;
 }
+main #post-add {
+  width: 80%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main #post-add form {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  color: orangered;
+  gap: 14px;
+  font-weight: 600;
+}
+main #post-add form button {
+  border: 1px solid green;
+  color: orangered;
+  background-color: transparent;
+  width: 148px;
+  height: 33px;
+  transition: background-color 0.3s ease;
+  font-weight: 600;
+}
+main #post-add form button:hover {
+  background-color: green;
+  color: white;
+}
+main #post-add form select {
+  border: none;
+  background-color: transparent;
+  color: orangered;
+  font-weight: 600;
+}
+main #post-add form textarea {
+  width: 30%;
+  height: 66px;
+  border: 1px solid green;
+  background-color: transparent;
+}
+main #post-add form #media {
+  border: none;
+}
+main #post-add form input {
+  width: 24%;
+  height: 33px;
+  border: 1px solid green;
+  background-color: transparent;
+  padding: 3px;
+}
 main .proporties {
   width: 80%;
   height: auto;
@@ -1148,6 +1201,7 @@ main .discover .news #postsDetails .boxes {
   align-items: start;
   flex-direction: column;
   gap: 10px;
+  width: 90%;
 }
 main .discover .news #postsDetails .boxes .comment-section {
   width: 100%;
@@ -1242,6 +1296,24 @@ main .discover .news #postsDetails .boxes .users img {
 }
 main .discover .news .posts-container {
   width: 66%;
+}
+main .discover .news .posts-container #addButton {
+  width: 200px;
+  height: 66px;
+  border: none;
+  background-color: transparent;
+  font-size: 21px;
+  transition: font-size 0.4s ease;
+  display: block;
+}
+main .discover .news .posts-container #addButton i {
+  font-size: 21px;
+}
+main .discover .news .posts-container #addButton i:hover {
+  font-size: 24px;
+}
+main .discover .news .posts-container #addButton:hover {
+  font-size: 24px;
 }
 main .discover .news .posts-container .box {
   width: 98%;
@@ -1367,7 +1439,6 @@ main .discover .news .posts-container .box .boxes .postImg {
   border-radius: 14px;
 }
 main .discover #popular-container {
-  background-color: red;
   width: 100%;
   height: 210px;
   overflow: hidden;
@@ -1474,6 +1545,12 @@ main .offcanva .offcanvas::-webkit-scrollbar-thumb {
   header nav .reddit-images p {
     display: none;
   }
+  main #post-add form textarea {
+    width: 66%;
+  }
+  main #post-add form input {
+    width: 66%;
+  }
   main .proporties .karma {
     height: 400px;
   }
@@ -1543,7 +1620,10 @@ main .offcanva .offcanvas::-webkit-scrollbar-thumb {
     justify-content: center;
     align-items: center;
   }
-  main .discover .news #posts-container {
+  main .discover .news #postsDetails {
+    width: 90%;
+  }
+  main .discover .news .posts-container {
     width: 100%;
   }
   main .discover .news #posts-gaming {
@@ -1569,6 +1649,12 @@ main .offcanva .offcanvas::-webkit-scrollbar-thumb {
   }
   header nav #Searchform {
     display: none;
+  }
+  main #post-add form textarea {
+    width: 90%;
+  }
+  main #post-add form input {
+    width: 90%;
   }
   main .modal {
     width: 80%;
